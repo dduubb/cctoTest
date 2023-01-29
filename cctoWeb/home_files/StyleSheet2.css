@@ -1,0 +1,1083 @@
+﻿/** ################################################## **/
+/** Exemption History Results **/
+.exemptionhistoryresultsdatagriddesktop {
+    display: block;
+    visibility: visible;
+}
+
+.exemptionhistoryresultsdatagridmobile {
+    display: none;
+    visibility: collapse;
+}
+
+.exemptionhistoryresultsblankspace {
+    background-color: #d1d3d5;
+}
+
+.exemptionhistoryresultscolumnheader {
+    background-color: #d1d3d5;
+    border-left: 1px solid #ffffff;
+    color: #000000;
+    padding: 2px;
+    text-align: center;
+}
+
+.exemptionhistoryresultsrowheader {
+    font-weight: bold;
+    padding: 8px 20px 0px 0px;
+}
+
+.exemptionhistoryresultsvalue {
+    padding: 8px 0px 0px 0px;
+    text-align: center;
+}
+
+@media only screen and (max-width: 540px) {
+    .exemptionhistoryresultsdatagriddesktop {
+        display: none;
+        visibility: collapse;
+    }
+
+    .exemptionhistoryresultsdatagridmobile {
+        display: block;
+        visibility: visible;
+    }
+
+    .exemptionhistoryresultstaxyear {
+        background-color: #d1d3d5;
+        border: 1px solid #d1d3d5;
+        color: #000000;
+        padding: 2px;
+    }
+
+    .exemptionhistoryresultsrowheader {
+        padding: 4px 20px 0px 0px;
+        text-align: left;
+    }
+
+    .exemptionhistoryresultsvalue {
+        text-align: left;
+    }
+}
+
+/** ################################################## **/
+/** Overpayment Refund Results **/
+.refundresults {
+    width: 100%;
+}
+
+.refundheader {
+    background-color: #d1d3d5;
+    color: #000000;
+    margin-top: 10px;
+    padding: 4px 20px 4px 4px;
+}
+
+.refunddata {
+    margin: 12px 0px 0px 4px;
+    width: 600px;
+}
+
+.refundtaxtypevolume {
+    margin: 12px 0px 0px 4px;
+}
+
+.refundinformationtableheader {
+    font-weight: bold;
+    padding-bottom: 4px;
+}
+
+.refundinformationrowheader {
+    padding: 0px 20px 2px 0px;
+    text-align: left;
+    vertical-align: top;
+}
+
+.refundinformationvalue {
+    padding-bottom: 4px;
+    text-align: right;
+}
+
+.refundmessage {
+    color: #ed1c24;
+    margin: 0px 0px 10px 4px;
+}
+
+@media only screen and (max-width: 540px) {
+    .refundresults {
+        width: 100%;
+    }
+
+    .refunddata {
+        width: 100%;
+    }
+}
+
+/** ################################################## **/
+/** Name or Address Change Results **/
+.mailingaddressname {
+    font-weight: bold;
+    padding: 2px 20px 0px 0px;
+}
+
+.mailingaddressvalue {
+    padding: 2px 0px 0px 0px;
+}
+
+/** ################################################## **/
+/** Property Tax Appeal Board Results **/
+.ptabtablealternatingrow {
+    background-color: #e9ebed;
+    border-right: 0px solid #ffffff;
+    padding: 4px;
+}
+
+.ptabtableheader {
+    background-color: #d1d3d5;
+    border-right: 1px solid #ffffff;
+    color: #000000;
+    padding: 4px;
+}
+
+.ptabtablerow {
+    background-color: #ffffff;
+    border-right: 1px solid #ffffff;
+    padding: 4px;
+}
+
+.ptabsectionbox {
+    padding: 2px;
+    min-width: 280px;
+}
+
+.ptabsectionheader {
+    background-color: #d1d3d5;
+    font-size: 12px;
+    font-weight: bold;
+    padding: 4px;
+}
+
+.ptabsectiondata {
+    padding: 4px;
+}
+
+/** ################################################## **/
+/** Request a Duplicate Tax Bill **/
+.requestaduplicatetaxbillsectionheader {
+    background-color: #d1d3d5;
+    border: 1px solid #d1d3d5;
+    color: #000000;
+    font-size: 12px;
+    font-weight: bold;
+    margin-top: 30px;
+    padding: 4px;
+    /*width: 100%;*/
+}
+
+/** ################################################## **/
+/** Taxing Districts **/
+.taxingdistrictstablelayout {
+    border-collapse: collapse;
+    width: 826px;
+}
+
+.taxingdistrictspropertytaxbilltitle {
+    font-size: 13px;
+    font-weight: bold;
+}
+
+.taxingdistrictspropertytaxbilltotalamountdue {
+    font-size: 15px;
+    font-weight: bold;
+}
+
+.taxingdistrictsline {
+    border-bottom: solid 1px #000000;
+    height: 1px;
+    margin: 2px 0px 2px 0px;
+}
+
+.taxingdistrictscategory {
+    color: #000000;
+    font-size: 12px;
+    font-weight: bold;
+    padding: 0px 0px 4px 0px;
+}
+
+.taxingdistrictsagencycontrol {
+    width: 2px;
+}
+
+.taxingdistrictssectiontitle {
+    font-size: 11px;
+    font-weight: bold;
+    margin: 16px 0px 4px 0px;
+}
+
+.taxingdistrictsfinancialdatacolumnheader {
+    font-size: 11px;
+    font-weight: bold;
+    text-align: right;
+    width: 100px;
+}
+
+.taxingdistrictsfinancialdatarowheader {
+    font-size: 11px;
+    width: 170px;
+}
+
+.taxingdistrictsfinancialdatavalue {
+    font-size: 11px;
+    text-align: right;
+    width: 100px;
+}
+
+.taxingdistrictsagencyname {
+    font-size: 12px;
+    text-align: left;
+}
+
+.taxingdistrictsagencydetail {
+    background-color: #e9ebed;
+    padding: 11px;
+    margin: 4px 0px 6px 0px;
+    width: 836px;
+}
+
+.taxingdistrictsagencytitle {
+    color: #000000;
+    font-size: 18px;
+    font-weight: normal;
+    margin: 0px 0px 16px 0px;
+}
+
+.taxingdistrictsagencypensionrowheader {
+    font-size: 11px;
+    vertical-align: top;
+    width: 170px;
+}
+
+.taxingdistrictsagencypensiondatavalue {
+    font-size: 11px;
+    vertical-align: top;
+    width: 100px;
+}
+
+.taxingdistrictssearchdesktop {
+    display: block;
+    visibility: visible;
+}
+
+.taxingdistrictssearchmobile {
+    display: none;
+    visibility: collapse;
+}
+
+@media only screen and (max-width: 1020px) {
+    .taxingdistrictssearchdesktop {
+        display: none;
+        visibility: collapse;
+    }
+
+    .taxingdistrictssearchmobile {
+        display: block;
+        visibility: visible;
+    }
+}
+
+.taxingdistrictssectiondivider {
+    border-top: 1px dotted #5e6376;
+    padding-top: 8px;
+    margin-top: 8px;
+}
+
+/** ################################################## **/
+/** Your Property Tax Overview **/
+.yourpropertytaxoverviewsectionheader {
+    color: #000000;
+    font-size: 20px;
+    font-weight: bold;
+}
+
+/** ################################################## **/
+/** Your Property Tax Overview (Payments) **/
+.overviewpaymentsdatagriddesktop {
+    display: block;
+    visibility: visible;
+}
+
+.overviewpaymentsdatagridmobile {
+    display: none;
+    visibility: collapse;
+}
+
+.overviewpaymentsrowheader {
+    font-weight: bold;
+    margin: 0px;
+    min-width: 200px;
+    padding-top: 4px;
+}
+
+.overviewpaymentscolumnheader1 {
+    background-color: #094168;
+    color: #ffffff;
+    font-weight: bold;
+    margin: 0px 0px 1px 0px;
+    padding: 8px;
+}
+
+.overviewpaymentscolumnheader2 {
+    font-weight: bold;
+    margin: 0px;
+    padding: 8px;
+}
+
+.overviewpaymentscolumnheader3 {
+    background-color: #008066;
+    color: #ffffff;
+    font-weight: bold;
+    margin: 0px 0px 1px 0px;
+    padding: 8px;
+}
+
+.overviewpaymentsdatavalue {
+    color: #000000;
+    font-weight: normal;
+    margin: 0px;
+    padding-top: 4px;
+}
+
+.overviewpaymentsdatavaluefootnote {
+    color: #000000;
+    font-weight: normal;
+    margin: 0px;
+    padding-top: 4px;
+    text-align: left;
+    width: 20px;
+}
+
+.overviewpaymentsapplyforarefund {
+    color: #0060bb;
+    font-size: 12px;
+    margin-top: 10px;
+    padding-bottom: 4px;
+}
+
+@media only screen and (max-width: 1080px) {
+    .overviewpaymentsdatagriddesktop {
+        display: none;
+        visibility: collapse;
+    }
+
+    .overviewpaymentsdatagridmobile {
+        display: block;
+        visibility: visible;
+    }
+
+    .overviewpaymentsrowheader {
+        font-weight: bold;
+        margin: 0px;
+        min-width: 200px;
+        padding-top: 4px;
+    }
+
+    .overviewpaymentsdatavalue {
+        color: #000000;
+        font-weight: normal;
+        margin: 0px;
+        padding-top: 4px;
+        text-align: right;
+    }
+}
+
+@media only screen and (max-width: 500px) {
+    .overviewpaymentsrowheader {
+        float: none;
+        padding-bottom: 0px;
+        text-align: left;
+        width: 100%;
+    }
+
+    .overviewpaymentsdatavalue {
+        float: none;
+        padding-bottom: 6px;
+        text-align: left;
+    }
+}
+
+.totalamountbilled {
+    color: #505050;
+    font-size: 16px;
+    font-weight: 700;
+}
+
+.totalamountbilledname {
+    float: left;
+    text-align: left;
+    width: 160px;
+}
+
+.totalamountbilledvalue {
+    float: left;
+    text-align: right;
+    width: 100px;
+}
+
+.totalamountdue {
+    color: #505050;
+    font-size: 16px;
+    font-weight: 700;
+}
+
+.totalamountduename {
+    float: left;
+    text-align: left;
+    width: 160px;
+}
+
+.totalamountduevalue {
+    color: #ed1c24;
+    float: left;
+    font-weight: 700;
+    text-align: right;
+    width: 100px;
+}
+
+@media only screen and (max-width: 500px) {
+    .totalamountbilledname {
+        float: none;
+        text-align: left;
+        width: 100%;
+    }
+
+    .totalamountbilledvalue {
+        float: none;
+        text-align: left;
+        width: 100%;
+    }
+
+    .totalamountduename {
+        float: none;
+        margin: 0px 0px 4px 0px;
+        text-align: left;
+        width: 100%;
+    }
+
+    .totalamountduevalue {
+        float: none;
+        text-align: left;
+        width: 100%;
+    }
+}
+
+/** ################################################## **/
+/** Your Property Tax Overview (Payments - Payment Box) **/
+.paymentbox {
+    min-height: 140px;
+}
+
+/** ################################################## **/
+/** Your Property Tax Overview (Payments - Background Images) **/
+.overviewpaymentsinstallment1balancedue {
+    background-color: #c9dae7;
+    padding: 8px;
+}
+
+.overviewpaymentsinstallment2balancedue {
+    background-color: #fff8cc;
+    padding: 8px;
+}
+
+.overviewpaymentsbacktaxesbalancedue {
+    background-color: #b1d4cc;
+    padding: 8px;
+}
+
+.overviewpaymentsinstallment1paidinfull {
+    background-image: url('../images/paid1.png');
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: auto;
+    background-color: #c9dae7;
+    padding: 8px;
+}
+
+.overviewpaymentsinstallment2paidinfull {
+    background-image: url('../images/paid2.png');
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: auto;
+    background-color: #fff8cc;
+    padding: 8px;
+}
+
+.overviewpaymentsbacktaxespaidinfull {
+    background-image: url('../images/paid3.png');
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: auto;
+    background-color: #b1d4cc;
+    padding: 8px;
+}
+
+.overviewpaymentsinstallment1nobalancedue {
+    background-image: url('../images/nobalancedue1.png');
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: auto;
+    background-color: #c9dae7;
+    padding: 8px;
+}
+
+.overviewpaymentsinstallment2nobalancedue {
+    background-image: url('../images/nobalancedue2.png');
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: auto;
+    background-color: #fff8cc;
+    padding: 8px;
+}
+
+.overviewpaymentsbacktaxesnobalancedue {
+    background-image: url('../images/nobalancedue3.png');
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: auto;
+    background-color: #b1d4cc;
+    padding: 8px;
+}
+
+.overviewpaymentsinstallment1refunddue {
+    background-image: url('../images/refunddue.png');
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: auto;
+    background-color: #c9dae7;
+    padding: 8px;
+}
+
+.overviewpaymentsinstallment2refunddue {
+    background-image: url('../images/refunddue.png');
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: auto;
+    background-color: #fff8cc;
+    padding: 8px;
+}
+
+.overviewpaymentsbacktaxesrefunddue {
+    background-image: url('../images/refunddue.png');
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: auto;
+    background-color: #b1d4cc;
+    padding: 8px;
+}
+
+.overviewpaymentsinstallment1delinquenttaxes {
+    background-image: url('../images/delinquent.png');
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: auto;
+    background-color: #c9dae7;
+    padding: 8px;
+}
+
+.overviewpaymentsinstallment2delinquenttaxes {
+    background-image: url('../images/delinquent.png');
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: auto;
+    background-color: #fff8cc;
+    padding: 8px;
+}
+
+.overviewpaymentsbacktaxesdelinquenttaxes {
+    background-image: url('../images/delinquent.png');
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: auto;
+    background-color: #b1d4cc;
+    padding: 8px;
+}
+
+.overviewpaymentsinstallment1taxsalepostponed {
+    background-image: url('../images/delinquenttaxsalepostponed.png');
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: auto;
+    background-color: #c9dae7;
+    padding: 8px;
+}
+
+.overviewpaymentsinstallment2taxsalepostponed {
+    background-image: url('../images/delinquenttaxsalepostponed.png');
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: auto;
+    background-color: #fff8cc;
+    padding: 8px;
+}
+
+.overviewpaymentsbacktaxestaxsalepostponed {
+    background-image: url('../images/delinquenttaxsalepostponed.png');
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: auto;
+    background-color: #b1d4cc;
+    padding: 8px;
+}
+
+.overviewpaymentsinstallment1municipalacquisitiongeneraltaxes {
+    background-image: url('../images/nobalancedue1.png');
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: auto;
+    background-color: #c9dae7;
+    padding: 8px;
+}
+
+.overviewpaymentsinstallment2municipalacquisitiongeneraltaxes {
+    background-image: url('../images/nobalancedue2.png');
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: auto;
+    background-color: #fff8cc;
+    padding: 8px;
+}
+
+.overviewpaymentsinstallment2municipalacquisitionspecialitytaxes {
+    background-image: url('../images/nobalancedue3.png');
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: auto;
+    background-color: #b1d4cc;
+    padding: 8px;
+}
+
+
+/** ################################################## **/
+/** Your Property Tax Overview (Refunds) **/
+.overviewrefundssectionwrapper {
+    margin: 0px 0px 10px 0px;
+    width: 650px;
+}
+
+.overviewrefundssectiontitle {
+    background-color: #d1d3d5;
+    color: #000000;
+    font-weight: bold;
+    padding: 4px;
+}
+
+.overviewrefundsdatagriddesktop {
+    display: block;
+    visibility: visible;
+}
+
+.overviewrefundsdatagridmobile {
+    display: none;
+    visibility: collapse;
+}
+
+@media only screen and (max-width: 710px) {
+    .overviewrefundssectionwrapper {
+        width: 100%;
+    }
+
+    .overviewrefundssectiontitle {
+        background-color: #d1d3d5;
+        color: #000000;
+        font-weight: bold;
+        padding: 4px;
+    }
+
+    .overviewrefundsdatagriddesktop {
+        display: none;
+        visibility: collapse;
+    }
+
+    .overviewrefundsdatagridmobile {
+        display: block;
+        visibility: visible;
+    }
+}
+
+/** ################################################## **/
+/** Your Property Tax Overview (Exemptions) **/
+.exemptionhistoryresultsdatagriddesktop {
+    display: block;
+    visibility: visible;
+}
+
+.exemptionhistoryresultsdatagridmobile {
+    display: none;
+    visibility: collapse;
+}
+
+.exemptionhistoryresultsblankspace {
+    background-color: #d1d3d5;
+    color: #000000;
+    padding: 4px;
+}
+
+.exemptionhistoryresultscolumnheader1 {
+    background-color: #d1d3d5;
+    border-left: 1px solid #ffffff;
+    color: #000000;
+    font-weight: bold;
+    padding: 4px;
+    text-align: center;
+}
+
+.exemptionhistoryresultsrowheader1 {
+    background-color: #ffffff;
+    font-weight: bold;
+    padding: 4px 20px 4px 4px;
+}
+
+.exemptionhistoryresultsrowheader2 {
+    background-color: #e9ebed;
+    font-weight: bold;
+    padding: 4px 20px 4px 4px;
+}
+
+.exemptionhistoryresultsvalue1 {
+    background-color: #ffffff;
+    border-left: 1px solid #ffffff;
+    padding: 4px 0px 4px 4px;
+    text-align: center;
+}
+
+.exemptionhistoryresultsvalue2 {
+    background-color: #e9ebed;
+    border-left: 1px solid #ffffff;
+    padding: 4px 0px 4px 4px;
+    text-align: center;
+}
+
+@media only screen and (max-width: 710px) {
+    .exemptionhistoryresultsdatagriddesktop {
+        display: none;
+        visibility: collapse;
+    }
+
+    .exemptionhistoryresultsdatagridmobile {
+        display: block;
+        visibility: visible;
+    }
+
+    .exemptionhistoryresultstaxyear {
+        background-color: #d1d3d5;
+        border: 1px solid #d1d3d5;
+        color: #000000;
+        padding: 2px;
+    }
+
+    .exemptionhistoryresultsrowheader {
+        padding: 4px 20px 0px 0px;
+        text-align: left;
+    }
+
+    .exemptionhistoryresultsvalue {
+        text-align: left;
+    }
+}
+
+/** ################################################## **/
+/** Your Property Tax Overview (Taxing Districts) **/
+.overviewtaxingdistrictssectionwrapper {
+    margin: 0px 0px 20px 0px;
+    width: 820px;
+}
+
+.overviewtaxingdistrictssectiontitle {
+    background-color: #d1d3d5;
+    color: #000000;
+    font-weight: bold;
+    padding: 4px;
+}
+
+.overviewtaxingdistrictsdatagriddesktop {
+    display: block;
+    visibility: visible;
+}
+
+.overviewtaxingdistrictsdatagridmobile {
+    display: none;
+    visibility: collapse;
+}
+
+@media only screen and (max-width: 940px) {
+    .overviewtaxingdistrictssectionwrapper {
+        width: 100%;
+    }
+
+    .overviewtaxingdistrictssectiontitle {
+        background-color: #d1d3d5;
+        color: #000000;
+        font-weight: bold;
+        padding: 4px;
+    }
+
+    .overviewtaxingdistrictsdatagriddesktop {
+        display: none;
+        visibility: collapse;
+    }
+
+    .overviewtaxingdistrictsdatagridmobile {
+        display: block;
+        visibility: visible;
+    }
+}
+
+/** ################################################## **/
+/** Your Property Tax Overview (Taxing Districts - Charts) **/
+.chartdesktop {
+    display: block;
+    visibility: visible;
+}
+
+.chartmobile1 {
+    display: none;
+    visibility: collapse;
+}
+
+.chartmobile2 {
+    display: none;
+    visibility: collapse;
+}
+
+@media only screen and (max-width: 940px) {
+    .chartdesktop {
+        display: none;
+        visibility: collapse;
+    }
+
+    .chartmobile1 {
+        display: block;
+        visibility: visible;
+    }
+
+    .chartmobile2 {
+        display: none;
+        visibility: collapse;
+    }
+}
+
+@media only screen and (max-width: 718px) {
+    .chartdesktop {
+        display: none;
+        visibility: collapse;
+    }
+
+    .chartmobile1 {
+        display: none;
+        visibility: collapse;
+    }
+
+    .chartmobile2 {
+        display: block;
+        visibility: visible;
+    }
+}
+
+/** ################################################## **/
+/** Estate Search **/
+.estateresultsdesktop {
+    display: block;
+    visibility: visible;
+}
+
+.estateresultsmobile {
+    display: none;
+    visibility: collapse;
+}
+
+.estateresultsheader {
+    background-color: #d1d3d5;
+    border: solid 1px #d1d3d5;
+    color: #000000;
+    margin-bottom: 6px;
+    padding: 2px 20px 2px 2px;
+}
+
+.estateresultsname {
+    font-weight: bold;
+    padding-bottom: 4px;
+}
+
+.estateresultsvalue {
+    padding-bottom: 4px;
+}
+
+@media only screen and (max-width: 540px) {
+    .estateresultsdesktop {
+        display: none;
+        visibility: collapse;
+    }
+
+    .estateresultsmobile {
+        display: block;
+        visibility: visible;
+    }
+
+    .estateresultsname {
+        margin-bottom: 2px;
+        padding-bottom: 0px;
+    }
+
+    .estateresultsvalue {
+        margin-bottom: 8px;
+        padding-bottom: 0px;
+    }
+}
+
+/** ################################################## **/
+/** Delinquent Taxes / Tax Sale **/
+.taxsalewarningimage {
+    display: block;
+    visibility: visible;
+}
+
+@media only screen and (max-width: 770px) {
+    .taxsalewarningimage {
+        display: none;
+        visibility: collapse;
+    }
+}
+
+/** ################################################## **/
+/** J-Query Functions **/
+a.r_view {
+    padding: 0px;
+    text-decoration: none;
+}
+
+.d_view {
+    display: none;
+    font-size: 1em;
+    margin-bottom: 15px;
+}
+
+/** ################################################## **/
+/** Begin a New Search **/
+.beginanewsearchdesktop {
+    display: block;
+    visibility: visible;
+}
+
+.beginanewsearchmobile {
+    display: none;
+    visibility: collapse;
+}
+
+
+@media only screen and (max-width: 574px) {
+    .beginanewsearchdesktop {
+        display: none;
+        visibility: collapse;
+    }
+
+    .beginanewsearchmobile {
+        display: block;
+        visibility: visible;
+    }
+}
+
+/** ################################################## **/
+/** Payment Details **/
+.paymentdetailsdesktop {
+    display: block;
+    visibility: visible;
+}
+
+.paymentdetailsmobile {
+    display: none;
+    visibility: collapse;
+}
+
+@media only screen and (max-width: 950px) {
+    .paymentdetailsdesktop {
+        display: none;
+        visibility: collapse;
+    }
+
+    .paymentdetailsmobile {
+        display: block;
+        visibility: visible;
+    }
+}
+
+
+/** ################################################## **/
+/** Tax Bill History Summary Results **/
+.taxbillhistorysummaryresultsdesktop {
+    display: block;
+    visibility: visible;
+}
+
+.taxbillhistorysummaryresultsmobile {
+    display: none;
+    visibility: collapse;
+}
+
+@media only screen and (max-width: 550px) {
+    .taxbillhistorysummaryresultsdesktop {
+        display: none;
+        visibility: collapse;
+    }
+
+    .taxbillhistorysummaryresultsmobile {
+        display: block;
+        visibility: visible;
+    }
+}
+
+/** ################################################## **/
+/** 20-Year Property Tax Bill History **/
+.annualtaxamountbilleddesktop {
+    display: block;
+    visibility: visible;
+}
+
+.annualtaxamountbilledmobile {
+    display: none;
+    visibility: collapse;
+}
+
+@media only screen and (max-width: 500px) {
+    .annualtaxamountbilleddesktop {
+        display: none;
+        visibility: collapse;
+    }
+
+    .annualtaxamountbilledmobile {
+        display: block;
+        visibility: visible;
+    }
+}
+
+/** ################################################## **/
+/** Prior Tax Bill Warning Message **/
+.priortaxbillwarningmessagedesktop {
+    display: block;
+    visibility: visible;
+}
+
+.priortaxbillwarningmessagemobile {
+    display: none;
+    visibility: collapse;
+}
+
+@media only screen and (max-width: 420px) {
+    .priortaxbillwarningmessagedesktop {
+        display: none;
+        visibility: collapse;
+    }
+
+    .priortaxbillwarningmessagemobile {
+        display: block;
+        visibility: visible;
+    }
+}
