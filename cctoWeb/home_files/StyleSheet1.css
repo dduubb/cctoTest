@@ -39,6 +39,7 @@ table td {
 .ti_headerwrap {
     min-height: 80px;
     max-width: 1600px;
+    margin:auto;
     background-image: url("../scr/Artboard\ 1.svg");
     background-repeat: no-repeat;
     
