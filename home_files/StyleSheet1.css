@@ -1616,7 +1616,7 @@ max-width: 75;}
 
 .ti_headerwrap {
     min-height: 90px;
-    background-image: url("../scr2/header-1.svg");
+    background-image: url("../scr2/header-2.svg");
     background-repeat: no-repeat;
     
     background-position-x: 65%;
@@ -1626,7 +1626,7 @@ max-width: 75;}
 @media screen and (max-width: 980px) {
 .ti_headerwrap {
     min-height: 90px;
-    background-image: url("../scr2/header-3.svg");
+    background-image: url("../scr2/header-2.svg");
     background-repeat: no-repeat;
     
     background-position: -480px 0px;
