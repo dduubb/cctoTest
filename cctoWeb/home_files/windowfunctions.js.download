@@ -1,9 +1,0 @@
-﻿function WinOpen(path, posw, posh, width, height) {
-    LeftPosition = (screen.width) ? (screen.width - posw) / 2 : 0;
-    TopPosition = (screen.height) ? (screen.height - posh) / 2 : 0;
-    win = window.open(path, "CCTO", "top=" + TopPosition + ",left=" + LeftPosition + ",status=no,scrollbars=no,menubar=no,toolbar=no,resizable=no,width=" + width + ",height=" + height);
-}
-
-function OpenWindow(pagename, target) {
-    window.open(pagename, target);
-}
