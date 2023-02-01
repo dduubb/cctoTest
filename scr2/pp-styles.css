@@ -1,3 +1,20 @@
+/* START From Home Page  */
+body {
+    color: #000000;
+    font-family: Arial, Helvetica, sans-serif;
+    font-family: 'Roboto', sans-serif !important;
+    font-size: 13px;
+    font-weight: 400;
+    margin: 0;
+}
+/* END From Home Page  */
+
+
+
+
+
+
+
 /* BEGIN TAXING ISSUES INSERT */
 
 pp-div .child-block {
@@ -11,7 +28,13 @@ pp-div .block {
     flex-wrap: wrap;
     gap:.5em;
     padding: 0 0 10px 0;
+}
 
+pp-div > br {
+    
+    margin: 10px 0;
+    display: block;
+    margin-bottom: 1em;
 }
 
 /*This could issues the intent is to narrow the reading column*/
@@ -81,6 +104,10 @@ pp-div table{
 	border: .5px solid;
 	width: 625px;
 	
+}
+
+pp-div > tr > strong {
+    padding: 1px 4px 1px 4px;
 }
 
 pp-div table tr:nth-child(even){background-color: lightgray;}
