@@ -6,6 +6,7 @@ body {
     font-weight: 400;
 }
 
+
 html {
     -ms-text-size-adjust: none;
 }
@@ -1578,13 +1579,13 @@ max-width: 75;}
 
 /* BEGIN TAXING ISSUES INSERT */
 
-.child-block {
+pp .child-block {
     max-width: 11em;
     min-width: 7em;
     padding: 1em;
     background-color: lightgrey;
 }
-.block {
+pp .block {
     display: flex;
     flex-wrap: wrap;
     gap:.5em;
@@ -1592,11 +1593,12 @@ max-width: 75;}
 
 }
 
-
-.pagelayout {
+/*This could issues the intent is to narrow the reading column*/
+#PageContent {
     width: 100%;
     max-width: 750px;
     margin: auto;
+    padding: 1em;
 }
 
 .breadcrumbs{
@@ -1616,7 +1618,7 @@ max-width: 75;}
 
 .ti_headerwrap {
     min-height: 90px;
-    background-image: url("../scr2/header-2.svg");
+    background-image: url("../scr2/header-1.svg");
     background-repeat: no-repeat;
     
     background-position-x: 65%;
@@ -1626,7 +1628,7 @@ max-width: 75;}
 @media screen and (max-width: 980px) {
 .ti_headerwrap {
     min-height: 90px;
-    background-image: url("../scr2/header-2.svg");
+    background-image: url("../scr2/header-1.svg");
     background-repeat: no-repeat;
     
     background-position: -480px 0px;
@@ -1649,5 +1651,22 @@ max-width: 75;}
     background-color: lightgray;
 }
 }
+
+pp table td h3 {margin:auto;}
+
+pp p img {margin: auto;}
+
+pp table{
+	border: .5px solid;
+	width: 625px;
+	
+}
+
+pp table tr:nth-child(even){background-color: lightgray;}
+pp table tr:nth-child(1){background-color: darkblue;
+color:white;
+font-weight: bolder;
+	vertical-align: text-top;
+padding: 0.5em;}
 
 /* END TAXING ISSUES INSERT */
