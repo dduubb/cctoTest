@@ -22,16 +22,17 @@ pp-div img, pp-div > table {
     margin: auto;
 }
 
-table td {
+pp-div table td {
     text-align: right;
-	padding: 0 .5em;
+	padding: .1em .5em;
 }
 
-table td:first-child {
+
+pp-div table td:first-child {
     text-align: left;
 }
 
-.caption {
+pp-div .caption {
 	font-style: italic;
 }
 
@@ -107,7 +108,7 @@ pp-div > br {
 }}
 
 @media screen and (max-width: 700px) {
-    .pp-headerwrap{
+.pp-headerwrap{
     FONT-WEIGHT: 200;min-height: 80px;
     background-image: url("../scr2/header-3.svg");
     background-repeat: no-repeat;
