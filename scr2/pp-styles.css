@@ -17,6 +17,30 @@ body {
 
 /* BEGIN TAXING ISSUES INSERT */
 
+pp-div img, pp-div > table {
+	border: none;
+}
+
+table td {
+    text-align: right;
+	padding: .5em;
+}
+
+table td:first-child {
+    text-align: left;
+}​
+
+.caption {
+	font-style: italic;
+}
+
+pp-div .image-header{
+	background-color: darkblue;
+	padding: 4px;
+	color: white;
+	font-weight: bold;
+}
+
 pp-div .child-block {
     max-width: 11em;
     min-width: 7em;
@@ -102,7 +126,7 @@ pp-div p img {margin: auto;}
 
 pp-div table{
 	border: .5px solid;
-	width: 625px;
+	width: 100%;
 	
 }
 
@@ -118,3 +142,8 @@ font-weight: bolder;
 padding: 0.5em;}
 
 /* END TAXING ISSUES INSERT */
+tr td {
+    align-content: flex-end;
+}
+.image {
+}
