@@ -18,7 +18,7 @@ body {
 
 pp-div img, pp-div > table {
 	border: none;
-    width: 90%;
+    width: 100%;
     margin: auto;
 }
 
@@ -37,11 +37,11 @@ table td:first-child {
 
 pp-div .image-header{
 	background-color: darkblue;
-	padding: 4px;
+	padding: .5em;
 	color: white;
 	font-weight: bold;
     margin-block-end: 0;
-    margin: 0 .3em;
+    margin: 0 .2em;
 }
 
 pp-div .child-block {
@@ -54,7 +54,7 @@ pp-div .block {
     display: flex;
     flex-wrap: wrap;
     gap: .5em;
-    padding: 0 0 10px 0;
+    padding: 0 0 1em 0;
 }
 
 pp-div > br {
@@ -145,8 +145,5 @@ font-weight: bolder;
 padding: 0.5em;}
 
 /* END TAXING ISSUES INSERT */
-tr td {
-    align-content: flex-end;
-}
-.image {
-}
+
+
