@@ -8,12 +8,6 @@ body {
 }
 /* END From Home Page  */
 
-
-
-
-
-
-
 /* BEGIN TAXING ISSUES INSERT */
 
 pp-div img, pp-div > table {
@@ -89,6 +83,8 @@ pp-div > br {
 
 .pp-headerwrap {
     min-height: 6em;
+    max-width: 1865px;
+    margin: auto;
     background-image: url("../scr2/header-1.svg");
     background-repeat: no-repeat;
     
