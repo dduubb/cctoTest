@@ -37,7 +37,7 @@ pp-div .caption {
 }
 
 pp-div .image-header{
-	background-color: darkblue;
+	background-color: #759ac1;
 	padding: .5em;
 	color: white;
 	font-weight: bold;
@@ -152,7 +152,7 @@ pp-div > tr > strong {
 }
 
 pp-div table tr:nth-child(even){background-color: lightgray;}
-pp-div table tr:nth-child(1){background-color: darkblue;
+pp-div table tr:nth-child(1){background-color: #759ac1;
 color:white;
 font-weight: bolder;
 	vertical-align: text-top;
