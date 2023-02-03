@@ -82,14 +82,13 @@ pp-div > br {
     padding: 10px 0 0 0;
     min-height: 10px ;
     background-image: url("../scr2/footer-1.svg");
-    background-repeat: no-repeat;
-    
+    background-repeat: no-repeat;    
     background-position-x: 71%;
     background-size: cover;
 }
 
 .pp-headerwrap {
-    min-height: 90px;
+    min-height: 6em;
     background-image: url("../scr2/header-1.svg");
     background-repeat: no-repeat;
     
