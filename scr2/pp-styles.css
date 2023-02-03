@@ -108,6 +108,10 @@ pp-div > br {
 }}
 
 @media screen and (max-width: 700px) {
+pp-div .caption::before {
+	content: "Mobile ";
+}
+
 .pp-headerwrap{
     FONT-WEIGHT: 200;min-height: 80px;
     background-image: url("../scr2/header-3.svg");
