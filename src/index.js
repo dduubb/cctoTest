@@ -3,6 +3,13 @@
 
 
 
+//   ADD THIS TO THE BOTTOM OF A WORD DOC SAVED AS A FILTERED HTML  ---> <script src="./src/index.js"></script>
+
+
+
+document.querySelectorAll('style').forEach(el =>   el.innerText = ""  )         
+document.querySelector('script').remove
+
     function removeClassByPrefix(node, prefix) {
         var regx = new RegExp('\\b' + prefix + '[^ ]*[ ]?\\b', 'g');
         node.className = node.className.replace(regx, '');
@@ -65,6 +72,7 @@ document.querySelectorAll('p.TableTitle').forEach((el,i) => {
  
 document.querySelectorAll('p.TableTitle').forEach(el => {el.classList.remove("TableTitle");el.classList.add("image-header") } );
 document.querySelectorAll('p.WordSection1').forEach(el => {el.classList.remove("TableTitle");el.classList.add("image-header") } );
+document.querySelectorAll('.MsoFootnoteReference').forEach(el => {el.classList.remove("MsoFootnoteReference");el.classList.add("footnote-ref") } );
 
 const contentdiv = document.createElement("div");
 // MOVE ALL ITEMS INTO MAIN PARENT DIV
@@ -89,5 +97,11 @@ document.querySelector('body').appendChild(document.createElement("pp-div"));
 document.querySelector('pp-div').appendChild(headerdiv);
 document.querySelector('pp-div').appendChild(contentdiv)
 document.querySelector('pp-div').appendChild(footerdiv);
+
+
+// Add our CSS
+document.getElementsByTagName("head")[0].insertAdjacentHTML(
+  "beforeend",
+  "<link rel=\"stylesheet\" href=\"./src/pp-styles.css\" />");
 
 }())

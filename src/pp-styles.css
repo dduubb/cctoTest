@@ -53,10 +53,19 @@ pp-div .block {
     padding: 0 0 1em 0;
 }
 
+
+pp-div .footnote-ref{
+    font-size: .5em;
+}
+
 pp-div > br {    
     display: block;
     margin-bottom: 1em;
     margin: 10px 0;
+}
+
+pp-div h2 img {
+    max-width: 3em;
 }
 
 
