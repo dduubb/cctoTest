@@ -3,9 +3,18 @@
 
 
 
-//   ADD THIS TO THE BOTTOM OF A WORD DOC SAVED AS A FILTERED HTML  ---> <script src="./src/index.js"></script>
+//   ADD THIS TO THE BOTTOM OF A WORD DOC SAVED AS A FILTERED HTML  ---> <script src="./src/index-0.1.js"></script>
 
-
+window.addEventListener(
+  "scroll",
+  () => {
+    document.body.style.setProperty(
+      "--scroll",
+      window.pageYOffset / (document.body.offsetHeight - window.innerHeight)
+    );
+  },
+  false
+);
 
 document.querySelectorAll('style').forEach(el =>   el.innerText = ""  )         
 document.querySelector('script').remove
@@ -15,6 +24,24 @@ document.querySelector('script').remove
         node.className = node.className.replace(regx, '');
         return node;
     }
+
+
+    document.querySelectorAll('table').forEach(el => {
+      el.removeAttribute('cellpadding'); 
+           el.removeAttribute('cellspacing');
+           el.removeAttribute('border');
+           
+    });
+
+    document.querySelectorAll('caption').forEach(el => {
+      //el.parentElement.parentElement.insertBefore(el,el.parentElement)
+     console.log( el );
+    
+     // el.outerHTML=el.innerHTML
+    
+    })
+
+    //document.getElementById("mydiv").outerHTML = document.getElementById("mydiv").innerHTML
 
 
     document.querySelectorAll('[style]').forEach(el => {
@@ -29,9 +56,20 @@ document.querySelectorAll('p.MsoCaption').forEach(el => {el.classList.remove("Ms
 
 document.body.innerHTML = document.body.innerHTML.replace('�', '&rsquo;');
 
-document.querySelectorAll('div').forEach(el => {removeClassByPrefix(el, 'WordSect')} );
+document.querySelectorAll('div').forEach((el,i) => {
+  removeClassByPrefix(el, 'WordSect');
+  el.classList.add('section-'+i);
+} );
 
+document.querySelectorAll('p').forEach((el,i) => {
+  removeClassByPrefix(el, 'WordSect');
+  el.classList.add('para-'+i);
+} );
 
+document.querySelectorAll('table').forEach((el,i) => {
+  removeClassByPrefix(el, 'Mso');
+  el.classList.add('table-'+i);
+} );
 
 
 //removeClassByPrefix('div', 'WordSect');
