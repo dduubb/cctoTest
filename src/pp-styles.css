@@ -1,3 +1,24 @@
+
+svg {
+  position: relative;
+  top: 50%;
+  left: 50%;
+  margin-top: -50px;
+  margin-left: -50px;
+
+  animation: rotate 1s linear infinite;
+  animation-play-state: paused;
+  animation-delay: calc(var(--scroll) * -1s);
+
+  animation-iteration-count: 1;
+  animation-fill-mode: both;
+}
+@keyframes rotate {
+    to {
+      transform: rotate(21360deg);
+    }
+  }
+
 /* START From Home Page  */
 body {
     color: #000000;
@@ -12,12 +33,13 @@ body {
 
 pp-div img, pp-div > table {
 	border: none;
-    width: 100%;
     height: auto;
     margin: auto;
+    width: 100%;
 }
 
 pp-div table td {
+    vertical-align: -webkit-baseline-middle;
     text-align: right;
 	padding: .1em .5em;
 }
@@ -31,7 +53,7 @@ pp-div .caption {
 	font-style: italic;
 }
 
-pp-div .image-header{
+pp-div .image-header {
 	background-color: #759ac1;
 	padding: .5em;
 	color: white;
@@ -60,8 +82,7 @@ pp-div .footnote-ref{
 
 pp-div > br {    
     display: block;
-    margin-bottom: 1em;
-    margin: 10px 0;
+    margin: 1em 0;
 }
 
 pp-div h2 img {
@@ -73,7 +94,6 @@ pp-div h2 img {
     margin: auto;
     max-width: 750px;
     padding: 1em;
-    width: 100%;
 }
 
 .pp-breadcrumbs{
@@ -90,10 +110,20 @@ pp-div h2 img {
     padding: .7em 0 0 0;
 }
 
-.pp-headerwrap, .pp-header { 
+ .pp-header { 
     background-image: url("../src/header-1.svg");
     background-position-x: 50%;
     background-repeat: no-repeat;
+    background-size: cover;
+    margin: auto;
+    max-width: 1865px;
+    min-height: 6em;
+} 
+.res-header { 
+    background-image: url("../src/header-1.svg");
+    background-position-x: 50%;
+    background-repeat: no-repeat;
+    background-color: #759ac1;
     background-size: cover;
     margin: auto;
     max-width: 1865px;
@@ -108,6 +138,14 @@ pp-div h2 img {
     background-size: cover;
     min-height: 90px;
     }
+.res-headerwrap {
+    background-image: url("../src/header-1.svg");
+    background-position: -480px 0px;
+    background-repeat: no-repeat;
+    background-color: #759ac1;
+    background-size: cover;
+    min-height: 90px;
+    }
 }
 
 @media screen and (max-width: 700px) {
@@ -115,13 +153,25 @@ pp-div .caption::before {
 	content: "Mobile ";
 }
 
-.pp-headerwrap{
+.pp-header{
     background-image: url("../src/header-3.svg");
     background-position: -412px 0px;
     background-repeat: no-repeat;
     background-size: cover;
     min-height: 80px;
 }
+.res-header{
+    background-image: url("../src/header-3.svg");
+    background-position: -412px 0px;
+    background-color: #759ac1;
+    background-repeat: no-repeat;
+    background-size: cover;
+    min-height: 80px;
+}
+
+
+
+
 pp-div table td:nth-child(2),pp-div table td:nth-child(3),pp-div table td:nth-child(4){
     display: none;
 }pp-div table td:last-child{
@@ -141,7 +191,7 @@ pp-div table td:nth-child(2),pp-div table td:nth-child(3),pp-div table td:nth-ch
 
 pp-div table td h3 {margin:auto;}
 
-pp-div p img {margin: auto;}
+pp-div p img {margin: auto; vertical-align: middle;}
 
 pp-div table{
 	border: .5px solid #efefef;;
@@ -164,3 +214,6 @@ padding: 0.5em;
 /* END TAXING ISSUES INSERT */
 
 
+
+
+head style {}

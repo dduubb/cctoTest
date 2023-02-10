@@ -108,11 +108,11 @@ if (msoBrowserCheck())
 	{font-family:"Font Awesome 6 Free Solid";
 	panose-1:2 0 9 3 0 0 0 0 0 0;}
 @font-face
-	{font-family:"\@MS Gothic";
-	panose-1:2 11 6 9 7 2 5 8 2 4;}
-@font-face
 	{font-family:"\@MS Mincho";
 	panose-1:2 2 6 9 4 2 5 8 3 4;}
+@font-face
+	{font-family:"\@MS Gothic";
+	panose-1:2 11 6 9 7 2 5 8 2 4;}
  /* Style Definitions */
  p.MsoNormal, li.MsoNormal, div.MsoNormal
 	{margin-top:12.0pt;
@@ -252,90 +252,6 @@ p.MsoHeading9, li.MsoHeading9, div.MsoHeading9
 	text-transform:uppercase;
 	letter-spacing:.5pt;
 	font-style:italic;}
-p.MsoToc1, li.MsoToc1, div.MsoToc1
-	{margin-top:.25in;
-	margin-right:0in;
-	margin-bottom:0in;
-	margin-left:0in;
-	margin-bottom:.0001pt;
-	line-height:115%;
-	font-size:12.0pt;
-	font-family:"Roboto Condensed";
-	text-transform:uppercase;
-	font-weight:bold;}
-p.MsoToc2, li.MsoToc2, div.MsoToc2
-	{margin-top:12.0pt;
-	margin-right:0in;
-	margin-bottom:0in;
-	margin-left:0in;
-	margin-bottom:.0001pt;
-	line-height:115%;
-	font-size:10.0pt;
-	font-family:"Garamond Premr Pro Med",serif;
-	font-weight:bold;}
-p.MsoToc3, li.MsoToc3, div.MsoToc3
-	{margin-top:0in;
-	margin-right:0in;
-	margin-bottom:0in;
-	margin-left:12.0pt;
-	margin-bottom:.0001pt;
-	line-height:115%;
-	font-size:10.0pt;
-	font-family:"Garamond Premr Pro Med",serif;}
-p.MsoToc4, li.MsoToc4, div.MsoToc4
-	{margin-top:0in;
-	margin-right:0in;
-	margin-bottom:0in;
-	margin-left:24.0pt;
-	margin-bottom:.0001pt;
-	line-height:115%;
-	font-size:10.0pt;
-	font-family:"Garamond Premr Pro Med",serif;}
-p.MsoToc5, li.MsoToc5, div.MsoToc5
-	{margin-top:0in;
-	margin-right:0in;
-	margin-bottom:0in;
-	margin-left:.5in;
-	margin-bottom:.0001pt;
-	line-height:115%;
-	font-size:10.0pt;
-	font-family:"Garamond Premr Pro Med",serif;}
-p.MsoToc6, li.MsoToc6, div.MsoToc6
-	{margin-top:0in;
-	margin-right:0in;
-	margin-bottom:0in;
-	margin-left:48.0pt;
-	margin-bottom:.0001pt;
-	line-height:115%;
-	font-size:10.0pt;
-	font-family:"Garamond Premr Pro Med",serif;}
-p.MsoToc7, li.MsoToc7, div.MsoToc7
-	{margin-top:0in;
-	margin-right:0in;
-	margin-bottom:0in;
-	margin-left:60.0pt;
-	margin-bottom:.0001pt;
-	line-height:115%;
-	font-size:10.0pt;
-	font-family:"Garamond Premr Pro Med",serif;}
-p.MsoToc8, li.MsoToc8, div.MsoToc8
-	{margin-top:0in;
-	margin-right:0in;
-	margin-bottom:0in;
-	margin-left:1.0in;
-	margin-bottom:.0001pt;
-	line-height:115%;
-	font-size:10.0pt;
-	font-family:"Garamond Premr Pro Med",serif;}
-p.MsoToc9, li.MsoToc9, div.MsoToc9
-	{margin-top:0in;
-	margin-right:0in;
-	margin-bottom:0in;
-	margin-left:84.0pt;
-	margin-bottom:.0001pt;
-	line-height:115%;
-	font-size:10.0pt;
-	font-family:"Garamond Premr Pro Med",serif;}
 p.MsoFootnoteText, li.MsoFootnoteText, div.MsoFootnoteText
 	{mso-style-link:"Footnote Text Char";
 	margin:0in;
@@ -518,13 +434,30 @@ p.MsoTocHeading, li.MsoTocHeading, div.MsoTocHeading
 	text-transform:uppercase;
 	letter-spacing:1.0pt;
 	font-weight:bold;}
-span.Heading1Char
-	{mso-style-name:"Heading 1 Char";
-	mso-style-link:"Heading 1";
+span.Heading3Char
+	{mso-style-name:"Heading 3 Char";
+	mso-style-link:"Heading 3";
 	font-family:"Roboto Condensed";
-	text-transform:uppercase;
-	letter-spacing:1.0pt;
+	color:black;
+	letter-spacing:.75pt;
 	font-weight:bold;}
+span.UnresolvedMention1
+	{mso-style-name:"Unresolved Mention1";
+	color:#605E5C;
+	background:#E1DFDD;}
+span.BalloonTextChar
+	{mso-style-name:"Balloon Text Char";
+	mso-style-link:"Balloon Text";
+	font-family:"Segoe UI",sans-serif;}
+span.CommentTextChar
+	{mso-style-name:"Comment Text Char";
+	mso-style-link:"Comment Text";}
+span.CommentSubjectChar
+	{mso-style-name:"Comment Subject Char";
+	mso-style-link:"Comment Subject";
+	font-weight:bold;}
+span.example
+	{mso-style-name:example;}
 span.Heading2Char
 	{mso-style-name:"Heading 2 Char";
 	mso-style-link:"Heading 2";
@@ -532,12 +465,18 @@ span.Heading2Char
 	letter-spacing:.75pt;
 	background:#F8F8F8;
 	font-weight:bold;}
-span.Heading3Char
-	{mso-style-name:"Heading 3 Char";
-	mso-style-link:"Heading 3";
+span.TitleChar
+	{mso-style-name:"Title Char";
+	mso-style-link:Title;
 	font-family:"Roboto Condensed";
-	color:black;
-	letter-spacing:.75pt;
+	letter-spacing:.5pt;
+	font-weight:bold;}
+span.Heading1Char
+	{mso-style-name:"Heading 1 Char";
+	mso-style-link:"Heading 1";
+	font-family:"Roboto Condensed";
+	text-transform:uppercase;
+	letter-spacing:1.0pt;
 	font-weight:bold;}
 span.Heading4Char
 	{mso-style-name:"Heading 4 Char";
@@ -575,27 +514,6 @@ span.Heading9Char
 	text-transform:uppercase;
 	letter-spacing:.5pt;
 	font-style:italic;}
-span.UnresolvedMention1
-	{mso-style-name:"Unresolved Mention1";
-	color:#605E5C;
-	background:#E1DFDD;}
-span.BalloonTextChar
-	{mso-style-name:"Balloon Text Char";
-	mso-style-link:"Balloon Text";
-	font-family:"Segoe UI",sans-serif;}
-span.CommentTextChar
-	{mso-style-name:"Comment Text Char";
-	mso-style-link:"Comment Text";}
-span.CommentSubjectChar
-	{mso-style-name:"Comment Subject Char";
-	mso-style-link:"Comment Subject";
-	font-weight:bold;}
-span.TitleChar
-	{mso-style-name:"Title Char";
-	mso-style-link:Title;
-	font-family:"Roboto Condensed";
-	letter-spacing:.5pt;
-	font-weight:bold;}
 span.SubtitleChar
 	{mso-style-name:"Subtitle Char";
 	mso-style-link:Subtitle;
@@ -612,7 +530,6 @@ span.IntenseQuoteChar
 	color:#DDDDDD;}
 p.Hero, li.Hero, div.Hero
 	{mso-style-name:Hero;
-	mso-style-link:"Hero Char";
 	margin-top:12.0pt;
 	margin-right:0in;
 	margin-bottom:0in;
@@ -621,21 +538,61 @@ p.Hero, li.Hero, div.Hero
 	font-size:16.0pt;
 	font-family:"Roboto Condensed";
 	font-weight:bold;}
-span.HeroChar
-	{mso-style-name:"Hero Char";
-	mso-style-link:Hero;
-	font-family:"Roboto Condensed";
-	font-weight:bold;}
 p.Sidekick, li.Sidekick, div.Sidekick
 	{mso-style-name:Sidekick;
 	margin:0in;
 	margin-bottom:.0001pt;
 	font-size:11.0pt;
 	font-family:"Roboto Condensed";}
+p.StyleHeading2Raisedby20pt, li.StyleHeading2Raisedby20pt, div.StyleHeading2Raisedby20pt
+	{mso-style-name:"Style Heading 2 + Raised by  20 pt";
+	margin-top:12.0pt;
+	margin-right:0in;
+	margin-bottom:0in;
+	margin-left:.2in;
+	margin-bottom:.0001pt;
+	line-height:115%;
+	page-break-after:avoid;
+	background:#F8F8F8;
+	border:none;
+	padding:0in;
+	font-size:12.0pt;
+	font-family:"Roboto Condensed";
+	position:relative;
+	top:-20.0pt;
+	letter-spacing:.75pt;
+	font-weight:bold;}
+p.StyleHeading2Raisedby20pt1, li.StyleHeading2Raisedby20pt1, div.StyleHeading2Raisedby20pt1
+	{mso-style-name:"Style Heading 2 + Raised by  20 pt1";
+	margin-top:12.0pt;
+	margin-right:0in;
+	margin-bottom:0in;
+	margin-left:.2in;
+	margin-bottom:.0001pt;
+	line-height:115%;
+	page-break-after:avoid;
+	background:#F8F8F8;
+	border:none;
+	padding:0in;
+	font-size:12.0pt;
+	font-family:"Roboto Condensed";
+	position:relative;
+	top:-20.0pt;
+	letter-spacing:.75pt;
+	font-weight:bold;}
 span.Raised
 	{mso-style-name:Raised;
 	position:relative;
 	top:-14.0pt;}
+p.StyleAfter0ptLinespacingsingle, li.StyleAfter0ptLinespacingsingle, div.StyleAfter0ptLinespacingsingle
+	{mso-style-name:"Style After\:  0 pt Line spacing\:  single";
+	margin-top:12.0pt;
+	margin-right:0in;
+	margin-bottom:0in;
+	margin-left:0in;
+	margin-bottom:.0001pt;
+	font-size:12.0pt;
+	font-family:"Garamond Premr Pro Med",serif;}
 p.StyleSidekickWingdingssymbol145pt, li.StyleSidekickWingdingssymbol145pt, div.StyleSidekickWingdingssymbol145pt
 	{mso-style-name:"Style Sidekick + Wingdings \(symbol\) 14\.5 pt";
 	margin:0in;
@@ -647,6 +604,13 @@ span.SidekickBullet
 	{mso-style-name:"Sidekick  Bullet";
 	font-family:Wingdings;
 	letter-spacing:4.1pt;}
+p.Style1, li.Style1, div.Style1
+	{mso-style-name:Style1;
+	margin:0in;
+	margin-bottom:.0001pt;
+	font-size:11.0pt;
+	font-family:"Roboto Condensed";
+	display:none;}
 span.UnresolvedMention2
 	{mso-style-name:"Unresolved Mention2";
 	color:#605E5C;
@@ -663,10 +627,44 @@ span.EndnoteTextChar
 span.FootnoteTextChar
 	{mso-style-name:"Footnote Text Char";
 	mso-style-link:"Footnote Text";}
+p.StyleHeading314pt, li.StyleHeading314pt, div.StyleHeading314pt
+	{mso-style-name:"Style Heading 3 + 14 pt";
+	margin-top:15.0pt;
+	margin-right:0in;
+	margin-bottom:0in;
+	margin-left:0in;
+	margin-bottom:.0001pt;
+	line-height:115%;
+	page-break-after:avoid;
+	border:none;
+	padding:0in;
+	font-size:14.0pt;
+	font-family:"Roboto Condensed";
+	color:black;
+	letter-spacing:.75pt;
+	font-weight:bold;}
+p.StyleHeading314ptNotBold, li.StyleHeading314ptNotBold, div.StyleHeading314ptNotBold
+	{mso-style-name:"Style Heading 3 + 14 pt Not Bold";
+	margin-top:15.0pt;
+	margin-right:0in;
+	margin-bottom:0in;
+	margin-left:0in;
+	margin-bottom:.0001pt;
+	line-height:115%;
+	page-break-after:avoid;
+	border:none;
+	padding:0in;
+	font-size:14.0pt;
+	font-family:"Roboto Condensed";
+	color:black;
+	letter-spacing:.75pt;
+	font-weight:bold;}
 p.ListParagraphTight, li.ListParagraphTight, div.ListParagraphTight
 	{mso-style-name:"List Paragraph Tight";
-	margin:0in;
-	margin-bottom:.0001pt;
+	margin-top:0in;
+	margin-right:0in;
+	margin-bottom:6.0pt;
+	margin-left:0in;
 	font-size:12.0pt;
 	font-family:"Garamond Premr Pro Med",serif;}
 p.ListParagraphTightCxSpFirst, li.ListParagraphTightCxSpFirst, div.ListParagraphTightCxSpFirst
@@ -683,8 +681,19 @@ p.ListParagraphTightCxSpMiddle, li.ListParagraphTightCxSpMiddle, div.ListParagra
 	font-family:"Garamond Premr Pro Med",serif;}
 p.ListParagraphTightCxSpLast, li.ListParagraphTightCxSpLast, div.ListParagraphTightCxSpLast
 	{mso-style-name:"List Paragraph TightCxSpLast";
-	margin:0in;
-	margin-bottom:.0001pt;
+	margin-top:0in;
+	margin-right:0in;
+	margin-bottom:6.0pt;
+	margin-left:0in;
+	font-size:12.0pt;
+	font-family:"Garamond Premr Pro Med",serif;}
+p.Gappy, li.Gappy, div.Gappy
+	{mso-style-name:Gappy;
+	margin-top:12.0pt;
+	margin-right:0in;
+	margin-bottom:.25in;
+	margin-left:0in;
+	line-height:115%;
 	font-size:12.0pt;
 	font-family:"Garamond Premr Pro Med",serif;}
 p.SidekickIcon, li.SidekickIcon, div.SidekickIcon
@@ -692,6 +701,23 @@ p.SidekickIcon, li.SidekickIcon, div.SidekickIcon
 	margin:0in;
 	margin-bottom:.0001pt;
 	font-size:14.0pt;
+	font-family:"Font Awesome 6 Free Solid";}
+span.StyleSidekickLatinFontAwesome6FreeSolid14pt
+	{mso-style-name:"Style Sidekick + \(Latin\) Font Awesome 6 Free Solid 14 pt";
+	font-family:"Font Awesome 6 Free Solid";}
+p.Style10ptRightBefore0ptAfter0ptLinespacingMul, li.Style10ptRightBefore0ptAfter0ptLinespacingMul, div.Style10ptRightBefore0ptAfter0ptLinespacingMul
+	{mso-style-name:"Style 10 pt Right Before\:  0 pt After\:  0 pt Line spacing\:  Mul\.\.\.";
+	margin:0in;
+	margin-bottom:.0001pt;
+	text-align:right;
+	line-height:90%;
+	font-size:10.0pt;
+	font-family:"Garamond Premr Pro Med",serif;}
+span.StyleTimesNewRoman
+	{mso-style-name:"Style Times New Roman";
+	font-family:"Garamond Premr Pro Med",serif;}
+span.StyleSidekickLatinFontAwesome6FreeSolid14pt1
+	{mso-style-name:"Style Sidekick + \(Latin\) Font Awesome 6 Free Solid 14 pt1";
 	font-family:"Font Awesome 6 Free Solid";}
 span.Math
 	{mso-style-name:Math;
@@ -709,32 +735,15 @@ p.StyleListParagraphAfter5pt, li.StyleListParagraphAfter5pt, div.StyleListParagr
 	font-family:"Garamond Premr Pro Med",serif;}
 span.StyleCentered
 	{mso-style-name:"Style Centered";}
-p.TableTitle, li.TableTitle, div.TableTitle
-	{mso-style-name:"Table Title";
-	mso-style-link:"Table Title Char";
-	margin-top:12.0pt;
+p.BigTable, li.BigTable, div.BigTable
+	{mso-style-name:BigTable;
+	margin-top:5.0pt;
 	margin-right:0in;
-	margin-bottom:0in;
+	margin-bottom:10.0pt;
 	margin-left:0in;
-	margin-bottom:.0001pt;
-	font-size:16.0pt;
-	font-family:"Roboto Condensed";
-	font-weight:bold;}
-span.TableTitleChar
-	{mso-style-name:"Table Title Char";
-	mso-style-link:"Table Title";
-	font-family:"Roboto Condensed";
-	font-weight:bold;}
-p.publishing-comments, li.publishing-comments, div.publishing-comments
-	{mso-style-name:publishing-comments;
-	margin-top:0in;
-	margin-right:0in;
-	margin-bottom:8.0pt;
-	margin-left:0in;
-	line-height:107%;
-	font-size:11.0pt;
-	font-family:"Garamond Premr Pro Med",serif;
-	display:none;}
+	line-height:115%;
+	font-size:12.0pt;
+	font-family:"Garamond Premr Pro Med",serif;}
 span.msoIns
 	{mso-style-name:"";
 	text-decoration:underline;
@@ -770,7 +779,7 @@ ul
 
 <div style='border:none;border-bottom:solid #DDDDDD 6.0pt;padding:0in 0in 1.0pt 0in'>
 
-<h1><a name="_Toc126910175">Introduction</a></h1>
+<h1>Introduction</h1>
 
 </div>
 
@@ -824,9 +833,9 @@ href="#_ftn2" name="_ftnref2" title=""><span class=MsoFootnoteReference><span
 class=MsoFootnoteReference><span style='font-size:12.0pt;line-height:115%;
 font-family:"Garamond Premr Pro Med",serif'>[2]</span></span></span></a>.</p>
 
-<p class=MsoNormal>In Illinois, 56% of all local government revenue, not
-including state funding for local governments, is derived from the property
-tax, Pew found<a href="#_ftn3" name="_ftnref3" title=""><span
+<p class=MsoNormal>In Illinois, 56% of all local government revenue, not including
+state funding for local governments, is derived from the property tax, Pew
+found<a href="#_ftn3" name="_ftnref3" title=""><span
 class=MsoFootnoteReference><span class=MsoFootnoteReference><span
 style='font-size:12.0pt;line-height:115%;font-family:"Garamond Premr Pro Med",serif'>[3]</span></span></span></a>.
 Local governments in 26 states rely more, in terms of percentage of revenue, on
@@ -837,17 +846,20 @@ share of local government revenue from property taxes in Illinois drops to 39%,
 <a name="_Hlk102139353"></a><a
 href="https://www.lincolninst.edu/sites/default/files/gwipp/upload/sources/ContentPages/PTAAG/ptaag_full_2021.pdf"><span
 style='color:windowtext;text-decoration:none'>according to the </span><span
-style='color:windowtext'>Lincoln Institute for Land Policy</span></a>. That
+style='color:windowtext'>Lincoln Institute for Land Policy</span></a><a
+href="#_ftn4" name="_ftnref4" title=""><span class=MsoFootnoteReference><span
+class=MsoFootnoteReference><span style='font-size:12.0pt;line-height:115%;
+font-family:"Garamond Premr Pro Med",serif'>[4]</span></span></span></a>. That
 compares with an average of 30% across the nation.</p>
 
 <p class=MsoNormal>Although many other states rely more heavily, in percentage
 of local revenue, on property taxes to fund local government, Illinois still
 has <a
 href="https://www.lincolninst.edu/research-data/data-toolkits/significant-features-property-tax/state-state-property-tax-glance">the
-nation’s second-highest effective property tax rates</a><a href="#_ftn4"
-name="_ftnref4" title=""><span class=MsoFootnoteReference><span
+nation’s second-highest effective property tax rates</a><a href="#_ftn5"
+name="_ftnref5" title=""><span class=MsoFootnoteReference><span
 style='color:#5F5F5F'><span class=MsoFootnoteReference><span style='font-size:
-12.0pt;line-height:115%;font-family:"Garamond Premr Pro Med",serif;color:#5F5F5F'>[4]</span></span></span></span></a>
+12.0pt;line-height:115%;font-family:"Garamond Premr Pro Med",serif;color:#5F5F5F'>[5]</span></span></span></span></a>
 — defined as the percentage of a property’s value that is paid in taxes each
 year, according to multiple studies. Only New Jersey has a higher effective
 property tax rate. (See Figure 2)</p>
@@ -860,10 +872,10 @@ effective property tax (Source: Lincoln Institute of Land Policy)</p>
 
 <p class=MsoNormal>Looked at another way, the median property tax bill in
 Illinois between 2015 and 2019 was $4,419, compared to an average of $2,471
-across the nation, according to the Lincoln Institute<a href="#_ftn5"
-name="_ftnref5" title=""><span class=MsoFootnoteReference><span
+across the nation, according to the Lincoln Institute<a href="#_ftn6"
+name="_ftnref6" title=""><span class=MsoFootnoteReference><span
 class=MsoFootnoteReference><span style='font-size:12.0pt;line-height:115%;
-font-family:"Garamond Premr Pro Med",serif'>[5]</span></span></span></a>. That
+font-family:"Garamond Premr Pro Med",serif'>[6]</span></span></span></a>. That
 median Illinois tax bill is the sixth highest in the country.</p>
 
 <table class=MsoNormalTable border=0 cellspacing=0 cellpadding=0
@@ -887,8 +899,7 @@ median Illinois tax bill is the sixth highest in the country.</p>
   <td width=132 valign=top style='width:99.0pt;padding:0in 5.4pt 0in 5.4pt;
   height:1.0pt'>
   <p class=Sidekick>Median Property<br>
-  Tax Bill in the <b><span style='color:red'>U.S</span></b><span
-  style='color:red'>.</span></p>
+  Tax Bill in the <span style='color:red'>U.S.</span></p>
   </td>
  </tr>
  <tr style='height:1.0pt'>
@@ -909,9 +920,9 @@ compared with a national average of about <span style='background:aqua'>46%</spa
 <a
 href="https://www.nea.org/sites/default/files/2022-04/2022%20Rankings%20and%20Estimates%20Report.pdf"><span
 style='color:windowtext'>according to the National Education Association</span></a><span
-class=MsoHyperlinkFollowed>.</span><a href="#_ftn6" name="_ftnref6" title=""><span
+class=MsoHyperlinkFollowed>.</span><a href="#_ftn7" name="_ftnref7" title=""><span
 class=MsoFootnoteReference><span class=MsoFootnoteReference><span
-style='font-size:12.0pt;line-height:115%;font-family:"Garamond Premr Pro Med",serif'>[6]</span></span></span></a>
+style='font-size:12.0pt;line-height:115%;font-family:"Garamond Premr Pro Med",serif'>[7]</span></span></span></a>
 That leaves federal aid — which is declining — and property taxes to pick up
 the rest.</p>
 
@@ -920,256 +931,325 @@ of the highest unfunded pension liabilities in the U.S., which can result in
 steep tax increases as municipalities and counties <a
 href="https://www.chicagotribune.com/suburbs/niles/ct-nhs-tax-levy-tl-1223-20211216-rv5odlvwp5aqrcdlaudbllxtvi-story.html">take
 steps to comply with a state law that mandates those local pension funds
-achieve 90% funding</a><a href="#_ftn7" name="_ftnref7" title=""><span
-class=MsoFootnoteReference><span class=MsoFootnoteReference><span
-style='font-size:12.0pt;line-height:115%;font-family:"Garamond Premr Pro Med",serif'>[7]</span></span></span></a>in
-the coming decades.</p>
+achieve 90% funding</a><a href="#_ftn8" name="_ftnref8" title=""><span
+class=MsoFootnoteReference><span style='color:#5F5F5F'><span
+class=MsoFootnoteReference><span style='font-size:12.0pt;line-height:115%;
+font-family:"Garamond Premr Pro Med",serif;color:#5F5F5F'>[8]</span></span></span></span></a>
+in the coming decades.</p>
 
-<p class=TableTitle>Pension and Other Post-Employment Benefit Liabilities</p>
-
-<table class=ccto-standard border=0 cellspacing=0 cellpadding=0 align=right
+<table class=MsoNormalTable border=0 cellspacing=0 cellpadding=0 align=right
  width="100%" style='width:100.0%;border-collapse:collapse;margin-left:6.75pt;
  margin-right:6.75pt'>
- <tr style='height:1.0pt'>
-  <td width="40%" style='width:40.82%;background:#002060;padding:0in 5.4pt 0in 5.4pt;
-  height:1.0pt'>
-  <p class=MsoNormal style='line-height:normal'><b><span style='font-family:
-  "Roboto Condensed";color:white'>Agency Name&nbsp;</span></b></p>
-  </td>
-  <td width="21%" style='width:21.7%;background:#002060;padding:0in 5.4pt 0in 5.4pt;
-  height:1.0pt'>
-  <p class=MsoNormal align=right style='text-align:right;line-height:normal'><b><span
-  style='font-family:"Roboto Condensed";color:white'>Total Liability</span></b></p>
-  </td>
-  <td width="21%" style='width:21.18%;background:#002060;padding:0in 5.4pt 0in 5.4pt;
-  height:1.0pt'>
-  <p class=MsoNormal align=right style='text-align:right;line-height:normal'><b><span
-  style='font-family:"Roboto Condensed";color:white'>Unfunded Liability</span></b></p>
-  </td>
-  <td width="16%" style='width:16.3%;background:#002060;padding:0in 5.4pt 0in 5.4pt;
-  height:1.0pt'>
-  <p class=MsoNormal align=right style='text-align:right;line-height:normal'><b><span
-  style='font-family:"Roboto Condensed";color:white'>Funded* Ratio*</span></b></p>
+ <tr style='height:37.45pt'>
+  <td width="100%" colspan=4 style='width:100.0%;border:solid white 1.0pt;
+  border-bottom:solid white 3.0pt;background:#002060;padding:0in 7.9pt 0in 7.9pt;
+  height:37.45pt'>
+  <p class=Hero>Pension and Other Post-Employment Benefit Liabilities</p>
   </td>
  </tr>
- <tr style='height:1.0pt'>
-  <td width="40%" style='width:40.82%;background:#F2F2F2;padding:0in 5.4pt 0in 5.4pt;
-  height:1.0pt'>
-  <p class=ListParagraphTightCxSpFirst><b>City of Chicago</b></p>
+ <tr style='height:.3in'>
+  <td width="40%" style='width:40.82%;border:solid white 1.0pt;border-top:none;
+  background:#44546A;padding:0in 7.9pt 0in 7.9pt;height:.3in'>
+  <p class=Sidekick><b><span style='color:white'>Agency Name&nbsp;</span></b></p>
   </td>
-  <td width="21%" style='width:21.7%;background:#F2F2F2;padding:0in 5.4pt 0in 5.4pt;
-  height:1.0pt'>
+  <td width="21%" style='width:21.7%;border-top:none;border-left:none;
+  border-bottom:solid white 1.0pt;border-right:solid white 1.0pt;background:
+  #44546A;padding:.05in 8.25pt .05in 8.25pt;height:.3in'>
+  <p class=Sidekick><b><span style='color:white'>Total Liability</span></b></p>
+  </td>
+  <td width="21%" style='width:21.18%;border-top:none;border-left:none;
+  border-bottom:solid white 1.0pt;border-right:solid white 1.0pt;background:
+  #44546A;padding:.05in 8.25pt .05in 8.25pt;height:.3in'>
+  <p class=Sidekick><b><span style='color:white'>Unfunded Liability</span></b></p>
+  </td>
+  <td width="16%" style='width:16.28%;border-top:none;border-left:none;
+  border-bottom:solid white 1.0pt;border-right:solid white 1.0pt;background:
+  #44546A;padding:.05in 8.25pt .05in 8.25pt;height:.3in'>
+  <p class=Sidekick align=right style='text-align:right'><b><span
+  style='color:white'>Funded* Ratio*</span></b></p>
+  </td>
+ </tr>
+ <tr style='height:18.7pt'>
+  <td width="40%" style='width:40.82%;border:solid white 1.0pt;border-top:none;
+  background:#CBCCD2;padding:0in 7.9pt 0in 7.9pt;height:18.7pt'>
+  <p class=ListParagraphTightCxSpFirst>City of Chicago</p>
+  </td>
+  <td width="21%" style='width:21.7%;border-top:none;border-left:none;
+  border-bottom:solid white 1.0pt;border-right:solid white 1.0pt;background:
+  #CBCCD2;padding:.05in 8.25pt .05in 8.25pt;height:18.7pt'>
   <p class=ListParagraphTightCxSpMiddle align=right style='text-align:right'>$42,196,885,000</p>
   </td>
-  <td width="21%" style='width:21.18%;background:#F2F2F2;padding:0in 5.4pt 0in 5.4pt;
-  height:1.0pt'>
+  <td width="21%" style='width:21.18%;border-top:none;border-left:none;
+  border-bottom:solid white 1.0pt;border-right:solid white 1.0pt;background:
+  #CBCCD2;padding:.05in 8.25pt .05in 8.25pt;height:18.7pt'>
   <p class=ListParagraphTightCxSpMiddle align=right style='text-align:right'>$32,616,444,000</p>
   </td>
-  <td width="16%" style='width:16.3%;background:#F2F2F2;padding:0in 5.4pt 0in 5.4pt;
-  height:1.0pt'>
+  <td width="16%" style='width:16.28%;border-top:none;border-left:none;
+  border-bottom:solid white 1.0pt;border-right:solid white 1.0pt;background:
+  #CBCCD2;padding:.05in 8.25pt .05in 8.25pt;height:18.7pt'>
   <p class=ListParagraphTightCxSpLast align=right style='text-align:right'>22.7%</p>
   </td>
  </tr>
- <tr style='height:1.0pt'>
-  <td width="40%" style='width:40.82%;padding:0in 5.4pt 0in 5.4pt;height:1.0pt'>
-  <p class=ListParagraphTightCxSpFirst><b>Board of Education Chicago</b></p>
+ <tr style='height:18.7pt'>
+  <td width="40%" style='width:40.82%;border:solid white 1.0pt;border-top:none;
+  background:#CBCCD2;padding:0in 7.9pt 0in 7.9pt;height:18.7pt'>
+  <p class=ListParagraphTightCxSpFirst>Board of Education Chicago</p>
   </td>
-  <td width="21%" style='width:21.7%;padding:0in 5.4pt 0in 5.4pt;height:1.0pt'>
+  <td width="21%" style='width:21.7%;border-top:none;border-left:none;
+  border-bottom:solid white 1.0pt;border-right:solid white 1.0pt;background:
+  #CBCCD2;padding:.05in 8.25pt .05in 8.25pt;height:18.7pt'>
   <p class=ListParagraphTightCxSpMiddle align=right style='text-align:right'>$27,721,071,511</p>
   </td>
-  <td width="21%" style='width:21.18%;padding:0in 5.4pt 0in 5.4pt;height:1.0pt'>
+  <td width="21%" style='width:21.18%;border-top:none;border-left:none;
+  border-bottom:solid white 1.0pt;border-right:solid white 1.0pt;background:
+  #CBCCD2;padding:.05in 8.25pt .05in 8.25pt;height:18.7pt'>
   <p class=ListParagraphTightCxSpMiddle align=right style='text-align:right'>$16,682,240,052</p>
   </td>
-  <td width="16%" style='width:16.3%;padding:0in 5.4pt 0in 5.4pt;height:1.0pt'>
+  <td width="16%" style='width:16.28%;border-top:none;border-left:none;
+  border-bottom:solid white 1.0pt;border-right:solid white 1.0pt;background:
+  #CBCCD2;padding:.05in 8.25pt .05in 8.25pt;height:18.7pt'>
   <p class=ListParagraphTightCxSpLast align=right style='text-align:right'>39.8%</p>
   </td>
  </tr>
- <tr style='height:1.0pt'>
-  <td width="40%" style='width:40.82%;background:#F2F2F2;padding:0in 5.4pt 0in 5.4pt;
-  height:1.0pt'>
-  <p class=ListParagraphTightCxSpFirst><b>County of Cook</b></p>
+ <tr style='height:18.7pt'>
+  <td width="40%" style='width:40.82%;border:solid white 1.0pt;border-top:none;
+  background:#E7E7EA;padding:0in 7.9pt 0in 7.9pt;height:18.7pt'>
+  <p class=ListParagraphTightCxSpFirst>County of Cook</p>
   </td>
-  <td width="21%" style='width:21.7%;background:#F2F2F2;padding:0in 5.4pt 0in 5.4pt;
-  height:1.0pt'>
+  <td width="21%" style='width:21.7%;border-top:none;border-left:none;
+  border-bottom:solid white 1.0pt;border-right:solid white 1.0pt;background:
+  #E7E7EA;padding:.05in 8.25pt .05in 8.25pt;height:18.7pt'>
   <p class=ListParagraphTightCxSpMiddle align=right style='text-align:right'>$23,257,290,307</p>
   </td>
-  <td width="21%" style='width:21.18%;background:#F2F2F2;padding:0in 5.4pt 0in 5.4pt;
-  height:1.0pt'>
+  <td width="21%" style='width:21.18%;border-top:none;border-left:none;
+  border-bottom:solid white 1.0pt;border-right:solid white 1.0pt;background:
+  #E7E7EA;padding:.05in 8.25pt .05in 8.25pt;height:18.7pt'>
   <p class=ListParagraphTightCxSpMiddle align=right style='text-align:right'>$13,395,266,525</p>
   </td>
-  <td width="16%" style='width:16.3%;background:#F2F2F2;padding:0in 5.4pt 0in 5.4pt;
-  height:1.0pt'>
+  <td width="16%" style='width:16.28%;border-top:none;border-left:none;
+  border-bottom:solid white 1.0pt;border-right:solid white 1.0pt;background:
+  #E7E7EA;padding:.05in 8.25pt .05in 8.25pt;height:18.7pt'>
   <p class=ListParagraphTightCxSpLast align=right style='text-align:right'>42.4%</p>
   </td>
  </tr>
- <tr style='height:1.0pt'>
-  <td width="40%" style='width:40.82%;padding:0in 5.4pt 0in 5.4pt;height:1.0pt'>
-  <p class=ListParagraphTightCxSpFirst><b>Metro Water Reclamation District of
-  Greater Chicago</b></p>
+ <tr style='height:.5in'>
+  <td width="40%" style='width:40.82%;border:solid white 1.0pt;border-top:none;
+  background:#CBCCD2;padding:0in 7.9pt 0in 7.9pt;height:.5in'>
+  <p class=ListParagraphTightCxSpFirst>Metro Water Reclamation District of
+  Greater Chicago</p>
   </td>
-  <td width="21%" style='width:21.7%;padding:0in 5.4pt 0in 5.4pt;height:1.0pt'>
+  <td width="21%" style='width:21.7%;border-top:none;border-left:none;
+  border-bottom:solid white 1.0pt;border-right:solid white 1.0pt;background:
+  #CBCCD2;padding:.05in 8.25pt .05in 8.25pt;height:.5in'>
   <p class=ListParagraphTightCxSpMiddle align=right style='text-align:right'>$2,909,890,000</p>
   </td>
-  <td width="21%" style='width:21.18%;padding:0in 5.4pt 0in 5.4pt;height:1.0pt'>
+  <td width="21%" style='width:21.18%;border-top:none;border-left:none;
+  border-bottom:solid white 1.0pt;border-right:solid white 1.0pt;background:
+  #CBCCD2;padding:.05in 8.25pt .05in 8.25pt;height:.5in'>
   <p class=ListParagraphTightCxSpMiddle align=right style='text-align:right'>$1,377,581,000</p>
   </td>
-  <td width="16%" style='width:16.3%;padding:0in 5.4pt 0in 5.4pt;height:1.0pt'>
+  <td width="16%" style='width:16.28%;border-top:none;border-left:none;
+  border-bottom:solid white 1.0pt;border-right:solid white 1.0pt;background:
+  #CBCCD2;padding:.05in 8.25pt .05in 8.25pt;height:.5in'>
   <p class=ListParagraphTightCxSpLast align=right style='text-align:right'>52.7%</p>
   </td>
  </tr>
- <tr style='height:1.0pt'>
-  <td width="40%" style='width:40.82%;background:#F2F2F2;padding:0in 5.4pt 0in 5.4pt;
-  height:1.0pt'>
-  <p class=ListParagraphTightCxSpFirst><b>Chicago Park District</b></p>
+ <tr style='height:18.7pt'>
+  <td width="40%" style='width:40.82%;border:solid white 1.0pt;border-top:none;
+  background:#E7E7EA;padding:0in 7.9pt 0in 7.9pt;height:18.7pt'>
+  <p class=ListParagraphTightCxSpFirst>Chicago Park District</p>
   </td>
-  <td width="21%" style='width:21.7%;background:#F2F2F2;padding:0in 5.4pt 0in 5.4pt;
-  height:1.0pt'>
+  <td width="21%" style='width:21.7%;border-top:none;border-left:none;
+  border-bottom:solid white 1.0pt;border-right:solid white 1.0pt;background:
+  #E7E7EA;padding:.05in 8.25pt .05in 8.25pt;height:18.7pt'>
   <p class=ListParagraphTightCxSpMiddle align=right style='text-align:right'>$1,698,928,000</p>
   </td>
-  <td width="21%" style='width:21.18%;background:#F2F2F2;padding:0in 5.4pt 0in 5.4pt;
-  height:1.0pt'>
+  <td width="21%" style='width:21.18%;border-top:none;border-left:none;
+  border-bottom:solid white 1.0pt;border-right:solid white 1.0pt;background:
+  #E7E7EA;padding:.05in 8.25pt .05in 8.25pt;height:18.7pt'>
   <p class=ListParagraphTightCxSpMiddle align=right style='text-align:right'>$1,356,672,000</p>
   </td>
-  <td width="16%" style='width:16.3%;background:#F2F2F2;padding:0in 5.4pt 0in 5.4pt;
-  height:1.0pt'>
+  <td width="16%" style='width:16.28%;border-top:none;border-left:none;
+  border-bottom:solid white 1.0pt;border-right:solid white 1.0pt;background:
+  #E7E7EA;padding:.05in 8.25pt .05in 8.25pt;height:18.7pt'>
   <p class=ListParagraphTightCxSpLast align=right style='text-align:right'>20.2%</p>
   </td>
  </tr>
- <tr style='height:1.0pt'>
-  <td width="40%" style='width:40.82%;padding:0in 5.4pt 0in 5.4pt;height:1.0pt'>
-  <p class=ListParagraphTightCxSpFirst><b>School District U-46 (Elgin)</b></p>
+ <tr style='height:18.7pt'>
+  <td width="40%" style='width:40.82%;border:solid white 1.0pt;border-top:none;
+  background:#CBCCD2;padding:0in 7.9pt 0in 7.9pt;height:18.7pt'>
+  <p class=ListParagraphTightCxSpFirst>School District U-46 (Elgin)</p>
   </td>
-  <td width="21%" style='width:21.7%;padding:0in 5.4pt 0in 5.4pt;height:1.0pt'>
+  <td width="21%" style='width:21.7%;border-top:none;border-left:none;
+  border-bottom:solid white 1.0pt;border-right:solid white 1.0pt;background:
+  #CBCCD2;padding:.05in 8.25pt .05in 8.25pt;height:18.7pt'>
   <p class=ListParagraphTightCxSpMiddle align=right style='text-align:right'>$383,963,357</p>
   </td>
-  <td width="21%" style='width:21.18%;padding:0in 5.4pt 0in 5.4pt;height:1.0pt'>
+  <td width="21%" style='width:21.18%;border-top:none;border-left:none;
+  border-bottom:solid white 1.0pt;border-right:solid white 1.0pt;background:
+  #CBCCD2;padding:.05in 8.25pt .05in 8.25pt;height:18.7pt'>
   <p class=ListParagraphTightCxSpMiddle align=right style='text-align:right'>$58,255,306</p>
   </td>
-  <td width="16%" style='width:16.3%;padding:0in 5.4pt 0in 5.4pt;height:1.0pt'>
+  <td width="16%" style='width:16.28%;border-top:none;border-left:none;
+  border-bottom:solid white 1.0pt;border-right:solid white 1.0pt;background:
+  #CBCCD2;padding:.05in 8.25pt .05in 8.25pt;height:18.7pt'>
   <p class=ListParagraphTightCxSpLast align=right style='text-align:right'>84.8%</p>
   </td>
  </tr>
- <tr style='height:1.0pt'>
-  <td width="40%" style='width:40.82%;background:#F2F2F2;padding:0in 5.4pt 0in 5.4pt;
-  height:1.0pt'>
-  <p class=ListParagraphTightCxSpFirst><b>Village of Rosemont</b></p>
+ <tr style='height:18.7pt'>
+  <td width="40%" style='width:40.82%;border:solid white 1.0pt;border-top:none;
+  background:#E7E7EA;padding:0in 7.9pt 0in 7.9pt;height:18.7pt'>
+  <p class=ListParagraphTightCxSpFirst>Village of Rosemont</p>
   </td>
-  <td width="21%" style='width:21.7%;background:#F2F2F2;padding:0in 5.4pt 0in 5.4pt;
-  height:1.0pt'>
+  <td width="21%" style='width:21.7%;border-top:none;border-left:none;
+  border-bottom:solid white 1.0pt;border-right:solid white 1.0pt;background:
+  #E7E7EA;padding:.05in 8.25pt .05in 8.25pt;height:18.7pt'>
   <p class=ListParagraphTightCxSpMiddle align=right style='text-align:right'>$394,835,779</p>
   </td>
-  <td width="21%" style='width:21.18%;background:#F2F2F2;padding:0in 5.4pt 0in 5.4pt;
-  height:1.0pt'>
+  <td width="21%" style='width:21.18%;border-top:none;border-left:none;
+  border-bottom:solid white 1.0pt;border-right:solid white 1.0pt;background:
+  #E7E7EA;padding:.05in 8.25pt .05in 8.25pt;height:18.7pt'>
   <p class=ListParagraphTightCxSpMiddle align=right style='text-align:right'>$212,302,147</p>
   </td>
-  <td width="16%" style='width:16.3%;background:#F2F2F2;padding:0in 5.4pt 0in 5.4pt;
-  height:1.0pt'>
+  <td width="16%" style='width:16.28%;border-top:none;border-left:none;
+  border-bottom:solid white 1.0pt;border-right:solid white 1.0pt;background:
+  #E7E7EA;padding:.05in 8.25pt .05in 8.25pt;height:18.7pt'>
   <p class=ListParagraphTightCxSpLast align=right style='text-align:right'>46.2%</p>
   </td>
  </tr>
- <tr style='height:1.0pt'>
-  <td width="40%" style='width:40.82%;padding:0in 5.4pt 0in 5.4pt;height:1.0pt'>
-  <p class=ListParagraphTightCxSpFirst><b>City of Evanston</b></p>
+ <tr style='height:18.7pt'>
+  <td width="40%" style='width:40.82%;border:solid white 1.0pt;border-top:none;
+  background:#CBCCD2;padding:0in 7.9pt 0in 7.9pt;height:18.7pt'>
+  <p class=ListParagraphTightCxSpFirst>City of Evanston</p>
   </td>
-  <td width="21%" style='width:21.7%;padding:0in 5.4pt 0in 5.4pt;height:1.0pt'>
+  <td width="21%" style='width:21.7%;border-top:none;border-left:none;
+  border-bottom:solid white 1.0pt;border-right:solid white 1.0pt;background:
+  #CBCCD2;padding:.05in 8.25pt .05in 8.25pt;height:18.7pt'>
   <p class=ListParagraphTightCxSpMiddle align=right style='text-align:right'>$710,890,147</p>
   </td>
-  <td width="21%" style='width:21.18%;padding:0in 5.4pt 0in 5.4pt;height:1.0pt'>
+  <td width="21%" style='width:21.18%;border-top:none;border-left:none;
+  border-bottom:solid white 1.0pt;border-right:solid white 1.0pt;background:
+  #CBCCD2;padding:.05in 8.25pt .05in 8.25pt;height:18.7pt'>
   <p class=ListParagraphTightCxSpMiddle align=right style='text-align:right'>$252,149,643</p>
   </td>
-  <td width="16%" style='width:16.3%;padding:0in 5.4pt 0in 5.4pt;height:1.0pt'>
+  <td width="16%" style='width:16.28%;border-top:none;border-left:none;
+  border-bottom:solid white 1.0pt;border-right:solid white 1.0pt;background:
+  #CBCCD2;padding:.05in 8.25pt .05in 8.25pt;height:18.7pt'>
   <p class=ListParagraphTightCxSpLast align=right style='text-align:right'>64.5%</p>
   </td>
  </tr>
- <tr style='height:1.0pt'>
-  <td width="40%" style='width:40.82%;background:#F2F2F2;padding:0in 5.4pt 0in 5.4pt;
-  height:1.0pt'>
-  <p class=ListParagraphTightCxSpFirst><b>Forest Preserve District</b></p>
+ <tr style='height:18.7pt'>
+  <td width="40%" style='width:40.82%;border:solid white 1.0pt;border-top:none;
+  background:#E7E7EA;padding:0in 7.9pt 0in 7.9pt;height:18.7pt'>
+  <p class=ListParagraphTightCxSpFirst>Forest Preserve District</p>
   </td>
-  <td width="21%" style='width:21.7%;background:#F2F2F2;padding:0in 5.4pt 0in 5.4pt;
-  height:1.0pt'>
+  <td width="21%" style='width:21.7%;border-top:none;border-left:none;
+  border-bottom:solid white 1.0pt;border-right:solid white 1.0pt;background:
+  #E7E7EA;padding:.05in 8.25pt .05in 8.25pt;height:18.7pt'>
   <p class=ListParagraphTightCxSpMiddle align=right style='text-align:right'>$540,107,634</p>
   </td>
-  <td width="21%" style='width:21.18%;background:#F2F2F2;padding:0in 5.4pt 0in 5.4pt;
-  height:1.0pt'>
+  <td width="21%" style='width:21.18%;border-top:none;border-left:none;
+  border-bottom:solid white 1.0pt;border-right:solid white 1.0pt;background:
+  #E7E7EA;padding:.05in 8.25pt .05in 8.25pt;height:18.7pt'>
   <p class=ListParagraphTightCxSpMiddle align=right style='text-align:right'>$328,420,280</p>
   </td>
-  <td width="16%" style='width:16.3%;background:#F2F2F2;padding:0in 5.4pt 0in 5.4pt;
-  height:1.0pt'>
+  <td width="16%" style='width:16.28%;border-top:none;border-left:none;
+  border-bottom:solid white 1.0pt;border-right:solid white 1.0pt;background:
+  #E7E7EA;padding:.05in 8.25pt .05in 8.25pt;height:18.7pt'>
   <p class=ListParagraphTightCxSpLast align=right style='text-align:right'>39.2%</p>
   </td>
  </tr>
- <tr style='height:1.0pt'>
-  <td width="40%" style='width:40.82%;padding:0in 5.4pt 0in 5.4pt;height:1.0pt'>
-  <p class=ListParagraphTightCxSpFirst><b>Chicago Community College District</b></p>
+ <tr style='height:18.7pt'>
+  <td width="40%" style='width:40.82%;border:solid white 1.0pt;border-top:none;
+  background:#CBCCD2;padding:0in 7.9pt 0in 7.9pt;height:18.7pt'>
+  <p class=ListParagraphTightCxSpFirst>Chicago Community College District</p>
   </td>
-  <td width="21%" style='width:21.7%;padding:0in 5.4pt 0in 5.4pt;height:1.0pt'>
+  <td width="21%" style='width:21.7%;border-top:none;border-left:none;
+  border-bottom:solid white 1.0pt;border-right:solid white 1.0pt;background:
+  #CBCCD2;padding:.05in 8.25pt .05in 8.25pt;height:18.7pt'>
   <p class=ListParagraphTightCxSpMiddle align=right style='text-align:right'>$107,291,401</p>
   </td>
-  <td width="21%" style='width:21.18%;padding:0in 5.4pt 0in 5.4pt;height:1.0pt'>
+  <td width="21%" style='width:21.18%;border-top:none;border-left:none;
+  border-bottom:solid white 1.0pt;border-right:solid white 1.0pt;background:
+  #CBCCD2;padding:.05in 8.25pt .05in 8.25pt;height:18.7pt'>
   <p class=ListParagraphTightCxSpMiddle align=right style='text-align:right'>$107,291,401</p>
   </td>
-  <td width="16%" style='width:16.3%;padding:0in 5.4pt 0in 5.4pt;height:1.0pt'>
+  <td width="16%" style='width:16.28%;border-top:none;border-left:none;
+  border-bottom:solid white 1.0pt;border-right:solid white 1.0pt;background:
+  #CBCCD2;padding:.05in 8.25pt .05in 8.25pt;height:18.7pt'>
   <p class=ListParagraphTightCxSpLast align=right style='text-align:right'>0.0%</p>
   </td>
  </tr>
- <tr style='height:1.0pt'>
-  <td width="40%" style='width:40.82%;background:#F2F2F2;padding:0in 5.4pt 0in 5.4pt;
-  height:1.0pt'>
-  <p class=ListParagraphTightCxSpFirst><b>Village of Schaumburg</b></p>
+ <tr style='height:18.7pt'>
+  <td width="40%" style='width:40.82%;border:solid white 1.0pt;border-top:none;
+  background:#E7E7EA;padding:0in 7.9pt 0in 7.9pt;height:18.7pt'>
+  <p class=ListParagraphTightCxSpFirst>Village of Schaumburg</p>
   </td>
-  <td width="21%" style='width:21.7%;background:#F2F2F2;padding:0in 5.4pt 0in 5.4pt;
-  height:1.0pt'>
+  <td width="21%" style='width:21.7%;border-top:none;border-left:none;
+  border-bottom:solid white 1.0pt;border-right:solid white 1.0pt;background:
+  #E7E7EA;padding:.05in 8.25pt .05in 8.25pt;height:18.7pt'>
   <p class=ListParagraphTightCxSpMiddle align=right style='text-align:right'>$576,434,335</p>
   </td>
-  <td width="21%" style='width:21.18%;background:#F2F2F2;padding:0in 5.4pt 0in 5.4pt;
-  height:1.0pt'>
+  <td width="21%" style='width:21.18%;border-top:none;border-left:none;
+  border-bottom:solid white 1.0pt;border-right:solid white 1.0pt;background:
+  #E7E7EA;padding:.05in 8.25pt .05in 8.25pt;height:18.7pt'>
   <p class=ListParagraphTightCxSpMiddle align=right style='text-align:right'>$201,601,548</p>
   </td>
-  <td width="16%" style='width:16.3%;background:#F2F2F2;padding:0in 5.4pt 0in 5.4pt;
-  height:1.0pt'>
+  <td width="16%" style='width:16.28%;border-top:none;border-left:none;
+  border-bottom:solid white 1.0pt;border-right:solid white 1.0pt;background:
+  #E7E7EA;padding:.05in 8.25pt .05in 8.25pt;height:18.7pt'>
   <p class=ListParagraphTightCxSpLast align=right style='text-align:right'>65.0%</p>
   </td>
  </tr>
- <tr style='height:1.0pt'>
-  <td width="40%" style='width:40.82%;padding:0in 5.4pt 0in 5.4pt;height:1.0pt'>
-  <p class=ListParagraphTightCxSpFirst><b>Community Unit School District 300
-  (Carpentersville)</b></p>
+ <tr style='height:18.7pt'>
+  <td width="40%" style='width:40.82%;border:solid white 1.0pt;border-top:none;
+  background:#CBCCD2;padding:0in 7.9pt 0in 7.9pt;height:18.7pt'>
+  <p class=ListParagraphTightCxSpFirst>Community Unit School District 300
+  (Carpentersville)</p>
   </td>
-  <td width="21%" style='width:21.7%;padding:0in 5.4pt 0in 5.4pt;height:1.0pt'>
+  <td width="21%" style='width:21.7%;border-top:none;border-left:none;
+  border-bottom:solid white 1.0pt;border-right:solid white 1.0pt;background:
+  #CBCCD2;padding:.05in 8.25pt .05in 8.25pt;height:18.7pt'>
   <p class=ListParagraphTightCxSpMiddle align=right style='text-align:right'>$132,837,376</p>
   </td>
-  <td width="21%" style='width:21.18%;padding:0in 5.4pt 0in 5.4pt;height:1.0pt'>
+  <td width="21%" style='width:21.18%;border-top:none;border-left:none;
+  border-bottom:solid white 1.0pt;border-right:solid white 1.0pt;background:
+  #CBCCD2;padding:.05in 8.25pt .05in 8.25pt;height:18.7pt'>
   <p class=ListParagraphTightCxSpMiddle align=right style='text-align:right'>$5,720,994</p>
   </td>
-  <td width="16%" style='width:16.3%;padding:0in 5.4pt 0in 5.4pt;height:1.0pt'>
+  <td width="16%" style='width:16.28%;border-top:none;border-left:none;
+  border-bottom:solid white 1.0pt;border-right:solid white 1.0pt;background:
+  #CBCCD2;padding:.05in 8.25pt .05in 8.25pt;height:18.7pt'>
   <p class=ListParagraphTightCxSpLast align=right style='text-align:right'>95.7%</p>
   </td>
  </tr>
- <tr style='height:1.0pt'>
-  <td width="40%" style='width:40.82%;background:#F2F2F2;padding:0in 5.4pt 0in 5.4pt;
-  height:1.0pt'>
-  <p class=ListParagraphTightCxSpFirst><b>Town of Cicero</b></p>
+ <tr style='height:18.7pt'>
+  <td width="40%" style='width:40.82%;border:solid white 1.0pt;border-top:none;
+  background:#E7E7EA;padding:0in 7.9pt 0in 7.9pt;height:18.7pt'>
+  <p class=ListParagraphTightCxSpFirst>Town of Cicero</p>
   </td>
-  <td width="21%" style='width:21.7%;background:#F2F2F2;padding:0in 5.4pt 0in 5.4pt;
-  height:1.0pt'>
+  <td width="21%" style='width:21.7%;border-top:none;border-left:none;
+  border-bottom:solid white 1.0pt;border-right:solid white 1.0pt;background:
+  #E7E7EA;padding:.05in 8.25pt .05in 8.25pt;height:18.7pt'>
   <p class=ListParagraphTightCxSpMiddle align=right style='text-align:right'>$551,794,904</p>
   </td>
-  <td width="21%" style='width:21.18%;background:#F2F2F2;padding:0in 5.4pt 0in 5.4pt;
-  height:1.0pt'>
+  <td width="21%" style='width:21.18%;border-top:none;border-left:none;
+  border-bottom:solid white 1.0pt;border-right:solid white 1.0pt;background:
+  #E7E7EA;padding:.05in 8.25pt .05in 8.25pt;height:18.7pt'>
   <p class=ListParagraphTightCxSpMiddle align=right style='text-align:right'>$372,586,339</p>
   </td>
-  <td width="16%" style='width:16.3%;background:#F2F2F2;padding:0in 5.4pt 0in 5.4pt;
-  height:1.0pt'>
+  <td width="16%" style='width:16.28%;border-top:none;border-left:none;
+  border-bottom:solid white 1.0pt;border-right:solid white 1.0pt;background:
+  #E7E7EA;padding:.05in 8.25pt .05in 8.25pt;height:18.7pt'>
   <p class=ListParagraphTightCxSpLast align=right style='text-align:right'>32.5%</p>
   </td>
  </tr>
- <tr style='height:1.0pt'>
-  <td width="100%" colspan=4 style='width:100.0%;padding:0in 5.4pt 0in 5.4pt;
-  height:1.0pt'>
-  <p class=MsoCaption style='margin-left:.4pt;text-indent:-.4pt'><b>*Unfunded
+ <tr style='height:.3in'>
+  <td width="100%" colspan=4 style='width:100.0%;border:solid white 1.0pt;
+  border-top:none;background:#E7E7EA;padding:0in 7.9pt 0in 7.9pt;height:.3in'>
+  <p class=MsoCaption style='margin-left:.4pt;text-indent:-.4pt'>*Unfunded
   liabilities in this chart are calculated on an accrual basis. Individual
-  pension funds often calculate these numbers on an actuarial basis.</b></p>
+  pension funds often calculate these numbers on an actuarial basis.</p>
   </td>
  </tr>
 </table>
@@ -1193,7 +1273,7 @@ width=534 height=271 id="Graphic 1" src="primer_files/image003.png"></p>
 <p class=MsoCaption align=center style='text-align:center'>Figure 4:
 Top states by number of sub-units of governments (Source: U.S. Census)</p>
 
-<p class=MsoNormal><span style='position:relative;z-index:251557888;left:-49px;
+<p class=MsoNormal><span style='position:relative;z-index:251658240;left:-49px;
 top:0px;width:2px;height:2px'><img width=1 height=1
 src="primer_files/image004.png"></span><br clear=ALL>
 Local governments tend to rely heavily on property taxes because the amount
@@ -1213,128 +1293,143 @@ receipts from those two taxes fluctuate based on consumers’ financial health.<
 several states, there are variations from one locale to another. But generally,
 there are two ways property taxes are set in the U.S.</p>
 
-<p class=MsoNormal>1) In many states, like Illinois, New York and New Jersey,
-the levy — the overall amount of property taxes sought by local taxing agencies
-— is set first, followed by the tax rate. If the total value of local
-properties declines, the tax rate is set higher to ensure the full levy is
-collected from property owners.</p>
+<p class=Gappy>1) In many states, like Illinois, New York and New Jersey, the
+levy — the overall amount of property taxes sought by local taxing agencies — is
+set first, followed by the tax rate. If the total value of local properties
+declines, the tax rate is set higher to ensure the full levy is collected from
+property owners.</p>
 
-<table border=0 cellspacing=0 cellpadding=0 width=612 style='width:459.25pt;
- border-collapse:collapse'>
+<table class=MsoTableGrid border=0 cellspacing=0 cellpadding=0 width=612
+ style='width:459.25pt;margin-left:-.25pt;background:#F8F8F8;border-collapse:
+ collapse;border:none'>
  <tr style='height:.5in'>
-  <td width=177 valign=top style='width:132.9pt;padding:0in 5.4pt 0in 5.4pt;
+  <td width=177 style='width:132.9pt;padding:5.75pt 5.75pt 5.75pt 5.75pt;
   height:.5in'>
-  <p class=Sidekick>Assessments Decrease</p>
-  <p class=Sidekick><b>$100,000,000 to $87,500,000</b></p>
+  <p class=Sidekick align=center style='text-align:center'>Assessments Decrease</p>
+  <p class=Sidekick align=center style='margin-left:3.45pt;text-align:center;
+  text-indent:-3.45pt'><b>$100,000,000 to $87,500,000</b></p>
   </td>
-  <td width=51 valign=top style='width:38.35pt;padding:0in 5.4pt 0in 5.4pt;
+  <td width=51 style='width:38.35pt;padding:5.75pt 5.75pt 5.75pt 5.75pt;
   height:.5in'>
-  <p class=Sidekick><img border=0 width=51 height=51 id="Graphic 25"
-  src="primer_files/image005.png"></p>
+  <p class=Sidekick align=center style='text-align:center'><img border=0
+  width=51 height=51 id="Graphic 25" src="primer_files/image005.png"></p>
   </td>
-  <td width=153 valign=top style='width:114.55pt;padding:0in 5.4pt 0in 5.4pt;
-  height:.5in'>
-  <p class=Sidekick>Total Tax Amount Set</p>
-  <p class=Sidekick><b>$1 million</b></p>
+  <td width=153 style='width:114.55pt;border:none;border-left:solid windowtext 1.0pt;
+  padding:5.75pt 5.75pt 5.75pt 5.75pt;height:.5in'>
+  <p class=Sidekick align=center style='text-align:center'>Total Tax Amount Set</p>
+  <p class=Sidekick align=center style='text-align:center'><b>$1 million</b></p>
   </td>
-  <td width=51 valign=top style='width:38.45pt;padding:0in 5.4pt 0in 5.4pt;
-  height:.5in'>
+  <td width=51 style='width:38.45pt;border:none;border-right:solid windowtext 1.0pt;
+  padding:5.75pt 5.75pt 5.75pt 5.75pt;height:.5in'>
   <p class=Sidekick><span style='font-size:14.0pt'>&nbsp;</span></p>
   </td>
-  <td width=124 valign=top style='width:93.0pt;padding:0in 5.4pt 0in 5.4pt;
+  <td width=124 style='width:93.0pt;border:none;padding:5.75pt 5.75pt 5.75pt 5.75pt;
   height:.5in'>
-  <p class=Sidekick style='margin-right:-9.75pt'>Tax Rate Increases</p>
-  <p class=Sidekick><b>1% to 1.143%</b></p>
+  <p class=Sidekick align=center style='margin-right:-9.75pt;text-align:center'>Tax
+  Rate Increases</p>
+  <p class=Sidekick align=center style='margin-right:-9.75pt;text-align:center'><b>1%
+  to 1.143%</b></p>
   </td>
-  <td width=56 valign=top style='width:42.0pt;padding:0in 5.4pt 0in 5.4pt;
+  <td width=56 style='width:42.0pt;padding:5.75pt 5.75pt 5.75pt 5.75pt;
   height:.5in'>
-  <p class=Sidekick><img border=0 width=51 height=51 id="Graphic 23"
-  src="primer_files/image006.png"></p>
+  <p class=Sidekick align=center style='text-align:center'><img border=0
+  width=51 height=51 id="Graphic 23" src="primer_files/image006.png"></p>
   </td>
  </tr>
 </table>
 
-<p class=MsoNormal>2) In other states like California and Texas, properties are
+<p class=Gappy>2) In other states like California and Texas, properties are
 first assessed and then the rate is set, determining the amount of taxes to be
 collected. That method also allows local governments to increase their rates
 when the total value of all property declines — unless the state enacts strict
 rate limits.</p>
 
-<table border=0 cellspacing=0 cellpadding=0 width=612 style='width:459.25pt;
- border-collapse:collapse'>
+<table class=MsoTableGrid border=0 cellspacing=0 cellpadding=0 width=612
+ style='width:459.25pt;margin-left:-.25pt;background:#F8F8F8;border-collapse:
+ collapse;border:none'>
  <tr style='height:.5in'>
-  <td width=177 valign=top style='width:132.9pt;padding:0in 5.4pt 0in 5.4pt;
+  <td width=177 style='width:132.9pt;padding:5.75pt 5.75pt 5.75pt 5.75pt;
   height:.5in'>
-  <p class=Sidekick>Assessments Decrease</p>
-  <p class=Sidekick><b>$100,000,000 to $87,500,000</b></p>
+  <p class=Sidekick align=center style='margin-left:3.45pt;text-align:center;
+  text-indent:-3.45pt'>Assessments Decrease</p>
+  <p class=Sidekick align=center style='margin-left:3.45pt;text-align:center;
+  text-indent:-3.45pt'><b>$100,000,000 to $87,500,000</b></p>
   </td>
-  <td width=51 valign=top style='width:38.35pt;padding:0in 5.4pt 0in 5.4pt;
+  <td width=51 style='width:38.35pt;padding:5.75pt 5.75pt 5.75pt 5.75pt;
   height:.5in'>
-  <p class=Sidekick><img border=0 width=51 height=51 id="Graphic 26"
-  src="primer_files/image005.png"></p>
+  <p class=Sidekick align=center style='text-align:center'><img border=0
+  width=51 height=51 id="Graphic 26" src="primer_files/image005.png"></p>
   </td>
-  <td width=153 valign=top style='width:114.55pt;padding:0in 5.4pt 0in 5.4pt;
-  height:.5in'>
-  <p class=Sidekick>Tax Rate Increases</p>
-  <p class=Sidekick><b>1% to 1.143%</b></p>
+  <td width=153 style='width:114.55pt;border:none;border-left:solid windowtext 1.0pt;
+  padding:5.75pt 5.75pt 5.75pt 5.75pt;height:.5in'>
+  <p class=Sidekick align=center style='text-align:center'>Tax Rate Increases</p>
+  <p class=Sidekick align=center style='text-align:center'><b>1% to 1.143%</b></p>
   </td>
-  <td width=51 valign=top style='width:38.45pt;padding:0in 5.4pt 0in 5.4pt;
-  height:.5in'>
-  <p class=Sidekick><img border=0 width=51 height=51 id="Graphic 24"
-  src="primer_files/image006.png"></p>
+  <td width=51 style='width:38.45pt;border:none;border-right:solid windowtext 1.0pt;
+  padding:5.75pt 5.75pt 5.75pt 5.75pt;height:.5in'>
+  <p class=Sidekick align=center style='text-align:center'><img border=0
+  width=51 height=51 id="Graphic 24" src="primer_files/image006.png"></p>
   </td>
-  <td width=124 valign=top style='width:93.0pt;padding:0in 5.4pt 0in 5.4pt;
+  <td width=124 style='width:93.0pt;border:none;padding:5.75pt 5.75pt 5.75pt 5.75pt;
   height:.5in'>
-  <p class=Sidekick style='margin-right:-9.75pt'>Total Tax Amount</p>
-  <p class=Sidekick style='margin-right:-9.75pt'><b>$1 million</b></p>
+  <p class=Sidekick align=center style='margin-right:-9.75pt;text-align:center'>Total
+  Tax Amount</p>
+  <p class=Sidekick align=center style='margin-right:-9.75pt;text-align:center'><b>$1
+  million</b></p>
   </td>
-  <td width=56 valign=top style='width:42.0pt;padding:0in 5.4pt 0in 5.4pt;
+  <td width=56 style='width:42.0pt;padding:5.75pt 5.75pt 5.75pt 5.75pt;
   height:.5in'>
-  <p class=MsoNormal>&nbsp;</p>
+  <p class=MsoNormal style='line-height:normal'>&nbsp;</p>
   </td>
  </tr>
 </table>
 
-<p class=MsoNormal>Many states, including Arizona and California, in recent
-decades have enacted laws or changed their constitutions to lower limits on tax
-rates, according to the <a
-href="https://www.lincolninst.edu/research-data/data-toolkits/significant-features-property-tax/state-state-property-tax-glance">Lincoln
-Institute</a><a href="#_ftn8" name="_ftnref8" title=""><span style='font-size:
-12.0pt;line-height:115%;font-family:"Garamond Premr Pro Med",serif'>[8]</span></a>.
-In those states, property tax bills can decrease when property values decline.</p>
+<p class=Gappy>Many states, including Arizona and California, in recent decades
+have enacted laws or changed their constitutions to lower limits on tax rates,
+according to the <a
+href="https://www.lincolninst.edu/research-data/data-toolkits/significant-features-property-tax/state-state-property-tax-glance"><span
+style='color:windowtext'>Lincoln Institute</span></a><a href="#_ftn9"
+name="_ftnref9" title=""><span class=MsoFootnoteReference><span
+class=MsoFootnoteReference><span style='font-size:12.0pt;line-height:115%;
+font-family:"Garamond Premr Pro Med",serif'>[9]</span></span></span></a>. In
+those states, property tax bills can decrease when property values decline.</p>
 
-<table border=0 cellspacing=0 cellpadding=0 width=612 style='width:459.25pt;
- border-collapse:collapse'>
+<table class=MsoTableGrid border=0 cellspacing=0 cellpadding=0 width=612
+ style='width:459.25pt;margin-left:-.25pt;background:#F8F8F8;border-collapse:
+ collapse;border:none'>
  <tr style='height:.5in'>
-  <td width=177 valign=top style='width:132.9pt;padding:0in 5.4pt 0in 5.4pt;
+  <td width=177 style='width:132.9pt;padding:5.75pt 5.75pt 5.75pt 5.75pt;
   height:.5in'>
-  <p class=Sidekick>Assessment Decreases</p>
-  <p class=Sidekick><b>$100,000,000 to $87,500,000</b></p>
+  <p class=Sidekick align=center style='text-align:center'>Assessment Decreases</p>
+  <p class=Sidekick align=center style='margin-left:3.45pt;text-align:center;
+  text-indent:-3.45pt'><b>$100,000,000 to $87,500,000</b></p>
   </td>
-  <td width=51 valign=top style='width:38.35pt;padding:0in 5.4pt 0in 5.4pt;
+  <td width=51 style='width:38.35pt;padding:5.75pt 5.75pt 5.75pt 5.75pt;
   height:.5in'>
-  <p class=Sidekick><img border=0 width=51 height=51 id="Graphic 28"
-  src="primer_files/image005.png"></p>
+  <p class=Sidekick align=center style='text-align:center'><img border=0
+  width=51 height=51 id="Graphic 28" src="primer_files/image005.png"></p>
   </td>
-  <td width=153 valign=top style='width:114.55pt;padding:0in 5.4pt 0in 5.4pt;
-  height:.5in'>
-  <p class=Sidekick>Tax Rate is Limited</p>
-  <p class=Sidekick><b>1%</b></p>
+  <td width=153 style='width:114.55pt;border:none;border-left:solid windowtext 1.0pt;
+  padding:5.75pt 5.75pt 5.75pt 5.75pt;height:.5in'>
+  <p class=Sidekick align=center style='text-align:center'>Tax Rate is Limited</p>
+  <p class=Sidekick align=center style='margin-left:3.45pt;text-align:center;
+  text-indent:-3.45pt'><b>1%</b></p>
   </td>
-  <td width=51 valign=top style='width:38.45pt;padding:0in 5.4pt 0in 5.4pt;
-  height:.5in'>
-  <p class=Sidekick><img border=0 width=51 height=51 id="Graphic 22"
-  src="primer_files/image007.png"></p>
+  <td width=51 style='width:38.45pt;border:none;border-right:solid windowtext 1.0pt;
+  padding:5.75pt 5.75pt 5.75pt 5.75pt;height:.5in'>
+  <p class=Sidekick align=center style='text-align:center'><img border=0
+  width=51 height=51 id="Graphic 22" src="primer_files/image007.png"></p>
   </td>
-  <td width=124 valign=top style='width:93.0pt;padding:0in 5.4pt 0in 5.4pt;
+  <td width=124 style='width:93.0pt;border:none;padding:5.75pt 5.75pt 5.75pt 5.75pt;
   height:.5in'>
-  <p class=Sidekick>Total Tax Amount</p>
-  <p class=Sidekick><b>$875,000</b></p>
+  <p class=Sidekick align=center style='text-align:center'>Total Tax Amount</p>
+  <p class=Sidekick align=center style='margin-left:3.45pt;text-align:center;
+  text-indent:-3.45pt'><b>$875,000</b></p>
   </td>
-  <td width=56 valign=top style='width:42.0pt;padding:0in 5.4pt 0in 5.4pt;
+  <td width=56 style='width:42.0pt;padding:5.75pt 5.75pt 5.75pt 5.75pt;
   height:.5in'>
-  <p class=Sidekick><img border=0 width=51 height=51 id="Graphic 29"
-  src="primer_files/image005.png"></p>
+  <p class=Sidekick align=center style='text-align:center'><img border=0
+  width=51 height=51 id="Graphic 29" src="primer_files/image005.png"></p>
   </td>
  </tr>
 </table>
@@ -1344,9 +1439,9 @@ U.S., but throughout the world — is that all systems are dizzyingly complex,
 making it tough for ordinary taxpayers to understand how they work. For
 example, the <a
 href="https://www.ilga.gov/legislation/ilcs/ilcs5.asp?ActID=596&amp;ChapterID=8">Illinois
-property tax code</a><a href="#_ftn9" name="_ftnref9" title=""><span
+property tax code</a><a href="#_ftn10" name="_ftnref10" title=""><span
 class=MsoFootnoteReference><span class=MsoFootnoteReference><span
-style='font-size:12.0pt;line-height:115%;font-family:"Garamond Premr Pro Med",serif'>[9]</span></span></span></a>
+style='font-size:12.0pt;line-height:115%;font-family:"Garamond Premr Pro Med",serif'>[10]</span></span></span></a>
 is laid out in 233,617 words that prints out at 286 standard-size pages.</p>
 
 <p class=MsoNormal>Each U.S. state devises its own tax system, often with
@@ -1356,9 +1451,9 @@ systems of property taxation.</p>
 <p class=MsoNormal>A <a
 href="https://www.lincolninst.edu/sites/default/files/pubfiles/brown_wp02pb1.pdf"><span
 style='color:windowtext'>Lincoln Institute working paper</span></a><a
-href="#_ftn10" name="_ftnref10" title=""><span class=MsoFootnoteReference><span
+href="#_ftn11" name="_ftnref11" title=""><span class=MsoFootnoteReference><span
 class=MsoFootnoteReference><span style='font-size:12.0pt;line-height:115%;
-font-family:"Garamond Premr Pro Med",serif'>[10]</span></span></span></a>
+font-family:"Garamond Premr Pro Med",serif'>[11]</span></span></span></a>
 examining European tax systems in 41 countries at the start of this century found
 190 different forms of taxation. But European and other foreign governments
 tend to rely less on property taxes than they do in the U.S., largely because
@@ -1367,9 +1462,9 @@ exception is the United Kingdom, which relies more on property taxation than
 the U.S., <a
 href="https://taxfoundation.org/publications/sources-of-government-revenue-in-the-oecd/"><span
 style='color:windowtext'>according to the Tax Foundation</span></a><a
-href="#_ftn11" name="_ftnref11" title=""><span class=MsoFootnoteReference><span
+href="#_ftn12" name="_ftnref12" title=""><span class=MsoFootnoteReference><span
 class=MsoFootnoteReference><span style='font-size:12.0pt;line-height:115%;
-font-family:"Garamond Premr Pro Med",serif'>[11]</span></span></span></a>.</p>
+font-family:"Garamond Premr Pro Med",serif'>[12]</span></span></span></a>.</p>
 
 <p class=MsoNormal>It’s also worth noting that many states, but not Illinois,
 tax “personal property” like cars, boats and business equipment. The 1970
@@ -1385,16 +1480,15 @@ complex state “equalizer,” collections and enforcement all play a role.</p>
 <p class=MsoNormal>Below is an explanation of how Illinois property taxes are
 calculated and collected.</p>
 
-<p class=MsoNormal><a name="_Hlk99722852">A Word on Property Index Numbers (PINs)</a></p>
-
 <div style='border:solid windowtext 1.0pt;padding:10.0pt 10.0pt 10.0pt 10.0pt'>
 
-<p class=MsoNormal style='border:none;padding:0in'><img border=0 width=305
-height=157 id="Graphic 12" src="primer_files/image008.png"></p>
+<h3 style='border:none;padding:0in'><a name="_Hlk99722852">A Word on Property Index
+Numbers (PINs)</a></h3>
 
-<p class=MsoNormal style='border:none;padding:0in'>* Zeros in this portion of
-the PIN indicate non-condo and non-leasehold PINs. Other counties may use the
-last four numbers to indicate land use.</p>
+<p class=MsoNormal style='border:none;padding:0in'><img border=0 width=305
+height=157 id="Graphic 12" src="primer_files/image008.png"><img border=0
+width=305 height=48 src="primer_files/image009.png"
+alt=" &#13;&#10;* Zeros in this portion of the PIN indicate non-condo and non-leasehold PINs. Other counties may use the last four numbers to indicate land use.&#13;&#10;&#13;&#10;"></p>
 
 <p class=MsoNormal style='border:none;padding:0in'>In Cook County, the Clerk
 assigns each a Property Index Number, or PIN, for both property record and
@@ -1414,70 +1508,68 @@ structure, the multiple PINs may be consolidated into a single PIN.</p>
 clear=all style='page-break-before:always'>
 </span>
 
-<p class=MsoNormal>&nbsp;</p>
+<p class=MsoNormal style='margin-top:5.0pt;margin-right:0in;margin-bottom:10.0pt;
+margin-left:0in'><b><span style='font-size:14.0pt;line-height:115%;font-family:
+"Roboto Condensed";letter-spacing:1.0pt'>&nbsp;</span></b></p>
 
 <div style='border:none;border-bottom:solid #DDDDDD 6.0pt;padding:0in 0in 1.0pt 0in'>
 
-<h1><a name="_Toc126910176">Offices Involved in Property Taxation</a></h1>
+<h1>Offices Involved in Property Taxation</h1>
 
 </div>
 
-<table class=MsoToc7 border=0 cellspacing=0 cellpadding=0 style='border-collapse:
- collapse'>
+<table class=MsoNormalTable border=0 cellspacing=0 cellpadding=0
+ style='border-collapse:collapse'>
  <tr style='height:147.75pt'>
   <td width=102 valign=top style='width:76.25pt;padding:0in 5.4pt 0in 5.4pt;
   height:147.75pt'>
-  <p class=MsoNormal style='margin-left:60.0pt'><img border=0 width=86
-  height=86 id="Graphic 37530709" src="primer_files/image009.png"></p>
+  <p class=MsoNormal><img border=0 width=86 height=86 id="Graphic 37530709"
+  src="primer_files/image010.png"></p>
   </td>
   <td width=522 valign=top style='width:391.25pt;padding:0in 5.4pt 0in 5.4pt;
   height:147.75pt'>
-  <div style='border:none;border-top:solid #DDDDDD 1.0pt;padding:2.0pt 0in 0in 0in;
-  margin-left:60.0pt;margin-right:0in'>
-  <h3 style='margin-left:0in'><a name="_Toc126910177">Cook County Clerk,
-  Recorder of Deeds Division</a></h3>
+  <div style='border:none;border-top:solid #DDDDDD 1.0pt;padding:2.0pt 0in 0in 0in'>
+  <h3>Cook County Clerk, Recorder of Deeds Division</h3>
   </div>
-  <p class=MsoListParagraph style='text-indent:-.25in'><span style='font-family:
-  Symbol'>·<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+  <p class=MsoListParagraph style='margin-bottom:5.0pt;text-indent:-.25in'><span
+  style='font-family:Symbol;color:black'>·<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
   </span></span>The Clerk assigns a PIN to each property.</p>
-  <p class=MsoListParagraph style='text-indent:-.25in'><span style='font-family:
-  Symbol'>·<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+  <p class=MsoListParagraph style='margin-bottom:5.0pt;text-indent:-.25in'><span
+  style='font-family:Symbol;color:black'>·<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
   </span></span>Then the Recorder of Deeds, which in Cook County is a division
   of the Cook County Clerk’s Office, records and maintains property records.</p>
-  <p class=MsoListParagraph style='text-indent:-.25in'><span style='font-family:
-  Symbol'>·<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+  <p class=MsoListParagraph style='margin-bottom:5.0pt;text-indent:-.25in'><span
+  style='font-family:Symbol;color:black'>·<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
   </span></span>Records include property transfers, deeds, mortgages and liens,
   all of which must be filed with the Clerk.</p>
   </td>
  </tr>
  <tr>
   <td width=102 valign=top style='width:76.25pt;padding:0in 5.4pt 0in 5.4pt'>
-  <p class=MsoNormal style='margin-left:60.0pt'><img border=0 width=86
-  height=86 id="Graphic 37530702" src="primer_files/image010.png"></p>
+  <p class=MsoNormal><img border=0 width=86 height=86 id="Graphic 37530702"
+  src="primer_files/image011.png"></p>
   </td>
   <td width=522 valign=top style='width:391.25pt;padding:0in 5.4pt 0in 5.4pt'>
-  <div style='border:none;border-top:solid #DDDDDD 1.0pt;padding:2.0pt 0in 0in 0in;
-  margin-left:60.0pt;margin-right:0in'>
-  <h3 style='margin-left:0in'><a name="_Toc126910178">Cook County Assessor</a></h3>
+  <div style='border:none;border-top:solid #DDDDDD 1.0pt;padding:2.0pt 0in 0in 0in'>
+  <h3>Cook County Assessor</h3>
   </div>
-  <p class=MsoListParagraph style='text-indent:-.25in'><span style='font-family:
-  Symbol'>·<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+  <p class=MsoListParagraph style='margin-bottom:5.0pt;text-indent:-.25in'><span
+  style='line-height:115%;font-family:Symbol'>·<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
   </span></span>The Assessor estimates the market value of each property in his
   or her jurisdiction for taxation purposes.</p>
-  <p class=MsoListParagraph style='text-indent:-.25in'><span style='font-family:
-  Symbol'>·<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+  <p class=MsoListParagraph style='margin-bottom:5.0pt;text-indent:-.25in'><span
+  style='line-height:115%;font-family:Symbol'>·<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
   </span></span>The Assessor also grants various property tax exemptions.</p>
   </td>
  </tr>
  <tr>
   <td width=102 valign=top style='width:76.25pt;padding:0in 5.4pt 0in 5.4pt'>
-  <p class=MsoNormal style='margin-left:60.0pt'><img border=0 width=86
-  height=86 id="Graphic 37530703" src="primer_files/image011.png"></p>
+  <p class=MsoNormal><img border=0 width=86 height=86 id="Graphic 37530703"
+  src="primer_files/image012.png"></p>
   </td>
   <td width=522 valign=top style='width:391.25pt;padding:0in 5.4pt 0in 5.4pt'>
-  <div style='border:none;border-top:solid #DDDDDD 1.0pt;padding:2.0pt 0in 0in 0in;
-  margin-left:60.0pt;margin-right:0in'>
-  <h3 style='margin-left:0in'><a name="_Toc126910179">Cook County Board of Review</a></h3>
+  <div style='border:none;border-top:solid #DDDDDD 1.0pt;padding:2.0pt 0in 0in 0in'>
+  <h3>Cook County Board of Review</h3>
   </div>
   <p class=MsoListParagraph style='text-indent:-.25in'><span style='line-height:
   115%;font-family:Symbol'>·<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
@@ -1487,14 +1579,12 @@ clear=all style='page-break-before:always'>
  </tr>
  <tr>
   <td width=102 valign=top style='width:76.25pt;padding:0in 5.4pt 0in 5.4pt'>
-  <p class=MsoNormal style='margin-left:60.0pt'><img border=0 width=86
-  height=86 id="Graphic 37530704" src="primer_files/image012.png"></p>
+  <p class=MsoNormal><img border=0 width=86 height=86 id="Graphic 37530704"
+  src="primer_files/image013.png"></p>
   </td>
   <td width=522 valign=top style='width:391.25pt;padding:0in 5.4pt 0in 5.4pt'>
-  <div style='border:none;border-top:solid #DDDDDD 1.0pt;padding:2.0pt 0in 0in 0in;
-  margin-left:60.0pt;margin-right:0in'>
-  <h3 style='margin-left:0in'><a name="_Toc126910180">Illinois Property Tax
-  Appeal Board</a> </h3>
+  <div style='border:none;border-top:solid #DDDDDD 1.0pt;padding:2.0pt 0in 0in 0in'>
+  <h3>Illinois Property Tax Appeal Board </h3>
   </div>
   <p class=MsoListParagraph style='text-indent:-.25in'><span style='line-height:
   115%;font-family:Symbol'>·<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
@@ -1505,13 +1595,12 @@ clear=all style='page-break-before:always'>
  </tr>
  <tr>
   <td width=102 valign=top style='width:76.25pt;padding:0in 5.4pt 0in 5.4pt'>
-  <p class=MsoNormal style='margin-left:60.0pt'><img border=0 width=86
-  height=86 id="Graphic 37530705" src="primer_files/image013.png"></p>
+  <p class=MsoNormal><img border=0 width=86 height=86 id="Graphic 37530705"
+  src="primer_files/image014.png"></p>
   </td>
   <td width=522 valign=top style='width:391.25pt;padding:0in 5.4pt 0in 5.4pt'>
-  <div style='border:none;border-top:solid #DDDDDD 1.0pt;padding:2.0pt 0in 0in 0in;
-  margin-left:60.0pt;margin-right:0in'>
-  <h3 style='margin-left:0in'><a name="_Toc126910181">Illinois Department of Revenue</a></h3>
+  <div style='border:none;border-top:solid #DDDDDD 1.0pt;padding:2.0pt 0in 0in 0in'>
+  <h3>Illinois Department of Revenue</h3>
   </div>
   <p class=MsoListParagraph style='text-indent:-.25in'><span style='line-height:
   115%;font-family:Symbol;color:black'>·<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
@@ -1525,14 +1614,12 @@ clear=all style='page-break-before:always'>
  </tr>
  <tr>
   <td width=102 valign=top style='width:76.25pt;padding:0in 5.4pt 0in 5.4pt'>
-  <p class=MsoNormal style='margin-left:60.0pt'><img border=0 width=86
-  height=86 id="Graphic 37530706" src="primer_files/image014.png"></p>
+  <p class=MsoNormal><img border=0 width=86 height=86 id="Graphic 37530706"
+  src="primer_files/image015.png"></p>
   </td>
   <td width=522 valign=top style='width:391.25pt;padding:0in 5.4pt 0in 5.4pt'>
-  <div style='border:none;border-top:solid #DDDDDD 1.0pt;padding:2.0pt 0in 0in 0in;
-  margin-left:60.0pt;margin-right:0in'>
-  <h3 style='margin-left:0in'><a name="_Toc126910182">Local Governments-Taxing
-  Districts</a></h3>
+  <div style='border:none;border-top:solid #DDDDDD 1.0pt;padding:2.0pt 0in 0in 0in'>
+  <h3>Local Governments-Taxing Districts</h3>
   </div>
   <p class=MsoListParagraph style='text-indent:-.25in'><span style='line-height:
   115%;font-family:Symbol'>·<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
@@ -1548,14 +1635,12 @@ clear=all style='page-break-before:always'>
  </tr>
  <tr>
   <td width=102 valign=top style='width:76.25pt;padding:0in 5.4pt 0in 5.4pt'>
-  <p class=MsoNormal style='margin-left:60.0pt'><img border=0 width=86
-  height=86 id="Graphic 37530707" src="primer_files/image015.png"></p>
+  <p class=MsoNormal><img border=0 width=86 height=86 id="Graphic 37530707"
+  src="primer_files/image016.png"></p>
   </td>
   <td width=522 valign=top style='width:391.25pt;padding:0in 5.4pt 0in 5.4pt'>
-  <div style='border:none;border-top:solid #DDDDDD 1.0pt;padding:2.0pt 0in 0in 0in;
-  margin-left:60.0pt;margin-right:0in'>
-  <h3 style='margin-left:0in'><a name="_Toc126910183">Cook County Clerk,
-  Property Tax Division</a></h3>
+  <div style='border:none;border-top:solid #DDDDDD 1.0pt;padding:2.0pt 0in 0in 0in'>
+  <h3>Cook County Clerk, Property Tax Division</h3>
   </div>
   <p class=MsoListParagraph style='text-indent:-.25in'><span style='line-height:
   115%;font-family:Symbol'>·<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
@@ -1565,14 +1650,12 @@ clear=all style='page-break-before:always'>
  </tr>
  <tr>
   <td width=102 valign=top style='width:76.25pt;padding:0in 5.4pt 0in 5.4pt'>
-  <p class=MsoNormal style='margin-left:60.0pt'><img border=0 width=86
-  height=86 id="Graphic 37530708" src="primer_files/image016.png"></p>
+  <p class=MsoNormal><img border=0 width=86 height=86 id="Graphic 37530708"
+  src="primer_files/image017.png"></p>
   </td>
   <td width=522 valign=top style='width:391.25pt;padding:0in 5.4pt 0in 5.4pt'>
-  <div style='border:none;border-top:solid #DDDDDD 1.0pt;padding:2.0pt 0in 0in 0in;
-  margin-left:60.0pt;margin-right:0in'>
-  <h3 style='margin-left:0in'><a name="_Toc126910184">Cook County Treasurer</a>
-  </h3>
+  <div style='border:none;border-top:solid #DDDDDD 1.0pt;padding:2.0pt 0in 0in 0in'>
+  <h3>Cook County Treasurer </h3>
   </div>
   <p class=MsoListParagraph style='text-indent:-.25in'><span style='font-family:
   Symbol'>·<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
@@ -1586,25 +1669,25 @@ clear=all style='page-break-before:always'>
   <p class=MsoListParagraph style='text-indent:-.25in'><span style='font-family:
   Symbol'>·<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
   </span></span>The Treasurer also issues all property tax refunds.</p>
-  <p class=MsoNormal style='margin-left:60.0pt'><span style='line-height:115%'>&nbsp;</span></p>
+  <p class=MsoNormal><span style='line-height:115%'>&nbsp;</span></p>
   </td>
  </tr>
 </table>
 
 <div style='border:none;border-bottom:solid #DDDDDD 6.0pt;padding:0in 0in 1.0pt 0in'>
 
-<h1><a name="_Toc126910185">The Cook County Property Tax Process</a></h1>
+<h1>The Cook County Property Tax Process</h1>
 
 </div>
 
 <p class=MsoNormal align=center style='text-align:center'><span
 class=StyleCentered><img border=0 width=522 height=744 id="Picture 59"
-src="primer_files/image017.png"></span></p>
+src="primer_files/image018.png"></span></p>
 
 <div style='border:solid #F8F8F8 3.0pt;padding:0in 0in 0in 0in;background:#F8F8F8'>
 
-<h2><a name="_Toc126910186"><img border=0 width=58 height=58 id="Graphic 152"
-src="primer_files/image018.png">  <span class=Raised>Step 1 — Assessments</span></a></h2>
+<h2><img border=0 width=58 height=58 id="Graphic 152"
+src="primer_files/image019.png">  <span class=Raised>Step 1 — Assessments</span></h2>
 
 </div>
 
@@ -1666,9 +1749,9 @@ burden on homeowners, were a matter of practice long before 1970, when they
 were specifically allowed in the Illinois Constitution. As a result, Chicago
 has one of the highest effective commercial and industrial property tax rates
 among cities across the nation, according to the Lincoln Institute and the
-Minnesota Center for Fiscal Excellence.<a href="#_ftn12" name="_ftnref12"
-title=""><span class=MsoFootnoteReference><span class=MsoFootnoteReference><span
-style='font-size:12.0pt;line-height:115%;font-family:"Garamond Premr Pro Med",serif'>[12]</span></span></span></a></p>
+Minnesota Center for Fiscal Excellence.<a href="#_ftn13" name="_ftnref13"
+title=""><sup><sup><span style='font-size:12.0pt;line-height:115%;font-family:
+"Garamond Premr Pro Med",serif'>[13]</span></sup></sup></a></p>
 
 <p class=MsoNormal>But treating commercial and residential properties
 differently when conducting assessments is hardly unique to Cook County.
@@ -1682,14 +1765,11 @@ exemption, which reduces tax bills on primary residences.</p>
 <p class=MsoNormal>It’s worth noting that in recent years, investigators and
 analysts at the <a
 href="https://www.chicagotribune.com/investigations/ct-tax-divide-investigation-20180425-storygallery.html">Chicago
-Tribune</a><a href="#_ftn13" name="_ftnref13" title=""><span
-class=MsoFootnoteReference><span class=MsoFootnoteReference><span
-style='font-size:12.0pt;line-height:115%;font-family:"Garamond Premr Pro Med",serif'>[13]</span></span></span></a><span
-class=MsoFootnoteReference> </span>and <a
-href="https://papers.ssrn.com/sol3/papers.cfm?abstract_id=3800536">University
-of Chicago</a><a href="#_ftn14" name="_ftnref14" title=""><span
-class=MsoFootnoteReference><span class=MsoFootnoteReference><span
-style='font-size:12.0pt;line-height:115%;font-family:"Garamond Premr Pro Med",serif'>[14]</span></span></span></a>,
+Tribune</a><a href="#_ftn14" name="_ftnref14" title=""><sup><sup><span
+style='font-size:12.0pt;line-height:115%;font-family:"Garamond Premr Pro Med",serif'>[14]</span></sup></sup></a><sup>
+</sup>and <a href="https://papers.ssrn.com/sol3/papers.cfm?abstract_id=3800536">University
+of Chicago</a><a href="#_ftn15" name="_ftnref15" title=""><sup><sup><span
+style='font-size:12.0pt;line-height:115%;font-family:"Garamond Premr Pro Med",serif'>[15]</span></sup></sup></a><sup>,</sup>
 among others, have determined that assessments in Cook County and across the
 nation tend to overvalue lower-priced properties, particularly in Black
 neighborhoods, and undervalue higher-priced homes, typically in predominantly
@@ -1698,7 +1778,7 @@ regressive and inequitable property tax system that harms the poor.</p>
 
 <p class=MsoNormal align=center style='text-align:center'><span
 class=StyleCentered><img border=0 width=343 height=411 id="Picture 4605"
-src="primer_files/image019.png"></span></p>
+src="primer_files/image020.png"></span></p>
 
 <p class=MsoCaption align=center style='text-align:center'>Figure 5:
 Chicago Tribune Article from June 10, 2017, Part of a Four-Part Investigation
@@ -1732,18 +1812,18 @@ assessments rise.</p>
 
 <p class=MsoNormal>Other potential assessment reductions for various types of
 property are included in Appendix I. A fuller list, including assessment
-reductions for some open space, can be found in the Illinois Department of
-Revenue’s <a
+reductions for some open space, can be found in the Illinois Department of Revenue’s
+<a
 href="https://www2.illinois.gov/rev/research/publications/Documents/localgovernment/ptax-1004.pdf/"><span
 style='color:windowtext'>Guide to the Illinois Property Tax System</span></a><a
-href="#_ftn15" name="_ftnref15" title=""><span class=MsoFootnoteReference><span
+href="#_ftn16" name="_ftnref16" title=""><span class=MsoFootnoteReference><span
 class=MsoFootnoteReference><span style='font-size:12.0pt;line-height:115%;
-font-family:"Garamond Premr Pro Med",serif'>[15]</span></span></span></a>.</p>
+font-family:"Garamond Premr Pro Med",serif'>[16]</span></span></span></a>.</p>
 
 <div style='border:solid #F8F8F8 3.0pt;padding:0in 0in 0in 0in;background:#F8F8F8'>
 
-<h2><a name="_Toc126910187"><img border=0 width=58 height=58 id="Graphic 153"
-src="primer_files/image020.png">  <span class=Raised>Step 2 — Appeals</span></a></h2>
+<h2><img border=0 width=58 height=58 id="Graphic 153"
+src="primer_files/image021.png">  <span class=Raised>Step 2 — Appeals</span></h2>
 
 </div>
 
@@ -1764,7 +1844,7 @@ appeal with the county <b>Board of Review</b>.</p>
 
 <p class=MsoNormal align=center style='text-align:center;page-break-after:avoid'><span
 class=StyleCentered><img border=0 width=570 height=193 id="Picture 37530710"
-src="primer_files/image021.png"></span></p>
+src="primer_files/image022.png"></span></p>
 
 <p class=MsoCaption>Figure 6: Diagram of the property tax appeals process in
 Illinois</p>
@@ -1778,22 +1858,22 @@ the taxes based on the contested assessment while the appeal is pending.</p>
 
 <p class=MsoNormal>It’s also important to note that studies in the <a
 href="https://apps.chicagotribune.com/news/watchdog/cook-county-property-tax-divide/appeals.html">press</a><a
-href="#_ftn16" name="_ftnref16" title=""><span class=MsoFootnoteReference><span
-style='color:#5F5F5F'><span class=MsoFootnoteReference><span style='font-size:
-12.0pt;line-height:115%;font-family:"Garamond Premr Pro Med",serif;color:#5F5F5F'>[16]</span></span></span></span></a>
-and <a
-href="https://www.semanticscholar.org/paper/The-Impact-of-Property-Tax-Appeals-on-Vertical-in-%2C-Ross/9a0d153dc8db7fb8716891a7166cf4792caff672">academia</a><a
 href="#_ftn17" name="_ftnref17" title=""><span class=MsoFootnoteReference><span
 style='color:#5F5F5F'><span class=MsoFootnoteReference><span style='font-size:
 12.0pt;line-height:115%;font-family:"Garamond Premr Pro Med",serif;color:#5F5F5F'>[17]</span></span></span></span></a>
+and <a
+href="https://www.semanticscholar.org/paper/The-Impact-of-Property-Tax-Appeals-on-Vertical-in-%2C-Ross/9a0d153dc8db7fb8716891a7166cf4792caff672">academia</a><a
+href="#_ftn18" name="_ftnref18" title=""><span class=MsoFootnoteReference><span
+style='color:#5F5F5F'><span class=MsoFootnoteReference><span style='font-size:
+12.0pt;line-height:115%;font-family:"Garamond Premr Pro Med",serif;color:#5F5F5F'>[18]</span></span></span></span></a>
 have concluded that the appeals process often makes the property tax system
 more regressive, given that wealthier property owners typically have greater
 wherewithal to file successful appeals.</p>
 
 <div style='border:solid #F8F8F8 3.0pt;padding:0in 0in 0in 0in;background:#F8F8F8'>
 
-<h2><a name="_Toc126910188"><img border=0 width=58 height=58 id="Graphic 154"
-src="primer_files/image022.png">  <span class=Raised>Step 3 — Equalization</span></a></h2>
+<h2><img border=0 width=58 height=58 id="Graphic 154"
+src="primer_files/image023.png">  <span class=Raised>Step 3 — Equalization</span></h2>
 
 </div>
 
@@ -1846,14 +1926,12 @@ residential property is assessed at 10%, and commercial and industrial
 properties are assessed at 25%. And, historically, Cook County has tended to
 undervalue its properties as a whole.</span></p>
 
-<p class=TableTitle>Cook County Equalization Factors</p>
+<p class=MsoNormal><img border=0 width=497 height=308 id="Graphic 111"
+src="primer_files/image024.png"></p>
 
-<p class=MsoNormal><img border=0 width=497 height=292 id="Graphic 111"
-src="primer_files/image023.png"></p>
-
-<p class=MsoCaption>Figure 7: Cook County Equalization Factors from 2000 to
-2020 (Source: Taxpayers’ Federation of Illinois.
-https://www.illinoistax.org/index.php/cook-county-property-tax-deja-vu-multiplier-up-homeowners-share-down-mike-klemens/</p>
+<p class=MsoNormal><img border=0 width=497 height=50
+src="primer_files/image025.png"
+alt="Figure 7: Cook County Equalization Factors from 2000 to 2020 (Source: Taxpayers’ Federation of Illinois. https://www.illinoistax.org/index.php/cook-county-property-tax-deja-vu-multiplier-up-homeowners-share-down-mike-klemens/"></p>
 
 <p class=MsoNormal><span style='line-height:115%'>As a result, bringing the
 overall assessment level in Cook up to 33&nbsp;⅓% requires that they be
@@ -1862,8 +1940,8 @@ Cook has been at least 2, and sometimes higher than 3.</span></p>
 
 <div style='border:solid #F8F8F8 3.0pt;padding:0in 0in 0in 0in;background:#F8F8F8'>
 
-<h2><a name="_Toc126910189"><img border=0 width=58 height=58 id="Graphic 155"
-src="primer_files/image024.png">  <span class=Raised>Step 4 — Setting the Levy</span></a></h2>
+<h2><img border=0 width=58 height=58 id="Graphic 155"
+src="primer_files/image026.png">  <span class=Raised>Step 4 — Setting the Levy</span></h2>
 
 </div>
 
@@ -1909,9 +1987,9 @@ set their levies, the levy amounts are sent to the County Clerk.</p>
 
 <div style='border:solid #F8F8F8 3.0pt;padding:0in 0in 0in 0in;background:#F8F8F8'>
 
-<h2><a name="_Toc126910190"><img border=0 width=58 height=58 id="Graphic 156"
-src="primer_files/image025.png">  <span class=Raised>Step 5 — Extending the
-Levy</span></a></h2>
+<h2><img border=0 width=58 height=58 id="Graphic 156"
+src="primer_files/image027.png">  <span class=Raised>Step 5 — Extending the
+Levy</span></h2>
 
 </div>
 
@@ -1931,9 +2009,9 @@ applies the exemptions.</p>
   <td width=510 valign=top style='width:382.25pt;border-top:solid windowtext 1.0pt;
   border-left:none;border-bottom:solid windowtext 1.0pt;border-right:none;
   padding:0in 0in 0in 5.75pt'>
-  <p class=MsoNormal><a name="_Hlk102317801"></a><span
+  <p class=MsoNormal style='margin-bottom:12.0pt'><a name="_Hlk102317801"></a><span
   style='font-size:12.0pt;line-height:115%;font-family:"Calibri",sans-serif'><img
-  width=624 height=59 src="primer_files/image026.png"></span></p>
+  width=624 height=59 src="primer_files/image028.png"></span></p>
   </td>
  </tr>
 </table>
@@ -1954,9 +2032,9 @@ multiplied to raise the funds sought by the taxing district: </p>
   <td width=390 valign=top style='width:292.25pt;border-top:solid windowtext 1.0pt;
   border-left:none;border-bottom:solid windowtext 1.0pt;border-right:none;
   padding:0in 5.4pt 0in 5.4pt'>
-  <p class=MsoNormal><span
+  <p class=MsoNormal style='margin-bottom:12.0pt'><span
   style='font-size:12.0pt;line-height:115%;font-family:"Calibri",sans-serif'><img
-  width=368 height=58 src="primer_files/image027.png"></span></p>
+  width=368 height=58 src="primer_files/image029.png"></span></p>
   </td>
  </tr>
 </table>
@@ -1981,9 +2059,9 @@ of each property to determine the amount of tax owed: </p>
   <td width=600 valign=top style='width:449.75pt;border-top:solid windowtext 1.0pt;
   border-left:none;border-bottom:solid windowtext 1.0pt;border-right:none;
   padding:0in 5.4pt 0in 5.4pt'>
-  <p class=MsoNormal><span
+  <p class=MsoNormal style='margin-bottom:12.0pt'><span
   style='font-size:12.0pt;line-height:115%;font-family:"Calibri",sans-serif'><img
-  width=560 height=38 src="primer_files/image028.png"></span></p>
+  width=560 height=38 src="primer_files/image030.png"></span></p>
   </td>
  </tr>
 </table>
@@ -1994,9 +2072,9 @@ of each property to determine the amount of tax owed: </p>
 
 <div style='border:solid #F8F8F8 3.0pt;padding:0in 0in 0in 0in;background:#F8F8F8'>
 
-<h2 style='background:#F8F8F8'><a name="_Toc126910191"><img border=0 width=58
-height=58 id="Graphic 157" src="primer_files/image029.png">  <span
-class=Raised>Step 6 — Collection and Distribution</span></a></h2>
+<h2 style='background:#F8F8F8'><img border=0 width=58 height=58 id="Graphic 157"
+src="primer_files/image031.png">  <span class=Raised>Step 6 — Collection and
+Distribution</span></h2>
 
 </div>
 
@@ -2007,14 +2085,14 @@ is being billed by the governments that serve them.</p>
 <p class=MsoNormal>The bills are mailed in two installments.</p>
 
 <p class=MsoNormal><img border=0 width=602 height=499 id="Picture 27"
-src="primer_files/image030.jpg"></p>
+src="primer_files/image032.jpg"></p>
 
 <p class=MsoNormal>In Cook County, the first installment is typically due on
 March 1. This bill also includes a breakdown of local government debt and
 unfunded liabilities.</p>
 
 <p class=MsoNormal><img border=0 width=552 height=470 id="Picture 4443"
-src="primer_files/image031.jpg"></p>
+src="primer_files/image033.jpg"></p>
 
 <p class=MsoCaption align=center style='text-align:center'>Figure 9:
 Section of a first installment Cook County property tax bill</p>
@@ -2031,7 +2109,7 @@ the taxes are calculated.</p>
  </tr>
  <tr>
   <td></td>
-  <td><img width=534 height=0 src="primer_files/image032.png"></td>
+  <td><img width=534 height=0 src="primer_files/image034.png"></td>
  </tr>
 </table>
 
@@ -2052,10 +2130,11 @@ money continues to come in. In Cook County, taxes and interest earned are
 required to be disbursed starting on June 1 and the first day of each month
 thereafter, but the Cook County Treasurer distributes funds as they come in.</p>
 
-<p class=TableTitle>Collection and Distribution </p>
+<p class=Hero align=center style='text-align:center'>Collection and
+Distribution </p>
 
-<p class=MsoNormal><img border=0 width=612 height=222 id="Picture 57"
-src="primer_files/image033.png"></p>
+<p class=Hero align=center style='text-align:center'><img border=0 width=612
+height=222 id="Picture 57" src="primer_files/image035.png"></p>
 
 <p class=MsoCaption align=center style='text-align:center'>Figure 11:
 The Treasurer is responsible for the collection and distribution of county
@@ -2063,9 +2142,9 @@ funds</p>
 
 <div style='border:solid #F8F8F8 3.0pt;padding:0in 0in 0in 0in;background:#F8F8F8'>
 
-<h2><a name="_Toc126910192"><img border=0 width=58 height=58 id="Graphic 158"
-src="primer_files/image034.png">  <span class=Raised>Step 7 — Payment
-Enforcement</span></a></h2>
+<h2><img border=0 width=58 height=58 id="Graphic 158"
+src="primer_files/image036.png">  <span class=Raised>Step 7 — Payment
+Enforcement</span></h2>
 
 </div>
 
@@ -2085,7 +2164,7 @@ penalties, and a lien is placed on the property for the paid amount.</p>
 
 <p class=MsoNormal align=center style='text-align:center'><span
 class=StyleCentered><img border=0 width=480 height=408 id="Picture 13"
-src="primer_files/image035.png"></span></p>
+src="primer_files/image037.png"></span></p>
 
 <p class=MsoCaption align=center style='text-align:center'>Figure 12:
 Diagram of the process and penalties accrued when a tax buyer purchases a tax
@@ -2104,10 +2183,10 @@ months to redeem their taxes.</p>
 to extend the redemption period to a maximum of three years.</p>
 
 <p class=MsoNormal>The interest rate charged by the tax buyer on properties is
-applied every six months — meaning a hypothetical bid of 3% would rise to 6%
-after six months, 9% after a year and so on. In the majority of cases, that
-increase is meaningless, because tax buyers more often than not submit 0%
-interest bids, figuring they’ll make a profit later in the process.</p>
+applied every six months — meaning a hypothetical bid of 3% would rise to 6% after
+six months, 9% after a year and so on. In the majority of cases, that increase
+is meaningless, because tax buyers more often than not submit 0% interest bids,
+figuring they’ll make a profit later in the process.</p>
 
 <p class=MsoNormal>A tax buyer also has the right to pay property taxes billed
 after the sale if the property owner fails to pay the next tax installment on
@@ -2126,7 +2205,7 @@ continue not to be paid.</p>
 
 <p class=MsoNormal align=center style='text-align:center'><span
 class=StyleCentered><img border=0 width=442 height=336 id="Picture 15"
-src="primer_files/image036.png"></span></p>
+src="primer_files/image038.png"></span></p>
 
 <p class=MsoCaption align=center style='text-align:center'>Figure 13:
 Diagram of the penalties accrued by forfeited tax lien properties</p>
@@ -2140,23 +2219,23 @@ also are conducted by the Cook County Treasurer.</p>
 
 <p class=MsoNormal align=center style='text-align:center;page-break-after:avoid'><span
 class=StyleCentered><img border=0 width=340 height=368 id="Picture 11"
-src="primer_files/image037.png"></span></p>
+src="primer_files/image039.png"></span></p>
 
 <p class=MsoCaption align=center style='text-align:center'>Figure 14:
 Diagram of the &quot;Go to Deed&quot; process following a scavenger sale</p>
 
 <p class=MsoNormal>A Pappas Study found that the Scavenger Sale <a
 href="https://www.cookcountytreasurer.com/scavengersalestudy.aspx">failed in
-its mission to return properties to productive use</a><a href="#_ftn18"
-name="_ftnref18" title=""><span class=MsoFootnoteReference><span
-style='color:#5F5F5F'><span class=MsoFootnoteReference><span style='font-size:
-12.0pt;line-height:115%;font-family:"Garamond Premr Pro Med",serif;color:#5F5F5F'>[18]</span></span></span></span></a>,
-and a subsequent study by the University of Chicago <a
-href="https://harris.uchicago.edu/news-events/news/center-municipal-finance-releases-comprehensive-independent-analysis-cook-county">drew
-much the same conclu</a><span class=MsoHyperlink>sion</span><a href="#_ftn19"
+its mission to return properties to productive use</a><a href="#_ftn19"
 name="_ftnref19" title=""><span class=MsoFootnoteReference><span
 style='color:#5F5F5F'><span class=MsoFootnoteReference><span style='font-size:
-12.0pt;line-height:115%;font-family:"Garamond Premr Pro Med",serif;color:#5F5F5F'>[19]</span></span></span></span></a>.</p>
+12.0pt;line-height:115%;font-family:"Garamond Premr Pro Med",serif;color:#5F5F5F'>[19]</span></span></span></span></a>,
+and a subsequent study by the University of Chicago <a
+href="https://harris.uchicago.edu/news-events/news/center-municipal-finance-releases-comprehensive-independent-analysis-cook-county">drew
+much the same conclu</a><span class=MsoHyperlink>sion</span><a href="#_ftn20"
+name="_ftnref20" title=""><span class=MsoFootnoteReference><span
+style='color:#5F5F5F'><span class=MsoFootnoteReference><span style='font-size:
+12.0pt;line-height:115%;font-family:"Garamond Premr Pro Med",serif;color:#5F5F5F'>[20]</span></span></span></span></a>.</p>
 
 <p class=MsoNormal><span style='line-height:115%'>A </span><a
 href="https://www.cookcountytreasurer.com/scavengersalestudymapsofinequality.aspx"><span
@@ -2180,7 +2259,7 @@ bids. Private buyers must pay future taxes on the property to keep open their
 option to eventually go to deed.</p>
 
 <p class=MsoNormal style='page-break-after:avoid'><img border=0 width=625
-height=350 id="Picture 2" src="primer_files/image038.png"></p>
+height=350 id="Picture 2" src="primer_files/image040.png"></p>
 
 <p class=MsoCaption align=center style='text-align:center'>Figure 15:
 2022 Scavenger Property Sale at Navy Pier</p>
@@ -2192,12 +2271,12 @@ buyers can go to deed after six months.</p>
 
 <div style='border:solid #F8F8F8 3.0pt;padding:0in 0in 0in 0in;background:#F8F8F8'>
 
-<h2><a name="_Toc126910193">The Cycle Starts Over</a></h2>
+<h2>The Cycle Starts Over</h2>
 
 </div>
 
 <p class=MsoNormal><img border=0 width=241 height=240 id="Graphic 3"
-src="primer_files/image039.jpg"></p>
+src="primer_files/image041.jpg"></p>
 
 <p class=MsoNormal>Once the bills have gone out and the vast majority of
 property owners have paid, the cycle starts over with the assessor moving on to
@@ -2206,13 +2285,13 @@ an annual process.</p>
 
 <div style='border:none;border-bottom:solid #DDDDDD 6.0pt;padding:0in 0in 1.0pt 0in'>
 
-<h1><a name="_Toc126910194">Appendix</a></h1>
+<h1>Appendix</h1>
 
 </div>
 
 <div style='border:none;border-top:solid #DDDDDD 1.0pt;padding:2.0pt 0in 0in 0in'>
 
-<h3><a name="_Toc126910195">Additional Exemptions &amp; Forms of Tax Relief</a></h3>
+<h3>Additional Exemptions &amp; Forms of Tax Relief</h3>
 
 </div>
 
@@ -2220,10 +2299,11 @@ an annual process.</p>
 
 <p class=MsoNormal> – This exemption is available to homeowners with a
 household income of $100,000 or less who have lived in the home for 10
-continuous years, or five years if the homeowner received government or nonprofit
-assistance to purchase the home. When this is granted, annual increases in
-assessed value are limited to 7% for households with income of $75,000 or less
-and 10% for households with income higher than $75,000 but less than $100,000.</p>
+continuous years, or five years if the homeowner received government or
+nonprofit assistance to purchase the home. When this is granted, annual
+increases in assessed value are limited to 7% for households with income of
+$75,000 or less and 10% for households with income higher than $75,000 but less
+than $100,000.</p>
 
 <h4>Standard Homestead Exemption for Veterans with Disabilities</h4>
 
@@ -2279,10 +2359,10 @@ damaged. The exemption continues until the property is sold or transferred.</p>
 <h4><a name="_historic">Historic Residence Property Tax Assessment Freeze</a></h4>
 
 <p class=MsoNormal> – This exemption is available to owners of homes that are
-certified as historic residences when the owner rehabilitates the home. This
-exemption freezes the assessment at the level where it stood before
-rehabilitation for eight years, then ramps it up to actual fair cash value over
-the next four years.</p>
+certified as historic residences when the owner rehabilitates the home. This exemption
+freezes the assessment at the level where it stood before rehabilitation for
+eight years, then ramps it up to actual fair cash value over the next four
+years.</p>
 
 <h4>Full Exemptions for Religious, Charitable or Educational Organizations</h4>
 
@@ -2300,7 +2380,7 @@ several years.</p>
 
 <div style='border:solid #F8F8F8 3.0pt;padding:0in 0in 0in 0in;background:#F8F8F8'>
 
-<h2><a name="_Toc126910196">Additional Sources</a></h2>
+<h2>Additional Sources</h2>
 
 </div>
 
@@ -2329,14 +2409,14 @@ Dignity Taking,” by University of Virginia Professor Andrew Kahrl: &lt;<a
 href="https://scholarship.kentlaw.iit.edu/cklawreview/vol92/iss3/11/">https://scholarship.kentlaw.iit.edu<span
 style='font-family:"Times New Roman",serif'>‌</span>/cklawreview/vol92/iss3/11/</a>&gt;</p>
 
-<p class=MsoNormal>“The Assessment Gap: Racial Inequalities in Property Taxation,”
-by Carlos Avenancio-León, Indiana University, and Troup Howard, University of
-California, Berkeley: &lt; <a
+<p class=MsoNormal>“The Assessment Gap: Racial Inequalities in Property
+Taxation,” by Carlos Avenancio-León, Indiana University, and Troup Howard,
+University of California, Berkeley: &lt; <a
 href="https://equitablegrowth.org/working-papers/the-assessment-gap-racial-inequalities-in-property-taxation/">https://equitablegrowth.org/working-papers/the-assessment-gap-racial-inequalities-in-property-taxation/</a>&gt;</p>
 
-<p class=MsoNormal>“Estimating Property Tax Shifting Due to Regressive
-Assessments,” by Professor Christopher Berry of the University of Chicago
-Harris School of Public Policy. &lt; <a
+<p class=MsoNormal>“Estimating Property Tax Shifting Due to Regressive Assessments,”
+by Professor Christopher Berry of the University of Chicago Harris School of
+Public Policy. &lt; <a
 href="https://cpb-us-w2.wpmucdn.com/voices.uchicago.edu/dist/6/2330/files/2020/02/Tax-Shifting-Due-to-Regressive-Assessments.pdf">https://cpb-us-w2.wpmucdn.com/voices.uchicago.edu/dist/6/2330/files/2020/02/Tax-Shifting-Due-to-Regressive-Assessments.pdf</a>
 &gt;</p>
 
@@ -2347,85 +2427,99 @@ href="https://www.nytimes.com/2021/04/03/opinion/sunday/property-taxes-housing-a
 
 <div style='border:none;border-bottom:solid #DDDDDD 6.0pt;padding:0in 0in 1.0pt 0in'>
 
-<h1><a name="_Toc126910197">References</a></h1>
+<h1>References</h1>
 
 </div>
 
-<p class=MsoBibliography>Berry, Christopher R. 2021. Reassessing the Property
-Tax.</p>
+<p class=MsoBibliography style='margin-left:.5in;text-indent:-.5in'>Berry, Christopher R. 2021. <i>Reassessing the Property Tax.</i></p>
 
-<p class=MsoBibliography>Berry, Christopher, Bernadette Atuahene, Dan Black,
-Anthony Fowler, Alexander Fouirnaies, Joshua Gottleib, Robert Inman, et al.
-2021. &quot;Reassessing the Property Tax.&quot; Chicago.
+<p class=MsoBibliography style='margin-left:.5in;text-indent:-.5in'>Berry,
+Christopher, Bernadette Atuahene, Dan Black, Anthony Fowler, Alexander
+Fouirnaies, Joshua Gottleib, Robert Inman, et al. 2021. &quot;Reassessing the
+Property Tax.&quot; Chicago.
 www.census.gov/data/datasets/2016/econ/local/public-use-datasets.html.</p>
 
-<p class=MsoBibliography>Brown, P K, and M A Hepworth. 2002. &quot;A Study of
-European Land Tax Systems Second Year Report Lincoln Institute of Land Policy
-Working Paper.&quot;</p>
+<p class=MsoBibliography style='margin-left:.5in;text-indent:-.5in'>Brown, P K,
+and M A Hepworth. 2002. &quot;A Study of European Land Tax Systems Second Year
+Report Lincoln Institute of Land Policy Working Paper.&quot;</p>
 
-<p class=MsoBibliography>Carlos, Avenancio-León, Howard Troup, Carlos
-Avenancio-León, Troup Howard, Abhay Aneja, Steve Cicala, Hilary Hoynes, et al.
-2000. &quot;Working paper series The Assessment Gap: Racial Inequalities in
-Property Taxation https://equitablegrowth.org/working-papers/the-assessment-gap-racial-inequalities-in-property-taxation/
+<p class=MsoBibliography style='margin-left:.5in;text-indent:-.5in'>Carlos,
+Avenancio-León, Howard Troup, Carlos Avenancio-León, Troup Howard, Abhay Aneja,
+Steve Cicala, Hilary Hoynes, et al. 2000. &quot;Working paper series The
+Assessment Gap: Racial Inequalities in Property Taxation
+https://equitablegrowth.org/working-papers/the-assessment-gap-racial-inequalities-in-property-taxation/
 The Assessment Gap: Racial Inequalities in Property Taxation.&quot;
 https://equitablegrowth.org/working-papers/the-assessment-gap-.</p>
 
-<p class=MsoBibliography>Coalition for Affordable Homes. n.d. &quot;Compounding
-Debt Race, Affordability, and NYC's Tax Lien Sale.&quot;</p>
+<p class=MsoBibliography style='margin-left:.5in;text-indent:-.5in'>Coalition
+for Affordable Homes. n.d. &quot;Compounding Debt Race, Affordability, and
+NYC's Tax Lien Sale.&quot;</p>
 
-<p class=MsoBibliography>Housing Action Illinois. 2010. &quot;RACIAL
-DISPARITIES AND COOK COUNTY TAX SALE EVICTIONS.&quot;</p>
+<p class=MsoBibliography style='margin-left:.5in;text-indent:-.5in'>Housing
+Action Illinois. 2010. &quot;RACIAL DISPARITIES AND COOK COUNTY TAX SALE
+EVICTIONS.&quot;</p>
 
-<p class=MsoBibliography>Illinois Department of Revenue. n.d. &quot;PTAX 1-M,
-Introduction to Mapping for Assessors.&quot; Springfield, IL.</p>
+<p class=MsoBibliography style='margin-left:.5in;text-indent:-.5in'>Illinois
+Department of Revenue. n.d. &quot;PTAX 1-M, Introduction to Mapping for
+Assessors.&quot; Springfield, IL.</p>
 
-<p class=MsoBibliography>Illinois Department of Revenue. 2020. &quot;The
-Illinois Property Tax System.&quot;
+<p class=MsoBibliography style='margin-left:.5in;text-indent:-.5in'>Illinois
+Department of Revenue. 2020. &quot;The Illinois Property Tax System.&quot;
 https://www2.illinois.gov/rev/research/publications/Documents/localgovernment/ptax-1004.pdf.</p>
 
-<p class=MsoBibliography>Illinois State Statutes. n.d. &quot;(35 ILCS 200/)
-Property Tax Code.&quot; Illinois Compiled Statutes (ILCS).
+<p class=MsoBibliography style='margin-left:.5in;text-indent:-.5in'>Illinois
+State Statutes. n.d. &quot;(35 ILCS 200/) Property Tax Code.&quot; <i>Illinois
+Compiled Statutes (ILCS).</i>
 https://www.ilga.gov/legislation/ilcs/ilcs5.asp?ActID=596&amp;ChapterID=8.</p>
 
-<p class=MsoBibliography>Institute of Land Policy, Lincoln, and Minnesota
-Center for Fiscal Excellence. 2015. &quot;50-State Property Tax Comparison
-Study.&quot;</p>
+<p class=MsoBibliography style='margin-left:.5in;text-indent:-.5in'>Institute
+of Land Policy, Lincoln, and Minnesota Center for Fiscal Excellence. 2015. &quot;50-State
+Property Tax Comparison Study.&quot;</p>
 
-<p class=MsoBibliography>Kahrl, Andrew W. n.d. &quot;Chicago-Kent Law Review
-Chicago-Kent Law Review Volume 92 Issue 3 Dignity Takings and Dignity
-Restoration Unconscionable: Tax Delinquency Sales as a Form of Dignity
-Unconscionable: Tax Delinquency Sales as a Form of Dignity Taking Taking.&quot;
+<p class=MsoBibliography style='margin-left:.5in;text-indent:-.5in'>Kahrl,
+Andrew W. n.d. &quot;Chicago-Kent Law Review Chicago-Kent Law Review Volume 92
+Issue 3 Dignity Takings and Dignity Restoration Unconscionable: Tax Delinquency
+Sales as a Form of Dignity Unconscionable: Tax Delinquency Sales as a Form of
+Dignity Taking Taking.&quot;
 https://scholarship.kentlaw.iit.edu/cklawreviewhttps://scholarship.kentlaw.iit.edu/cklawreview/vol92/iss3/11.</p>
 
-<p class=MsoBibliography>Lincoln Institute of Land Policy. 2022.
-&quot;State-by-State Property Tax at a Glance.&quot;</p>
+<p class=MsoBibliography style='margin-left:.5in;text-indent:-.5in'>Lincoln
+Institute of Land Policy. 2022. &quot;State-by-State Property Tax at a
+Glance.&quot;</p>
 
-<p class=MsoBibliography>NEA Research. 2021. &quot;Rankings of the States 2020
-and Estimates of School Statistics 2021 NEA Research.&quot;</p>
+<p class=MsoBibliography style='margin-left:.5in;text-indent:-.5in'>NEA
+Research. 2021. &quot;Rankings of the States 2020 and Estimates of School
+Statistics 2021 NEA Research.&quot;</p>
 
-<p class=MsoBibliography>Schmidt, Maxwell. 2021. &quot;Cook County Scavenger
-Sale Evaluation.&quot; https://harris.uchicago.edu/files/scavenger_sale.pdf.</p>
+<p class=MsoBibliography style='margin-left:.5in;text-indent:-.5in'>Schmidt,
+Maxwell. 2021. &quot;Cook County Scavenger Sale Evaluation.&quot;
+https://harris.uchicago.edu/files/scavenger_sale.pdf.</p>
 
-<p class=MsoBibliography>The Pappas Studies. 2020. &quot;Scavenger Study.&quot;</p>
+<p class=MsoBibliography style='margin-left:.5in;text-indent:-.5in'>The Pappas
+Studies. 2020. &quot;Scavenger Study.&quot;</p>
 
-<p class=MsoBibliography>The Pew Charitable Trusts. 2021. How Local Governments
-Raise Their Tax Dollars. https://www.pewtrusts.org/en/research-and-analysis/data-visualizations/2021/how-local-governments-raise-their-tax-dollars.</p>
-
-<p class=MsoBibliography>—. 2021. &quot;How Local Governments Raise Their Tax
-Dollars.&quot; The Pew Charitable Trusts. July 27.
+<p class=MsoBibliography style='margin-left:.5in;text-indent:-.5in'>The Pew
+Charitable Trusts. 2021. <i>How Local Governments Raise Their Tax Dollars.</i>
 https://www.pewtrusts.org/en/research-and-analysis/data-visualizations/2021/how-local-governments-raise-their-tax-dollars.</p>
 
-<p class=MsoBibliography>The Pew Charitable Trusts. 2021. How Local Governments
-Raise Their Tax Dollars. July 27.</p>
+<p class=MsoBibliography style='margin-left:.5in;text-indent:-.5in'>—. 2021.
+&quot;How Local Governments Raise Their Tax Dollars.&quot; <i>The Pew
+Charitable Trusts.</i> July 27.
+https://www.pewtrusts.org/en/research-and-analysis/data-visualizations/2021/how-local-governments-raise-their-tax-dollars.</p>
 
-<p class=MsoBibliography>William, Christopher Berry, and Alicia Townsend
-Freidman. n.d. &quot;Estimating Property Tax Shifting.&quot;</p>
+<p class=MsoBibliography style='margin-left:.5in;text-indent:-.5in'>The Pew
+Charitable Trusts. 2021. <i>How Local Governments Raise Their Tax Dollars.</i>
+July 27.</p>
 
-<p class=MsoBibliography>&nbsp;</p>
+<p class=MsoBibliography style='margin-left:.5in;text-indent:-.5in'>William,
+Christopher Berry, and Alicia Townsend Freidman. n.d. &quot;Estimating Property
+Tax Shifting.&quot;</p>
+
+<p class=MsoBibliography style='margin-left:.5in;text-indent:-.5in'>&nbsp;</p>
 
 <div style='border:none;border-bottom:solid #DDDDDD 6.0pt;padding:0in 0in 1.0pt 0in'>
 
-<h1><a name="_Toc126910198">Glossary</a></h1>
+<h1>Glossary</h1>
 
 </div>
 
@@ -2686,159 +2780,15 @@ taxes, a term also applied the local government levying those taxes.</p>
 <h4>Treasurer </h4>
 
 <p class=MsoNormal>– The county official who prepares tax bills, mails them,
-collects property taxes and conducts tax lien sales on properties that are property
-tax delinquent.</p>
+collects property taxes and conducts tax lien sales on properties that are
+property tax delinquent.</p>
 
 <h4>Unfunded Liability </h4>
 
 <p class=MsoNormal>– The amount that a pension or other pension plan falls
 short of what’s needed to pay out future promised benefits.</p>
 
-<div style='border:none;border-bottom:solid #DDDDDD 6.0pt;padding:0in 0in 1.0pt 0in'>
-
-<p class=MsoTocHeading>Table of Contents</p>
-
-</div>
-
-<p class=MsoToc1><span
-class=MsoHyperlink><a href="#_Toc126910175">Introduction<span style='color:
-windowtext;display:none;text-decoration:none'>   </span><span style='color:windowtext;display:none;text-decoration:none'>1</span></a></span></p>
-
-<p class=MsoToc1><span class=MsoHyperlink><a href="#_Toc126910176">Offices
-Involved in Property Taxation<span style='color:windowtext;display:none;
-text-decoration:none'>   </span><span
-style='color:windowtext;display:none;text-decoration:none'>8</span></a></span></p>
-
-<p class=MsoToc3><span class=MsoHyperlink><a href="#_Toc126910177">Cook County
-Clerk, Recorder of Deeds Division<span style='color:windowtext;display:none;
-text-decoration:none'>  </span><span
-style='color:windowtext;display:none;text-decoration:none'>8</span></a></span></p>
-
-<p class=MsoToc3><span class=MsoHyperlink><a href="#_Toc126910178">Cook County
-Assessor<span style='color:windowtext;display:none;text-decoration:none'>  </span><span
-style='color:windowtext;display:none;text-decoration:none'>8</span></a></span></p>
-
-<p class=MsoToc3><span class=MsoHyperlink><a href="#_Toc126910179">Cook County
-Board of Review<span style='color:windowtext;display:none;text-decoration:none'>   </span><span
-style='color:windowtext;display:none;text-decoration:none'>8</span></a></span></p>
-
-<p class=MsoToc3><span class=MsoHyperlink><a href="#_Toc126910180">Illinois Property
-Tax Appeal Board<span style='color:windowtext;display:none;text-decoration:
-none'>  </span><span
-style='color:windowtext;display:none;text-decoration:none'>8</span></a></span></p>
-
-<p class=MsoToc3><span class=MsoHyperlink><a href="#_Toc126910181">Illinois
-Department of Revenue<span style='color:windowtext;display:none;text-decoration:
-none'>  </span><span
-style='color:windowtext;display:none;text-decoration:none'>8</span></a></span></p>
-
-<p class=MsoToc3><span class=MsoHyperlink><a href="#_Toc126910182">Local
-Governments-Taxing Districts<span style='color:windowtext;display:none;
-text-decoration:none'>  </span><span
-style='color:windowtext;display:none;text-decoration:none'>9</span></a></span></p>
-
-<p class=MsoToc3><span class=MsoHyperlink><a href="#_Toc126910183">Cook County
-Clerk, Property Tax Division<span style='color:windowtext;display:none;
-text-decoration:none'>  </span><span
-style='color:windowtext;display:none;text-decoration:none'>9</span></a></span></p>
-
-<p class=MsoToc3><span class=MsoHyperlink><a href="#_Toc126910184">Cook County
-Treasurer<span style='color:windowtext;display:none;text-decoration:none'>  </span><span
-style='color:windowtext;display:none;text-decoration:none'>9</span></a></span></p>
-
-<p class=MsoToc1><span class=MsoHyperlink><a href="#_Toc126910185">The Cook
-County Property Tax Process<span style='color:windowtext;display:none;
-text-decoration:none'>  </span><span
-style='color:windowtext;display:none;text-decoration:none'>10</span></a></span></p>
-
-<p class=MsoToc2><span class=MsoHyperlink><a href="#_Toc126910186"><img
-border=0 width=58 height=58 id="Graphic 67" src="primer_files/image018.png"><span
-style='font-size:11.0pt;line-height:115%;color:windowtext;font-weight:normal;
-text-decoration:none'>        </span><span style='position:relative;top:-14.0pt'>Step
-1 — Assessments</span><span style='color:windowtext;display:none;text-decoration:
-none'>  </span><span
-style='color:windowtext;display:none;text-decoration:none'>11</span></a></span></p>
-
-<p class=MsoToc2><span class=MsoHyperlink><a href="#_Toc126910187"><img
-border=0 width=58 height=58 id="Graphic 68" src="primer_files/image020.png"><span
-style='font-size:11.0pt;line-height:115%;color:windowtext;font-weight:normal;
-text-decoration:none'>        </span><span style='position:relative;top:-14.0pt'>Step
-2 — Appeals</span><span style='color:windowtext;display:none;text-decoration:
-none'>  </span><span
-style='color:windowtext;display:none;text-decoration:none'>14</span></a></span></p>
-
-<p class=MsoToc2><span class=MsoHyperlink><a href="#_Toc126910188"><img
-border=0 width=58 height=58 id="Graphic 69" src="primer_files/image022.png"><span
-style='font-size:11.0pt;line-height:115%;color:windowtext;font-weight:normal;
-text-decoration:none'>        </span><span style='position:relative;top:-14.0pt'>Step
-3 — Equalization</span><span style='color:windowtext;display:none;text-decoration:
-none'>   </span><span
-style='color:windowtext;display:none;text-decoration:none'>15</span></a></span></p>
-
-<p class=MsoToc2><span class=MsoHyperlink><a href="#_Toc126910189"><img
-border=0 width=58 height=58 id="Graphic 70" src="primer_files/image024.png"><span
-style='font-size:11.0pt;line-height:115%;color:windowtext;font-weight:normal;
-text-decoration:none'>        </span><span style='position:relative;top:-14.0pt'>Step
-4 — Setting the Levy</span><span style='color:windowtext;display:none;
-text-decoration:none'>  </span><span
-style='color:windowtext;display:none;text-decoration:none'>16</span></a></span></p>
-
-<p class=MsoToc2><span class=MsoHyperlink><a href="#_Toc126910190"><img
-border=0 width=58 height=58 id="Graphic 71" src="primer_files/image025.png"><span
-style='font-size:11.0pt;line-height:115%;color:windowtext;font-weight:normal;
-text-decoration:none'>        </span><span style='position:relative;top:-14.0pt'>Step
-5 — Extending the Levy</span><span style='color:windowtext;display:none;
-text-decoration:none'>  </span><span
-style='color:windowtext;display:none;text-decoration:none'>17</span></a></span></p>
-
-<p class=MsoToc2><span class=MsoHyperlink><a href="#_Toc126910191"><img
-border=0 width=58 height=58 id="Graphic 72" src="primer_files/image029.png"><span
-style='font-size:11.0pt;line-height:115%;color:windowtext;font-weight:normal;
-text-decoration:none'>        </span><span style='position:relative;top:-14.0pt'>Step
-6 — Collection and Distribution</span><span style='color:windowtext;display:
-none;text-decoration:none'>   </span><span
-style='color:windowtext;display:none;text-decoration:none'>18</span></a></span></p>
-
-<p class=MsoToc2><span class=MsoHyperlink><a href="#_Toc126910192"><img
-border=0 width=58 height=58 id="Graphic 73" src="primer_files/image034.png"><span
-style='font-size:11.0pt;line-height:115%;color:windowtext;font-weight:normal;
-text-decoration:none'>        </span><span style='position:relative;top:-14.0pt'>Step
-7 — Payment Enforcement</span><span style='color:windowtext;display:none;
-text-decoration:none'>  </span><span
-style='color:windowtext;display:none;text-decoration:none'>22</span></a></span></p>
-
-<p class=MsoToc2><span class=MsoHyperlink><a href="#_Toc126910193">The Cycle
-Starts Over<span style='color:windowtext;display:none;text-decoration:none'>  </span><span
-style='color:windowtext;display:none;text-decoration:none'>26</span></a></span></p>
-
-<p class=MsoToc1><span class=MsoHyperlink><a href="#_Toc126910194">Appendix<span
-style='color:windowtext;display:none;text-decoration:none'>  </span><span
-style='color:windowtext;display:none;text-decoration:none'>27</span></a></span></p>
-
-<p class=MsoToc3><span class=MsoHyperlink><a href="#_Toc126910195">Additional
-Exemptions &amp; Forms of Tax Relief<span style='color:windowtext;display:none;
-text-decoration:none'> </span><span
-style='color:windowtext;display:none;text-decoration:none'>27</span></a></span></p>
-
-<p class=MsoToc2><span class=MsoHyperlink><a href="#_Toc126910196">Additional
-Sources<span style='color:windowtext;display:none;text-decoration:none'>  </span><span
-style='color:windowtext;display:none;text-decoration:none'>28</span></a></span></p>
-
-<p class=MsoToc1><span class=MsoHyperlink><a href="#_Toc126910197">References<span
-style='color:windowtext;display:none;text-decoration:none'>  </span><span
-style='color:windowtext;display:none;text-decoration:none'>29</span></a></span></p>
-
-<p class=MsoToc1><span class=MsoHyperlink><a href="#_Toc126910198">Glossary<span
-style='color:windowtext;display:none;text-decoration:none'>  </span><span
-style='color:windowtext;display:none;text-decoration:none'>31</span></a></span></p>
-
-<p class=MsoNormal><b><a name="_GoBack"></a></b>&nbsp;</p>
-
 <p class=MsoNormal>&nbsp;</p>
-
-<p class=publishing-comments>Publishing notes: Save document as Web Page
-Filtered, add &lt;script src=&quot;./src/index-0.1.js&quot;&gt;&lt;/script&gt;
-inside the html tag at the bottom of the document </p>
 
 </div>
 
@@ -2883,11 +2833,14 @@ href="https://www.pewtrusts.org/en/research-and-analysis/data-visualizations/202
 
 <div id=ftn4>
 
-<p class=MsoFootnoteText><a href="#_ftnref4" name="_ftn4" title=""><span
+<p class=MsoNormal><a href="#_ftnref4" name="_ftn4" title=""><span
 class=MsoFootnoteReference><span class=MsoFootnoteReference><span
-style='font-size:10.0pt;line-height:115%;font-family:"Garamond Premr Pro Med",serif'>[4]</span></span></span></a> (Lincoln Institute of Land Policy 2022) <a
-href="https://www.lincolninst.edu/research-data/data-toolkits/significant-features-property-tax/state-state-property-tax-glance">https://www.lincolninst.edu/research-data/data-toolkits/significant-features-property-tax/state-state-property-tax-glance</a>
-</p>
+style='font-size:12.0pt;line-height:115%;font-family:"Garamond Premr Pro Med",serif'>[4]</span></span></span></a>
+(Lincoln Institute of Land Policy 2022) <a
+href="https://www.lincolninst.edu/research-data/data-toolkits/significant-features-property-tax/state-state-property-tax-glance"><span
+style='font-size:10.0pt;line-height:115%'>https://www.lincolninst.edu/research-data/data-toolkits/significant-features-property-tax/state-state-property-tax-glance</span></a></p>
+
+<p class=MsoFootnoteText>&nbsp;</p>
 
 </div>
 
@@ -2895,8 +2848,9 @@ href="https://www.lincolninst.edu/research-data/data-toolkits/significant-featur
 
 <p class=MsoFootnoteText><a href="#_ftnref5" name="_ftn5" title=""><span
 class=MsoFootnoteReference><span class=MsoFootnoteReference><span
-style='font-size:10.0pt;line-height:115%;font-family:"Garamond Premr Pro Med",serif'>[5]</span></span></span></a>
-(ibid)</p>
+style='font-size:10.0pt;line-height:115%;font-family:"Garamond Premr Pro Med",serif'>[5]</span></span></span></a> (Lincoln Institute of Land Policy 2022) <a
+href="https://www.lincolninst.edu/research-data/data-toolkits/significant-features-property-tax/state-state-property-tax-glance">https://www.lincolninst.edu/research-data/data-toolkits/significant-features-property-tax/state-state-property-tax-glance</a>
+</p>
 
 </div>
 
@@ -2905,11 +2859,7 @@ style='font-size:10.0pt;line-height:115%;font-family:"Garamond Premr Pro Med",se
 <p class=MsoFootnoteText><a href="#_ftnref6" name="_ftn6" title=""><span
 class=MsoFootnoteReference><span class=MsoFootnoteReference><span
 style='font-size:10.0pt;line-height:115%;font-family:"Garamond Premr Pro Med",serif'>[6]</span></span></span></a>
-(<i>Rankings of the States 2021 and Estimates of School Statistics 2022 NEA
-Research</i>, 2022)  <span class=msoIns><ins cite="mailto:Hal%20Dardick"
-datetime="2023-01-11T18:41"><a
-href="https://www.nea.org/sites/default/files/2022-06/2022%20Rankings%20and%20Estimates%20Report.pdf"><span
-style='color:windowtext;text-decoration:none'>https://www.nea.org/sites/default/files/2022-06/2022%20Rankings%20and%20Estimates%20Report.pdf</span></a></ins></span></p>
+(ibid)</p>
 
 </div>
 
@@ -2917,22 +2867,30 @@ style='color:windowtext;text-decoration:none'>https://www.nea.org/sites/default/
 
 <p class=MsoFootnoteText><a href="#_ftnref7" name="_ftn7" title=""><span
 class=MsoFootnoteReference><span class=MsoFootnoteReference><span
-style='font-size:10.0pt;line-height:115%;font-family:"Garamond Premr Pro Med",serif'>[7]</span></span></span></a>
-(A
-very difficult and unpopular decision:’ Niles Village Board approves 88%
-increase in property-tax levy 2021) <a
-href="https://www.chicagotribune.com/suburbs/niles/ct-nhs-property-taxes-down-tl-0630-20220628-xzz7akha7fcb7ma7lskwjr5cp4-story.html">https://www.chicagotribune.com/suburbs/niles/ct-nhs-property-taxes-down-tl-0630-20220628-xzz7akha7fcb7ma7lskwjr5cp4-story.html</a></p>
+style='font-size:10.0pt;line-height:115%;font-family:"Garamond Premr Pro Med",serif'>[7]</span></span></span></a></p>
+
+<p class=MsoNormal style='line-height:107%'>  (<i>Rankings of the States 2021
+and Estimates of School Statistics 2022 NEA Research</i>, 2022)  <span
+class=msoIns><ins cite="mailto:Hal%20Dardick" datetime="2023-01-11T18:41"><a
+href="https://www.nea.org/sites/default/files/2022-06/2022%20Rankings%20and%20Estimates%20Report.pdf"><span
+style='line-height:107%;font-family:"Courier New"'>https://www.nea.org/sites/default/files/2022-06/2022%20Rankings%20and%20Estimates%20Report.pdf</span></a></ins></span></p>
+
+<p class=MsoFootnoteText>&nbsp;</p>
 
 </div>
 
 <div id=ftn8>
 
-<p class=MsoFootnoteText><a href="#_ftnref8" name="_ftn8" title=""><span
-class=MsoFootnoteReference><span class=MsoFootnoteReference><span
-style='font-size:10.0pt;line-height:115%;font-family:"Garamond Premr Pro Med",serif'>[8]</span></span></span></a>
-(Lincoln Institute of Land Policy 2022) <a
-href="https://www.lincolninst.edu/research-data/data-toolkits/significant-features-property-tax/state-state-property-tax-glance">https://www.lincolninst.edu/research-data/data-toolkits/significant-features-property-tax/state-state-property-tax-glance</a>
-</p>
+<p class=MsoNormal style='line-height:107%'><a href="#_ftnref8" name="_ftn8"
+title=""><span class=MsoFootnoteReference><span class=MsoFootnoteReference><span
+style='font-size:12.0pt;line-height:115%;font-family:"Garamond Premr Pro Med",serif'>[8]</span></span></span></a>
+(A
+very difficult and unpopular decision:’ Niles Village Board approves 88%
+increase in property-tax levy 2021) <a
+href="https://www.chicagotribune.com/suburbs/niles/ct-nhs-property-taxes-down-tl-0630-20220628-xzz7akha7fcb7ma7lskwjr5cp4-story.html"><span
+style='line-height:107%;font-family:"Courier New"'>https://www.chicagotribune.com/suburbs/niles/ct-nhs-property-taxes-down-tl-0630-20220628-xzz7akha7fcb7ma7lskwjr5cp4-story.html</span></a></p>
+
+<p class=MsoFootnoteText>&nbsp;</p>
 
 </div>
 
@@ -2941,8 +2899,8 @@ href="https://www.lincolninst.edu/research-data/data-toolkits/significant-featur
 <p class=MsoFootnoteText><a href="#_ftnref9" name="_ftn9" title=""><span
 class=MsoFootnoteReference><span class=MsoFootnoteReference><span
 style='font-size:10.0pt;line-height:115%;font-family:"Garamond Premr Pro Med",serif'>[9]</span></span></span></a>
-(Illinois Department of Revenue, The Illinois Property Tax System 2020) <a
-href="https://www.ilga.gov/legislation/ilcs/ilcs5.asp?ActID=596&amp;ChapterID=8">https://www.ilga.gov/legislation/ilcs/ilcs5.asp?ActID=596&amp;ChapterID=8</a>
+(Lincoln Institute of Land Policy 2022) <a
+href="https://www.lincolninst.edu/research-data/data-toolkits/significant-features-property-tax/state-state-property-tax-glance">https://www.lincolninst.edu/research-data/data-toolkits/significant-features-property-tax/state-state-property-tax-glance</a>
 </p>
 
 </div>
@@ -2952,9 +2910,8 @@ href="https://www.ilga.gov/legislation/ilcs/ilcs5.asp?ActID=596&amp;ChapterID=8"
 <p class=MsoFootnoteText><a href="#_ftnref10" name="_ftn10" title=""><span
 class=MsoFootnoteReference><span class=MsoFootnoteReference><span
 style='font-size:10.0pt;line-height:115%;font-family:"Garamond Premr Pro Med",serif'>[10]</span></span></span></a>
-(Brown
-and Hepworth 2002) <a
-href="https://www.lincolninst.edu/sites/default/files/pubfiles/brown_wp02pb1.pdf">https://www.lincolninst.edu/sites/default/files/pubfiles/brown_wp02pb1.pdf</a>
+(Illinois Department of Revenue, The Illinois Property Tax System 2020) <a
+href="https://www.ilga.gov/legislation/ilcs/ilcs5.asp?ActID=596&amp;ChapterID=8">https://www.ilga.gov/legislation/ilcs/ilcs5.asp?ActID=596&amp;ChapterID=8</a>
 </p>
 
 </div>
@@ -2964,8 +2921,9 @@ href="https://www.lincolninst.edu/sites/default/files/pubfiles/brown_wp02pb1.pdf
 <p class=MsoFootnoteText><a href="#_ftnref11" name="_ftn11" title=""><span
 class=MsoFootnoteReference><span class=MsoFootnoteReference><span
 style='font-size:10.0pt;line-height:115%;font-family:"Garamond Premr Pro Med",serif'>[11]</span></span></span></a>
-(Sources of Government Revenue in the OECD n.d.) <a
-href="https://taxfoundation.org/publications/sources-of-government-revenue-in-the-oecd/">https://taxfoundation.org/publications/sources-of-government-revenue-in-the-oecd/</a>
+(Brown
+and Hepworth 2002) <a
+href="https://www.lincolninst.edu/sites/default/files/pubfiles/brown_wp02pb1.pdf">https://www.lincolninst.edu/sites/default/files/pubfiles/brown_wp02pb1.pdf</a>
 </p>
 
 </div>
@@ -2975,9 +2933,9 @@ href="https://taxfoundation.org/publications/sources-of-government-revenue-in-th
 <p class=MsoFootnoteText><a href="#_ftnref12" name="_ftn12" title=""><span
 class=MsoFootnoteReference><span class=MsoFootnoteReference><span
 style='font-size:10.0pt;line-height:115%;font-family:"Garamond Premr Pro Med",serif'>[12]</span></span></span></a>
-(Institute of Land Policy and Center for Fiscal Excellence 2015) <a
-href="https://www.lincolninst.edu/publications‌/other/50-state-property-tax-comparison-study">https://www.lincolninst.edu/publications<span
-style='font-family:"Times New Roman",serif'>‌</span>/other/50-state-property-tax-comparison-study</a></p>
+(Sources of Government Revenue in the OECD n.d.) <a
+href="https://taxfoundation.org/publications/sources-of-government-revenue-in-the-oecd/">https://taxfoundation.org/publications/sources-of-government-revenue-in-the-oecd/</a>
+</p>
 
 </div>
 
@@ -2986,9 +2944,9 @@ style='font-family:"Times New Roman",serif'>‌</span>/other/50-state-property-t
 <p class=MsoFootnoteText><a href="#_ftnref13" name="_ftn13" title=""><span
 class=MsoFootnoteReference><span class=MsoFootnoteReference><span
 style='font-size:10.0pt;line-height:115%;font-family:"Garamond Premr Pro Med",serif'>[13]</span></span></span></a>
-(The Tax Divide; AN UNFAIR BURDEN 2018) <a
-href="https://www.chicagotribune.com/investigations/ct-tax-divide-investigation-20180425-storygallery.html">https://www.chicagotribune.com/investigations/ct-tax-divide-investigation-20180425-storygallery.html</a>
-</p>
+(Institute of Land Policy and Center for Fiscal Excellence 2015) <a
+href="https://www.lincolninst.edu/publications‌/other/50-state-property-tax-comparison-study">https://www.lincolninst.edu/publications<span
+style='font-family:"Times New Roman",serif'>‌</span>/other/50-state-property-tax-comparison-study</a></p>
 
 </div>
 
@@ -2997,8 +2955,9 @@ href="https://www.chicagotribune.com/investigations/ct-tax-divide-investigation-
 <p class=MsoFootnoteText><a href="#_ftnref14" name="_ftn14" title=""><span
 class=MsoFootnoteReference><span class=MsoFootnoteReference><span
 style='font-size:10.0pt;line-height:115%;font-family:"Garamond Premr Pro Med",serif'>[14]</span></span></span></a>
-(Berry, et al. 2021, Berry, et al. 2021) <a
-href="https://ssrn.com/abstract=3800536">https://ssrn.com/abstract=3800536</a> </p>
+(The Tax Divide; AN UNFAIR BURDEN 2018) <a
+href="https://www.chicagotribune.com/investigations/ct-tax-divide-investigation-20180425-storygallery.html">https://www.chicagotribune.com/investigations/ct-tax-divide-investigation-20180425-storygallery.html</a>
+</p>
 
 </div>
 
@@ -3007,10 +2966,8 @@ href="https://ssrn.com/abstract=3800536">https://ssrn.com/abstract=3800536</a> <
 <p class=MsoFootnoteText><a href="#_ftnref15" name="_ftn15" title=""><span
 class=MsoFootnoteReference><span class=MsoFootnoteReference><span
 style='font-size:10.0pt;line-height:115%;font-family:"Garamond Premr Pro Med",serif'>[15]</span></span></span></a>
-(Illinois Department of Revenue, The Illinois Property Tax System 2020) <a
-href="https://www2.illinois.gov‌/rev/research/publications/Documents/localgovernment/ptax-1004.pdf">https://www2.illinois.gov<span
-style='font-family:"Times New Roman",serif'>‌</span>/rev/research/publications/Documents/localgovernment/ptax-1004.pdf</a>
-</p>
+(Berry, et al. 2021, Berry, et al. 2021) <a
+href="https://ssrn.com/abstract=3800536">https://ssrn.com/abstract=3800536</a> </p>
 
 </div>
 
@@ -3019,8 +2976,10 @@ style='font-family:"Times New Roman",serif'>‌</span>/rev/research/publications
 <p class=MsoFootnoteText><a href="#_ftnref16" name="_ftn16" title=""><span
 class=MsoFootnoteReference><span class=MsoFootnoteReference><span
 style='font-size:10.0pt;line-height:115%;font-family:"Garamond Premr Pro Med",serif'>[16]</span></span></span></a>
-(The Problem with Appeals 2017) <a
-href="https://apps.chicagotribune.com/news/watchdog/cook-county-property-tax-divide/appeals.html">https://apps.chicagotribune.com/news/watchdog/cook-county-property-tax-divide/appeals.html</a></p>
+(Illinois Department of Revenue, The Illinois Property Tax System 2020) <a
+href="https://www2.illinois.gov‌/rev/research/publications/Documents/localgovernment/ptax-1004.pdf">https://www2.illinois.gov<span
+style='font-family:"Times New Roman",serif'>‌</span>/rev/research/publications/Documents/localgovernment/ptax-1004.pdf</a>
+</p>
 
 </div>
 
@@ -3029,8 +2988,8 @@ href="https://apps.chicagotribune.com/news/watchdog/cook-county-property-tax-div
 <p class=MsoFootnoteText><a href="#_ftnref17" name="_ftn17" title=""><span
 class=MsoFootnoteReference><span class=MsoFootnoteReference><span
 style='font-size:10.0pt;line-height:115%;font-family:"Garamond Premr Pro Med",serif'>[17]</span></span></span></a>
-(Berry, et al. 2021) <a
-href="https://www.semanticscholar.org/paper/The-Impact-of-Property-Tax-Appeals-on-Vertical-in-%2C-Ross/9a0d153dc8db7fb8716891a7166cf4792caff672">https://www.semanticscholar.org/paper/The-Impact-of-Property-Tax-Appeals-on-Vertical-in-%2C-Ross/9a0d153dc8db7fb8716891a7166cf4792caff672</a></p>
+(The Problem with Appeals 2017) <a
+href="https://apps.chicagotribune.com/news/watchdog/cook-county-property-tax-divide/appeals.html">https://apps.chicagotribune.com/news/watchdog/cook-county-property-tax-divide/appeals.html</a></p>
 
 </div>
 
@@ -3039,9 +2998,8 @@ href="https://www.semanticscholar.org/paper/The-Impact-of-Property-Tax-Appeals-o
 <p class=MsoFootnoteText><a href="#_ftnref18" name="_ftn18" title=""><span
 class=MsoFootnoteReference><span class=MsoFootnoteReference><span
 style='font-size:10.0pt;line-height:115%;font-family:"Garamond Premr Pro Med",serif'>[18]</span></span></span></a>
-(The Pappas Studies 2020) <a
-href="https://www.cookcountytreasurer.com/scavengersalestudy.aspx">https://www.cookcountytreasurer.com/scavengersalestudy.aspx</a>
-</p>
+(Berry, et al. 2021) <a
+href="https://www.semanticscholar.org/paper/The-Impact-of-Property-Tax-Appeals-on-Vertical-in-%2C-Ross/9a0d153dc8db7fb8716891a7166cf4792caff672">https://www.semanticscholar.org/paper/The-Impact-of-Property-Tax-Appeals-on-Vertical-in-%2C-Ross/9a0d153dc8db7fb8716891a7166cf4792caff672</a></p>
 
 </div>
 
@@ -3050,6 +3008,17 @@ href="https://www.cookcountytreasurer.com/scavengersalestudy.aspx">https://www.c
 <p class=MsoFootnoteText><a href="#_ftnref19" name="_ftn19" title=""><span
 class=MsoFootnoteReference><span class=MsoFootnoteReference><span
 style='font-size:10.0pt;line-height:115%;font-family:"Garamond Premr Pro Med",serif'>[19]</span></span></span></a>
+(The Pappas Studies 2020) <a
+href="https://www.cookcountytreasurer.com/scavengersalestudy.aspx">https://www.cookcountytreasurer.com/scavengersalestudy.aspx</a>
+</p>
+
+</div>
+
+<div id=ftn20>
+
+<p class=MsoFootnoteText><a href="#_ftnref20" name="_ftn20" title=""><span
+class=MsoFootnoteReference><span class=MsoFootnoteReference><span
+style='font-size:10.0pt;line-height:115%;font-family:"Garamond Premr Pro Med",serif'>[20]</span></span></span></a>
 (Schmidt 2021) <a
 href="https://harris.uchicago.edu/news-events/news/center-municipal-finance-releases-comprehensive-independent-analysis-cook-county">https://harris.uchicago.edu/news-events/news/center-municipal-finance-releases-comprehensive-independent-analysis-cook-county</a>
 </p>
@@ -3077,7 +3046,7 @@ href="#_msoanchor_1" class=msocomoff>[DW1]</a></span></span></p>
 </div>
 
 </div>
-<script src="./src/index-0.1.js" kind="primer"></script>
+
 </body>
 
 </html>

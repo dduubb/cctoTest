@@ -5,43 +5,71 @@
 
 //   ADD THIS TO THE BOTTOM OF A WORD DOC SAVED AS A FILTERED HTML  ---> <script src="./src/index-0.1.js"></script>
 
-window.addEventListener(
-  "scroll",
-  () => {
-    document.body.style.setProperty(
-      "--scroll",
-      window.pageYOffset / (document.body.offsetHeight - window.innerHeight)
-    );
-  },
-  false
-);
+//window.addEventListener("scroll", () => { document.body.style.setProperty("--scroll", window.pageYOffset / (document.body.offsetHeight - window.innerHeight));  }, false);
 
-document.querySelectorAll('style').forEach(el =>   el.innerText = ""  )         
-document.querySelector('script').remove
+document.querySelector('head').innerHTML = '';
 
-    function removeClassByPrefix(node, prefix) {
+document.querySelectorAll('style').forEach(el => el.remove); // Remove all inline styles        
+document.querySelector('script').remove; // Remove all Script tags
+
+// Functions
+const 
+kebabize = (str) => str.replace(/[A-Z]+(?![a-z])|[A-Z]/g, ($, ofs) => (ofs ? "-" : "") + $.toLowerCase()),
+removeClassPrefix = (node, prefix) => {
+  if (node.className !== "" ){
+	node.className = node.className.replace(prefix,'' );
+  node.className =  kebabize(node.className)
+	return (node);}
+},
+removeClassByPrefix =  (node, prefix) => {
         var regx = new RegExp('\\b' + prefix + '[^ ]*[ ]?\\b', 'g');
         node.className = node.className.replace(regx, '');
         return node;
-    }
+    },
+addClassByPrefix =  (node, prefix, newclass) => {
+        document.querySelectorAll(node).forEach( el =>
+          {if ( el.className.includes(prefix)) {el.classList.add(newclass)} }
+        )
+        return node;
+    },  
+wrapDivs = (el,i) => {
+      const firstDiv = document.querySelectorAll('p.table-title')[i];
+    const secondDiv =  document.querySelectorAll('p.table-title+*')[i] //document.querySelectorAll('p.table-title')[i];       //el.innerHTML       //"<div>document.querySelectorAll('p.table-title+table')[i].innerHTML</div>";
+    const threeDiv =  document.querySelectorAll('p.table-title+*+p')[i]
+    const wrapper = document.createElement("div");
+    el.insertAdjacentElement('beforeBegin', wrapper)
+    wrapper.setAttribute("id", "wrapper-"+i);
+    wrapper.setAttribute("class", "wrapper");
+    wrapper.appendChild(firstDiv);
+     try { wrapper.appendChild(secondDiv);
+       wrapper.appendChild(threeDiv)
+      }
+     catch {}
+  },
+  wrapSameClass = (classMatch) => { //wraps all items 
+    document.querySelectorAll(classMatch).forEach((el,i) => {
+        if (i==0) {
+    wrapper = document.createElement('div');
+    wrapper.classList.add(classMatch+'-wrap');
+    el.insertAdjacentElement('beforeBegin', wrapper)
+  }
+  wrapper.appendChild(el);
+})
+  },
+  removeChildItems = (target,selector) => {
+    document.querySelectorAll(target+" "+selector).forEach(el=>{
+      el.outerHTML = ""})
+  }
 
+  // Remove Mso prefix and skewer
+    document.querySelectorAll('*').forEach(el => removeClassPrefix(el,'Mso'));
 
-    document.querySelectorAll('table').forEach(el => {
-      el.removeAttribute('cellpadding'); 
-           el.removeAttribute('cellspacing');
-           el.removeAttribute('border');
-           
+    // Remove inline table attributes
+    document.querySelectorAll('*').forEach(el => {
+      const attrs = ['cellpadding','cellspacing','border','valign','width','style'];
+      attrs.forEach(attr => el.removeAttribute(attr));
     });
 
-    document.querySelectorAll('caption').forEach(el => {
-      //el.parentElement.parentElement.insertBefore(el,el.parentElement)
-     console.log( el );
-    
-     // el.outerHTML=el.innerHTML
-    
-    })
-
-    //document.getElementById("mydiv").outerHTML = document.getElementById("mydiv").innerHTML
 
 
     document.querySelectorAll('[style]').forEach(el => {
@@ -49,68 +77,46 @@ document.querySelector('script').remove
         el.removeAttribute('width');
         el.removeAttribute('align');
     });
-    //document.querySelectorAll('[style]').forEach(el => el.removeAttribute('width'));
-    //document.querySelectorAll('MsoNormal').forEach(el => el.parentNode.removeChild(el));
-    document.querySelectorAll('p.MsoNormal', 'div.MsoNormal', 'table').forEach(el => {el.removeAttribute('class') } );
-document.querySelectorAll('p.MsoCaption').forEach(el => {el.classList.remove("MsoCaption");el.classList.add("caption") } );
+    document.querySelectorAll('p.normal', 'div.normal', 'table').forEach(el => {
+      el.removeAttribute('class') } );
+    
+    
 
-document.body.innerHTML = document.body.innerHTML.replace('�', '&rsquo;');
+
 
 document.querySelectorAll('div').forEach((el,i) => {
-  removeClassByPrefix(el, 'WordSect');
-  el.classList.add('section-'+i);
+  removeClassByPrefix(el, 'word-section');
+  if (1) { el.classList.add('section-'+i);} else  
+  if (el.classList.length === 0) {el.removeAttribute('class') }
 } );
 
 document.querySelectorAll('p').forEach((el,i) => {
-  removeClassByPrefix(el, 'WordSect');
-  el.classList.add('para-'+i);
+  removeClassByPrefix(el, 'word-sect');
+  if (0) { el.classList.add('para-'+i);} else  
+  if (el.classList.length === 0) {el.removeAttribute('class') }
 } );
 
 document.querySelectorAll('table').forEach((el,i) => {
-  removeClassByPrefix(el, 'Mso');
-  el.classList.add('table-'+i);
+  //removeClassByPrefix(el, 'Mso');
+  if (0) {el.classList.add('table-'+i);} else
+  if (el.classList.length === 0) {el.removeAttribute('class') }
 } );
 
 
-//removeClassByPrefix('div', 'WordSect');
-//removeClassByPrefix('p', 'WordSection');
-
-////const tempDiv = document.createElement('pp-div');
-//document.querySelectorAll('body').forEach(el => el.insertAdjacentElement ('beforeBegin', tempDiv) );
-
-//const myCustomElement = document.a ('my-custom-element');
-//document.appendChild(myCustomElement);
-
-
 document.querySelectorAll('p.Publishwithline').forEach(el => {el.remove() } );
-
-function wrapDivs(el,i) {
-///alert(document.querySelectorAll('p.TableTitle+table')[i] );
-  const firstDiv = document.querySelectorAll('p.TableTitle')[i];
-  const secondDiv =  document.querySelectorAll('p.TableTitle+*')[i] //document.querySelectorAll('p.TableTitle')[i];       //el.innerHTML       //"<div>document.querySelectorAll('p.TableTitle+table')[i].innerHTML</div>";
-  const threeDiv =  document.querySelectorAll('p.TableTitle+*+p')[i]
-  const wrapper = document.createElement("div");
-  el.insertAdjacentElement('beforeBegin', wrapper)
-  wrapper.setAttribute("id", "wrapper");
-  wrapper.appendChild(firstDiv);
-   try { wrapper.appendChild(secondDiv);
-     wrapper.appendChild(threeDiv)}
-   catch {console.log(i)}
-
-  /*document.body.insertBefore(wrapper, document.body.firstChild); */
-}
 //wrapDivs()
 
-//alert(document.querySelectorAll('p.TableTitle+table')[0].innerHTML);
+//alert(document.querySelectorAll('p.table-title+table')[0].innerHTML);
 
-document.querySelectorAll('p.TableTitle').forEach((el,i) => {
- wrapDivs(el,i)})
+document.querySelectorAll('p.table-title').forEach((el,i) => { wrapDivs(el,i)})
 
+document.querySelectorAll('div p.caption').forEach(el => {
+  try {el.previousElementSibling.append(el)
+} catch {} } );
  
- 
-document.querySelectorAll('p.TableTitle').forEach(el => {el.classList.remove("TableTitle");el.classList.add("image-header") } );
-document.querySelectorAll('p.WordSection1').forEach(el => {el.classList.remove("TableTitle");el.classList.add("image-header") } );
-document.querySelectorAll('.MsoFootnoteReference').forEach(el => {el.classList.remove("MsoFootnoteReference");el.classList.add("footnote-ref") } );
+document.querySelectorAll('p.table-title').forEach(el => {el.classList.remove("table-title");el.classList.add("image-header") } );
+//document.querySelectorAll('p.WordSection1').forEach(el => {el.classList.remove("table-title");el.classList.add("image-header") } );
+document.querySelectorAll('.FootnoteReference').forEach(el => {el.classList.remove("FootnoteReference");el.classList.add("footnote-ref") } );
 
 const contentdiv = document.createElement("div");
 // MOVE ALL ITEMS INTO MAIN PARENT DIV
@@ -127,8 +133,14 @@ const footerdiv = document.createElement("div");
 
 
 const ppdiv = document.createElement("pp-div");
-headerdiv.classList.add("pp-header");
-footerdiv.classList.add("pp-footer");
+
+if ( document.currentScript.getAttribute('kind') === "primer"){
+  headerdiv.classList.add("res-header");
+  footerdiv.classList.add("res-footer");}
+else  {  headerdiv.classList.add("pp-header");
+  footerdiv.classList.add("pp-footer");}
+
+
 
 document.querySelector('body').appendChild(document.createElement("pp-div"));
 ;
@@ -136,6 +148,15 @@ document.querySelector('pp-div').appendChild(headerdiv);
 document.querySelector('pp-div').appendChild(contentdiv)
 document.querySelector('pp-div').appendChild(footerdiv);
 
+
+addClassByPrefix('p',"toc","toc-base");
+wrapSameClass('toc-base')
+
+
+removeChildItems(".toc-base","img")
+
+
+document.querySelectorAll('.publishing-comments').forEach(el => el.outerHTML='');
 
 // Add our CSS
 document.getElementsByTagName("head")[0].insertAdjacentHTML(
