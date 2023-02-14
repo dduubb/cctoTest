@@ -1,3 +1,6 @@
+:root {
+    --max-width: 750px;
+  }
 
 svg {
   position: relative;
@@ -66,7 +69,7 @@ pp-div .child-block {
     background-color: lightgrey;
     max-width: 11em;
     min-width: 7em;
-    padding: 1em;
+    padding: .5em;
 }
 pp-div .block {
     display: flex;
@@ -90,11 +93,13 @@ pp-div h2 img {
 }
 
 
-#pp-page-content, .pp-page-content {
+#pp-page-content, .pp-page-content, .pp-header-content  {
     margin: auto;
-    max-width: 750px;
-    padding: 1em;
+    max-width: var(--max-width) ;
+    padding: 0  1em;
 }
+
+
 
 .pp-breadcrumbs{
     text-decoration: none;
@@ -111,41 +116,21 @@ pp-div h2 img {
 }
 
  .pp-header { 
-    background-image: url("../src/header-1.svg");
+    background-image: url("../src/header-1clean.svg");
     background-position-x: 50%;
     background-repeat: no-repeat;
     background-size: cover;
     margin: auto;
-    max-width: 1865px;
-    min-height: 6em;
 } 
-.res-header { 
-    background-image: url("../src/header-1.svg");
-    background-position-x: 50%;
-    background-repeat: no-repeat;
+.report { 
     background-color: #759ac1;
-    background-size: cover;
-    margin: auto;
-    max-width: 1865px;
-    min-height: 6em;
 }
 
 @media screen and (max-width: 980px) {
-.pp-headerwrap {
-    background-image: url("../src/header-1.svg");
-    background-position: -480px 0px;
-    background-repeat: no-repeat;
-    background-size: cover;
-    min-height: 90px;
-    }
-.res-headerwrap {
-    background-image: url("../src/header-1.svg");
-    background-position: -480px 0px;
-    background-repeat: no-repeat;
-    background-color: #759ac1;
-    background-size: cover;
-    min-height: 90px;
-    }
+
+.report {
+    background-color: #c8d4e0;
+}
 }
 
 @media screen and (max-width: 700px) {
@@ -153,32 +138,25 @@ pp-div .caption::before {
 	content: "Mobile ";
 }
 
-.pp-header{
-    background-image: url("../src/header-3.svg");
-    background-position: -412px 0px;
-    background-repeat: no-repeat;
-    background-size: cover;
-    min-height: 80px;
-}
-.res-header{
-    background-image: url("../src/header-3.svg");
-    background-position: -412px 0px;
-    background-color: #759ac1;
-    background-repeat: no-repeat;
-    background-size: cover;
-    min-height: 80px;
-}
+.report{
+    }
 
-
-
-
-pp-div table td:nth-child(2),pp-div table td:nth-child(3),pp-div table td:nth-child(4){
+.header-sub-title{
     display: none;
-}pp-div table td:last-child{
-    display: revert;
+}
+
+
+pp-div table td:not(:first-child):not(:last-child){
+    display: none;
+}
+pp-div table td:last-child, .wrapable-table td{
+    display: revert!important;
     text-align: center;
 }
 
+table.table-grid{
+    /* display: none; */
+}
 
 .child-block {
     max-width: 20em;
@@ -191,7 +169,7 @@ pp-div table td:nth-child(2),pp-div table td:nth-child(3),pp-div table td:nth-ch
 
 pp-div table td h3 {margin:auto;}
 
-pp-div p img {margin: auto; vertical-align: middle;}
+pp-div p img {margin: auto;vertical-align: middle;}
 
 pp-div table{
 	border: .5px solid #efefef;;
@@ -204,7 +182,7 @@ pp-div > tr > strong {
 }
 
 pp-div table tr:nth-child(even){background-color: lightgray;}
-pp-div table tr:nth-child(1){background-color: #759ac1;
+pp-div table:not(.wrapable-table,.wrapable-table table) tr:nth-child(1){background-color: #759ac1;
 color:white;
 font-weight: bolder;
 	vertical-align: text-top;
@@ -212,8 +190,99 @@ padding: 0.5em;
 }
 
 /* END TAXING ISSUES INSERT */
+body pp-div table div pp{background-color: #efefef;}
+
+pp-page-content{
+    scroll-snap-type: y mandatory block;
+  }
+
+  .wrapper table{
+    height:fit-content;
+    position:sticky;
+    position: -webkit-sticky;
+    background-color: #efefef;
+    top:0em;
+    scroll-snap-align: top;
+    display: flexbox;
+ }
+ /* pp-page-content>.wrapper {
+    
+    background-color: #fcfcfc;
+    position: -webkit-sticky; /* Safari 
+    position: sticky;
+    top: 0;
+  } */
+
+.pp-header-content {
+    display: flex;
+    align-items: center;
+}
+
+.header-title{
+}
+
+.pp-header-text-content{padding: 0;}
+
+.header-icon {
+    height: 6em;
+    content: url("./PostIcon.svg");
+}
+
+.header-title{
+    font-weight: 900;
+    font-size: 3em;
+    line-height: .9em;
+    Text-indent: -.5em;
+    Padding-left: .75em;
+}
+
+.header-sub-title{
+    margin: 0 7em;
+    font-weight: 400;
+}
+
+p.footnote-text, p.bibliography, .hyperlink-followed, [href]{
+    line-break: anywhere;
+}
+
+a>.footnote-reference{
+vertical-align: super;
+font-size:x-small
+}
 
 
+.wrapable-table>tbody>tr {
+    display:flex;
+    /* grid-template-columns: repeat(auto-fill,minmax(.1fr)); */
+    justify-content: space-around;
+    flex-wrap: wrap;
+    align-items: stretch;
+}
+table.wrapable-table{
+    background-color: #fff;
+}
 
+.wrapable-table>tbody>tr>*{
+    flex: 1;
+    flex-grow: 1;
+}
+.wrapable-table img{
+    width: 3em;
+    
+}
+.wrapable-table table{
+    height: 100%;
+}
 
-head style {}
+.wrapable-table td{
+vertical-align: middle;
+align-items: center;}
+
+.superscript{
+    font-size: small;
+    vertical-align: super;
+    text-decoration: none;
+}
+[href] {
+    text-decoration: none;
+}

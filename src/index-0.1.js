@@ -1,13 +1,8 @@
-//<script>
 (function(){
-
-
-
 //   ADD THIS TO THE BOTTOM OF A WORD DOC SAVED AS A FILTERED HTML  ---> <script src="./src/index-0.1.js"></script>
-
 //window.addEventListener("scroll", () => { document.body.style.setProperty("--scroll", window.pageYOffset / (document.body.offsetHeight - window.innerHeight));  }, false);
 
-document.querySelector('head').innerHTML = '';
+document.querySelector('head').innerHTML = '<title>How Wealthy Investors are Making Millions Exploiting Illinois Property Tax Law</title>'; // remove 
 
 document.querySelectorAll('style').forEach(el => el.remove); // Remove all inline styles        
 document.querySelector('script').remove; // Remove all Script tags
@@ -61,22 +56,31 @@ wrapDivs = (el,i) => {
       el.outerHTML = ""})
   }
 
+  // end functions **********************
+
   // Remove Mso prefix and skewer
     document.querySelectorAll('*').forEach(el => removeClassPrefix(el,'Mso'));
 
-    // Remove inline table attributes
+    // Remove inline attributes
     document.querySelectorAll('*').forEach(el => {
-      const attrs = ['cellpadding','cellspacing','border','valign','width','style'];
+        const attrs = ['title','nowrap','cellpadding','cellspacing','border','valign','width','style'];
       attrs.forEach(attr => el.removeAttribute(attr));
     });
 
+    ///remove empty divs and Spans
+document.querySelectorAll('div,span').forEach(el =>{
+if (el.innerHTML === '' || el.innerHTML===' ' ) {el.remove();};}
+);
 
-
+// remove inline styles
     document.querySelectorAll('[style]').forEach(el => {
         el.removeAttribute('style');
         el.removeAttribute('width');
         el.removeAttribute('align');
     });
+
+
+// remove word bogstandard style
     document.querySelectorAll('p.normal', 'div.normal', 'table').forEach(el => {
       el.removeAttribute('class') } );
     
@@ -86,7 +90,9 @@ wrapDivs = (el,i) => {
 
 document.querySelectorAll('div').forEach((el,i) => {
   removeClassByPrefix(el, 'word-section');
-  if (1) { el.classList.add('section-'+i);} else  
+  if (1) {
+     el.classList.add('section-'+i);
+    el.classList.add('section')} else  
   if (el.classList.length === 0) {el.removeAttribute('class') }
 } );
 
@@ -104,7 +110,7 @@ document.querySelectorAll('table').forEach((el,i) => {
 
 
 document.querySelectorAll('p.Publishwithline').forEach(el => {el.remove() } );
-//wrapDivs()
+
 
 //alert(document.querySelectorAll('p.table-title+table')[0].innerHTML);
 
@@ -130,16 +136,26 @@ while(document.body.childElementCount >= 2) {
 
 const headerdiv = document.createElement("div");
 const footerdiv = document.createElement("div");
-
+headerdiv.innerHTML = 
+`<div class = 'pp-header-content'>
+    <div class='header-icon'>
+    </div><div class = 'pp-header-text-content'>
+    <div class='header-title'>
+    ${document.currentScript.getAttribute('kind')}
+    </div>
+    <div class='header-sub-title'>
+      Insights from the Cook County Treasurer's Office
+    </div></div>
+  </div>`;
 
 const ppdiv = document.createElement("pp-div");
 
-if ( document.currentScript.getAttribute('kind') === "primer"){
-  headerdiv.classList.add("res-header");
-  footerdiv.classList.add("res-footer");}
-else  {  headerdiv.classList.add("pp-header");
-  footerdiv.classList.add("pp-footer");}
+headerdiv.classList.add("pp-header");
+footerdiv.classList.add("pp-footer");
 
+if ( document.currentScript.getAttribute('kind') === "primer"){
+  headerdiv.classList.add("report");
+  footerdiv.classList.add("report");}
 
 
 document.querySelector('body').appendChild(document.createElement("pp-div"));
@@ -161,6 +177,20 @@ document.querySelectorAll('.publishing-comments').forEach(el => el.outerHTML='')
 // Add our CSS
 document.getElementsByTagName("head")[0].insertAdjacentHTML(
   "beforeend",
-  "<link rel=\"stylesheet\" href=\"./src/pp-styles.css\" />");
+  `<link rel="stylesheet" href="./src/pp-styles.css" />`);
+  document.getElementsByTagName("head")[0].insertAdjacentHTML(
+  "beforeend",
+  `<link rel="preconnect" href="https://fonts.googleapis.com"> <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin> <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;700;900&display=swap" rel="stylesheet">`);
+
+
+  document.querySelectorAll('.superscript>.superscript').forEach(el =>{
+    el.classList.remove("superscript")
+  })
+
+  document.querySelectorAll(".list-bullet").forEach(el =>
+    {
+      const newItem = document.createElement('li')
+      
+    })
 
 }())
