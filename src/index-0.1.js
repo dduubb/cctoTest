@@ -55,11 +55,41 @@ wrapDivs = (el,i) => {
     document.querySelectorAll(target+" "+selector).forEach(el=>{
       el.outerHTML = ""})
   }
-
+  function wrapConsecutiveElementsByClass(className) {
+    const elements = document.querySelectorAll(`.${className}`);
+    let currentWrapper = null;
+  
+    for (let i = 0; i < elements.length; i++) {
+      const element = elements[i];
+      const prevElement = elements[i - 1];
+      
+      if (element.classList.contains(className)) {
+        if (prevElement && prevElement.classList.contains(className) && prevElement.nextSibling === element) {
+          if (!currentWrapper) {
+            currentWrapper = document.createElement('ul');
+            element.parentNode.insertBefore(currentWrapper, element);
+          }
+          const listItem = document.createElement('li');
+          listItem.classList.add(className);
+          listItem.innerHTML = element.innerHTML;
+          currentWrapper.appendChild(listItem);
+          element.parentNode.removeChild(element);
+        } else {
+          currentWrapper = null;
+        }
+      } else {
+        currentWrapper = null;
+      }
+    }
+  }
+  
   // end functions **********************
 
   // Remove Mso prefix and skewer
     document.querySelectorAll('*').forEach(el => removeClassPrefix(el,'Mso'));
+    
+    
+   addClassByPrefix('p','list','list-bullet');
 
     // Remove inline attributes
     document.querySelectorAll('*').forEach(el => {
@@ -109,6 +139,7 @@ document.querySelectorAll('table').forEach((el,i) => {
 } );
 
 
+document.querySelectorAll('.list-bullet span').forEach(el => {el.remove() } );
 document.querySelectorAll('p.Publishwithline').forEach(el => {el.remove() } );
 
 
@@ -164,12 +195,18 @@ document.querySelector('pp-div').appendChild(headerdiv);
 document.querySelector('pp-div').appendChild(contentdiv)
 document.querySelector('pp-div').appendChild(footerdiv);
 
+document.querySelectorAll("[class^='list-']").forEach(el => {el.classList=''; el.setAttribute('class','list-bullet');})
 
-addClassByPrefix('p',"toc","toc-base");
-wrapSameClass('toc-base')
+addClassByPrefix('p',"toc","toc-base",);
+wrapSameClass('toc-base');
 
 
-removeChildItems(".toc-base","img")
+//
+//
+//
+//[class^='list-']
+
+removeChildItems(".toc-base","img");
 
 
 document.querySelectorAll('.publishing-comments').forEach(el => el.outerHTML='');
@@ -187,10 +224,13 @@ document.getElementsByTagName("head")[0].insertAdjacentHTML(
     el.classList.remove("superscript")
   })
 
-  document.querySelectorAll(".list-bullet").forEach(el =>
+/*   document.querySelectorAll(".list-bullet").forEach(el =>
     {
-      const newItem = document.createElement('li')
-      
-    })
+      const newItem = document.createElement('li');
+      el.(newItem)
+
+    }) */
+
+    wrapConsecutiveElementsByClass('list-bullet')
 
 }())

@@ -92,6 +92,13 @@ pp-div h2 img {
     max-width: 3em;
 }
 
+pp-div .list-bullet {
+    list-style: disc inside none;
+    display:list-item;
+    padding: 0 2.5em;
+    text-indent: -1.25em;
+    }
+
 
 #pp-page-content, .pp-page-content, .pp-header-content  {
     margin: auto;
