@@ -2,7 +2,8 @@
 //   ADD THIS TO THE BOTTOM OF A WORD DOC SAVED AS A FILTERED HTML  ---> <script src="./src/index-0.1.js"></script>
 //window.addEventListener("scroll", () => { document.body.style.setProperty("--scroll", window.pageYOffset / (document.body.offsetHeight - window.innerHeight));  }, false);
 
-document.querySelector('head').innerHTML = '<title>How Wealthy Investors are Making Millions Exploiting Illinois Property Tax Law</title>'; // remove 
+document.querySelector('head').innerHTML = `<title>
+${document.currentScript.getAttribute('name')}</title>`; 
 
 document.querySelectorAll('style').forEach(el => el.remove); // Remove all inline styles        
 document.querySelector('script').remove; // Remove all Script tags
