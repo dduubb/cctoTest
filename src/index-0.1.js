@@ -115,7 +115,7 @@ document.querySelectorAll('table').forEach((el,i) => {
 
 
 document.querySelectorAll('.list-bullet span:not(.MsoFootnoteReference)').forEach(el => el = '');
-document.querySelectorAll('.list-bullet span').forEach(el => el.innerHTML = el.innerHTML.replace(/·/,''));
+document.querySelectorAll('.list-bullet span').forEach(el => el.innerHTML = el.innerHTML.replace(/·.*/,''));
 document.querySelectorAll('p.Publishwithline').forEach(el => {el.remove() } );
 
 
