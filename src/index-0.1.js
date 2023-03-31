@@ -184,7 +184,6 @@ wrapSameClass('toc-base');
 
 removeChildItems(".toc-base","img");
 
-
 document.querySelectorAll('.publishing-comments').forEach(el => el.outerHTML='');
 
 // Add our CSS
@@ -195,18 +194,10 @@ document.getElementsByTagName("head")[0].insertAdjacentHTML(
   "beforeend",
   `<link rel="preconnect" href="https://fonts.googleapis.com"> <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin> <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;700;900&display=swap" rel="stylesheet">`);
 
-
+// fix duplcate subscript wrap
   document.querySelectorAll('.superscript>.superscript').forEach(el =>{
     el.classList.remove("superscript")
   })
 
-/*   document.querySelectorAll(".list-bullet").forEach(el =>
-    {
-      const newItem = document.createElement('li');
-      el.(newItem)
-
-    }) */
-
-    //wrapConsecutiveElementsByClass('list-bullet')
 
 }())
