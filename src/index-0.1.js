@@ -56,33 +56,7 @@ wrapDivs = (el,i) => {
     document.querySelectorAll(target+" "+selector).forEach(el=>{
       el.outerHTML = ""})
   }
-  function wrapConsecutiveElementsByClass(className) {
-    const elements = document.querySelectorAll(`.${className}`);
-    let currentWrapper = null;
   
-    for (let i = 0; i < elements.length; i++) {
-      const element = elements[i];
-      const prevElement = elements[i - 1];
-      
-      if (element.classList.contains(className)) {
-        if (prevElement && prevElement.classList.contains(className) && prevElement.nextSibling === element) {
-          if (!currentWrapper) {
-            currentWrapper = document.createElement('ul');
-            element.parentNode.insertBefore(currentWrapper, element);
-          }
-          const listItem = document.createElement('li');
-          listItem.classList.add(className);
-          listItem.innerHTML = element.innerHTML;
-          currentWrapper.appendChild(listItem);
-          element.parentNode.removeChild(element);
-        } else {
-          currentWrapper = null;
-        }
-      } else {
-        currentWrapper = null;
-      }
-    }
-  }
   
   // end functions **********************
 
@@ -140,7 +114,8 @@ document.querySelectorAll('table').forEach((el,i) => {
 } );
 
 
-document.querySelectorAll('.list-bullet span').forEach(el => {el.remove() } );
+document.querySelectorAll('.list-bullet span:not(.MsoFootnoteReference)').forEach(el => el = '');
+document.querySelectorAll('.list-bullet span').forEach(el => el.innerHTML = el.innerHTML.replace(/·/,''));
 document.querySelectorAll('p.Publishwithline').forEach(el => {el.remove() } );
 
 
@@ -232,6 +207,6 @@ document.getElementsByTagName("head")[0].insertAdjacentHTML(
 
     }) */
 
-    wrapConsecutiveElementsByClass('list-bullet')
+    //wrapConsecutiveElementsByClass('list-bullet')
 
 }())
