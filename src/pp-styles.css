@@ -249,7 +249,7 @@ pp-page-content{
 }
 
 p.footnote-text, p.bibliography, .hyperlink-followed, [href]{
-    line-break: anywhere;
+    line-break: auto;
 }
 
 a>.footnote-reference{
