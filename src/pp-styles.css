@@ -29,6 +29,7 @@ body {
     font-size: unset;
     font-weight: 400;
     margin: 0;
+    margin: 1em;
 }
 /* END From Home Page  */
 
@@ -37,8 +38,19 @@ body {
 pp-div img, pp-div > table {
 	border: none;
     height: auto;
+    max-height: 20em;
     margin: auto;
     width: 100%;
+    max-width: 15em;
+}
+
+img#Graphic\ 327062654 {
+    border: none;
+    height: auto;
+    max-height: 20em;
+    margin: auto;
+    width: 100%;
+    max-width: 30em;
 }
 
 pp-div table td {
