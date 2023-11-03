@@ -1,67 +1,49 @@
-const data = [
-    {
-        "PIN": "33311000020000",
-        "Classification": "592",
-        "TaxpayerName": "BOB SMITH",
-        "Address": "231 W MAIN ST BARRINGTON, IL 600104205",
-        "TaxCode21": "10101",
-        "TaxCode22": "10101",
-        "Billed21": 16477.58,
-        "Billed22": 14235.33
-    },
-    {
-        "PIN": "01011003330000",
-        "Classification": "592",
-        "TaxpayerName": "LINDA DAN",
-        "Address": "223 W MAIN ST BARRINGTON, IL 600104205",
-        "TaxCode21": "10101",
-        "TaxCode22": "10101",
-        "Billed21": 30086.35,
-        "Billed22": 27440.53
-    }
-];
+document.addEventListener("DOMContentLoaded", function() {
+    const input = document.querySelector("#autocomplete-input");
+    const resultsContainer = document.querySelector("#results");
 
-const input = document.getElementById("autocomplete-input");
-const list = document.getElementById("autocomplete-list");
+    input.addEventListener("input", function(e) {
+        const inputValue = e.target.value;
 
-input.addEventListener('input', function() {
-    let val = this.value;
-    list.innerHTML = '';  // Clear existing list items
-
-    if (!val || val.length < 3) return false;  // Wait until user has typed at least 3 characters
-
-    for (let item of data) {
-        let taxName = item.TaxpayerName.toLowerCase();
-        let pin = item.PIN.toLowerCase();
-        let address = item.Address.toLowerCase();
-        let searchVal = val.toLowerCase();
-
-        if (taxName.includes(searchVal) || pin.includes(searchVal) || address.includes(searchVal)) {
-            let div = document.createElement("div");
-            div.className = 'list-group-item list-group-item-action';
-            div.innerHTML = `<strong>${item.TaxpayerName}</strong> | ${item.PIN} | ${item.Address}`;
-            div.addEventListener('click', function() {
-                input.value = item.TaxpayerName;  // Assigning TaxpayerName to input for better UX
-                list.innerHTML = '';  // Clear the list
-
-                let selectedData = {
-                    "PIN": item.PIN,
-                    "Classification": item.Classification,
-                    "TaxCode21": item.TaxCode21,
-                    "TaxCode22": item.TaxCode22,
-                    "Billed21": item.Billed21,
-                    "Billed22": item.Billed22
-                };
-
-                console.log(selectedData); // Logging the selected data to the console
-            });
-            list.appendChild(div);
+        if (inputValue.length < 3) {
+            resultsContainer.innerHTML = ''; // clear previous results if they exist
+            return;
         }
-    }
-});
 
-document.addEventListener('click', function(e) {
-    if(e.target !== input) {
-        list.innerHTML = '';  // Clear the list if clicked outside
-    }
+        // Fetch data from the server
+        fetch(`https://autocomplete-server-arp6.onrender.com/search-endpoint?query=${inputValue}`)
+            .then(response => response.json())
+            .then(data => {
+                let resultsHTML = '';
+                data.forEach(item => {
+                    resultsHTML += `
+                        <div class="result-item">
+                            ${item.TaxpayerName} - ${item.PIN} - ${item.Address}
+                        </div>
+                    `;
+                });
+
+                resultsContainer.innerHTML = resultsHTML;
+
+                // If you want to add event listeners to each result item
+                const resultItems = document.querySelectorAll(".result-item");
+                resultItems.forEach(item => {
+                    item.addEventListener("click", function() {
+                        const selectedData = {
+                            PIN: item.PIN,
+                            Classification: item.Classification,
+                            TaxCode21: item.TaxCode21,
+                            TaxCode22: item.TaxCode22,
+                            Billed21: item.Billed21,
+                            Billed22: item.Billed22
+                        };
+                        console.log(selectedData);
+                    });
+                });
+            })
+            .catch(error => {
+                console.error("Error fetching data:", error);
+                resultsContainer.innerHTML = 'Error fetching results';
+            });
+    });
 });
