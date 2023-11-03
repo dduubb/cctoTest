@@ -17,11 +17,18 @@ document.addEventListener("DOMContentLoaded", function() {
                 let resultsHTML = '';
                 data.forEach(item => {
                     resultsHTML += `
-                        <div class="result-item">
+                        <div class="result-item" 
+                             data-pin="${item.PIN}" 
+                             data-classification="${item.Classification}" 
+                             data-taxcode21="${item.TaxCode21}"
+                             data-taxcode22="${item.TaxCode22}"
+                             data-billed21="${item.Billed21}"
+                             data-billed22="${item.Billed22}">
                             ${item.TaxpayerName} - ${item.PIN} - ${item.Address}
                         </div>
                     `;
                 });
+
 
                 resultsContainer.innerHTML = resultsHTML;
 
