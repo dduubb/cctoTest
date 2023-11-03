@@ -11,10 +11,18 @@ app.use(cors());
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true }));
 
-// Sample data (in reality, you'll likely query a database)
-//const data = [
-    // Your 2 million records go here...
-//];
+var whitelist = ['https://dduubb.github.io'];
+var corsOptions = {
+  origin: function (origin, callback) {
+    if (whitelist.indexOf(origin) !== -1 || !origin) {
+      callback(null, true);
+    } else {
+      callback(new Error('Not allowed by CORS'));
+    }
+  }
+};
+
+app.use(cors(corsOptions));
 
 app.get('/search-endpoint', (req, res) => {
     const query = req.query.query.toLowerCase();
