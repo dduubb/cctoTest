@@ -30,16 +30,17 @@ document.addEventListener("DOMContentLoaded", function() {
                 resultItems.forEach(item => {
                     item.addEventListener("click", function() {
                         const selectedData = {
-                            PIN: item.PIN,
-                            Classification: item.Classification,
-                            TaxCode21: item.TaxCode21,
-                            TaxCode22: item.TaxCode22,
-                            Billed21: item.Billed21,
-                            Billed22: item.Billed22
+                            PIN: this.getAttribute("data-pin"),
+                            Classification: this.getAttribute("data-classification"),
+                            TaxCode21: this.getAttribute("data-taxcode21"),
+                            TaxCode22: this.getAttribute("data-taxcode22"),
+                            Billed21: this.getAttribute("data-billed21"),
+                            Billed22: this.getAttribute("data-billed22")
                         };
                         console.log(selectedData);
                     });
                 });
+
             })
             .catch(error => {
                 console.error("Error fetching data:", error);
