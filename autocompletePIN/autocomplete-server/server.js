@@ -1,6 +1,8 @@
 const express = require('express');
 const bodyParser = require('body-parser');
 const cors = require('cors');
+const data = require('./search.json');
+
 
 const app = express();
 const PORT = process.env.PORT || 3000;
@@ -10,9 +12,9 @@ app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true }));
 
 // Sample data (in reality, you'll likely query a database)
-const data = [
+//const data = [
     // Your 2 million records go here...
-];
+//];
 
 app.get('/search-endpoint', (req, res) => {
     const query = req.query.query.toLowerCase();
