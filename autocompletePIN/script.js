@@ -1,6 +1,6 @@
 document.addEventListener("DOMContentLoaded", function() {
     const input = document.querySelector("#autocomplete-input");
-    const resultsContainer = document.querySelector("#results");
+    const resultsContainer = document.querySelector("#autocomplete-list");
 
     input.addEventListener("input", function(e) {
         const inputValue = e.target.value;
