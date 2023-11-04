@@ -12,8 +12,14 @@ document.addEventListener("DOMContentLoaded", function() {
             return;
         }
 
+            let fieldParam = '';  // default
+    if (inputValue.includes('-')) {
+        fieldParam = '&field=PIN';
+    }
+
+
         // Fetch data from the server
-        fetch(`https://autocomplete-server-arp6.onrender.com/search-endpoint?query=${inputValue}`)
+    fetch(`https://autocomplete-server-arp6.onrender.com/search-endpoint?query=${inputValue}${fieldParam}`)
             .then(response => response.json())
             .then(data => {
                 let resultsHTML = '';
