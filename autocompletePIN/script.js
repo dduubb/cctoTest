@@ -1,30 +1,20 @@
-// client script .06
+//v .02
 document.addEventListener("DOMContentLoaded", function() {
-    console.log("Document loaded!");  
-
     const input = document.querySelector("#autocomplete-input");
     const resultsContainer = document.querySelector("#autocomplete-list");
 
-    // Function to fetch the data from the server
-    function fetchData(queryValue) {
-        let fieldParam = '';  
-        if (queryValue.includes('-')) {
-            fieldParam = '';//'&field=PIN';
+    input.addEventListener("input", function(e) {
+        const inputValue = e.target.value;
+
+        if (inputValue.length < 3) {
+            resultsContainer.innerHTML = ''; // clear previous results if they exist
+            return;
         }
 
-        const fetchURL = `https://autocomplete-server-arp6.onrender.com/search-endpoint?query=${queryValue}${fieldParam}`;
-        console.log(`Fetching from: ${fetchURL}`);
-
-        fetch(fetchURL)
-            .then(response => {
-                if (!response.ok) {
-                    throw new Error(`Server responded with status: ${response.status}`);
-                }
-                return response.json();
-            })
+        // Fetch data from the server
+        fetch(`https://autocomplete-server-arp6.onrender.com/search-endpoint?query=${inputValue}`)
+            .then(response => response.json())
             .then(data => {
-                console.log("Received data:", data);  
-
                 let resultsHTML = '';
                 data.forEach(item => {
                     resultsHTML += `
@@ -40,8 +30,10 @@ document.addEventListener("DOMContentLoaded", function() {
                     `;
                 });
 
+
                 resultsContainer.innerHTML = resultsHTML;
 
+                // If you want to add event listeners to each result item
                 const resultItems = document.querySelectorAll(".result-item");
                 resultItems.forEach(item => {
                     item.addEventListener("click", function() {
@@ -53,34 +45,14 @@ document.addEventListener("DOMContentLoaded", function() {
                             Billed21: this.getAttribute("data-billed21"),
                             Billed22: this.getAttribute("data-billed22")
                         };
-                        console.log("Selected item data:", selectedData);
+                        console.log(selectedData);
                     });
                 });
+
             })
             .catch(error => {
-                console.error("Error fetching data:", error.message);
+                console.error("Error fetching data:", error);
                 resultsContainer.innerHTML = 'Error fetching results';
             });
-    }
-
-    // Event listener for input change
-    input.addEventListener("input", function(e) {
-        const inputValue = e.target.value.trim();
-        const lastChar = inputValue.charAt(inputValue.length - 1);
-
-        // Only fetch suggestions if the last character is a space, '-' or if inputValue length is >= 3
-        if ((lastChar !== ' ' && lastChar !== '-') || inputValue.length < 3) {
-            resultsContainer.innerHTML = ''; 
-            return;
-        }
-
-        fetchData(inputValue);
-    });
-
-    // Event listener for the test button
-    const testButton = document.querySelector("#testButton");
-    testButton.addEventListener("click", function() {
-        console.log("Test button clicked");
-        fetchData("sample-test-value"); // Use a hardcoded value or input's value for testing
     });
 });
