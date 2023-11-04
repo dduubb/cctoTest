@@ -7,6 +7,7 @@ document.addEventListener("DOMContentLoaded", function() {
     input.addEventListener("input", function(e) {
         const inputValue = e.target.value.trim();
         const lastChar = inputValue.charAt(inputValue.length - 1);
+console.log("Input element:", input);
 
         // Only fetch suggestions if the last character is a space, '-' or if inputValue length is >= 3
         if ((lastChar !== ' ' && lastChar !== '-') || inputValue.length < 3) {
