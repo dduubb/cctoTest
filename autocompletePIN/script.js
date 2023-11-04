@@ -3,9 +3,11 @@ document.addEventListener("DOMContentLoaded", function() {
     const resultsContainer = document.querySelector("#autocomplete-list");
 
     input.addEventListener("input", function(e) {
-        const inputValue = e.target.value;
+        const inputValue = e.target.value.trim(); // Added trim to ensure spaces at start/end are removed
+        const lastChar = inputValue.charAt(inputValue.length - 1);
 
-        if (inputValue.length < 3) {
+        // Only fetch suggestions if the last character is a space, '-' or if inputValue length is >= 3
+        if ((lastChar !== ' ' && lastChar !== '-') || inputValue.length < 3) {
             resultsContainer.innerHTML = ''; // clear previous results if they exist
             return;
         }
@@ -28,7 +30,6 @@ document.addEventListener("DOMContentLoaded", function() {
                         </div>
                     `;
                 });
-
 
                 resultsContainer.innerHTML = resultsHTML;
 
