@@ -1,5 +1,6 @@
-// client script .05
+// client script .06
 document.addEventListener("DOMContentLoaded", function() {
+    console.log("Document loaded!");  
     const input = document.querySelector("#autocomplete-input");
     const resultsContainer = document.querySelector("#autocomplete-list");
 
@@ -17,6 +18,11 @@ document.addEventListener("DOMContentLoaded", function() {
         if (inputValue.includes('-')) {
             fieldParam = '&field=PIN';
         }
+        const testButton = document.querySelector("#testButton");
+        testButton.addEventListener("click", function() {
+            console.log("Test button clicked");
+            // Now put the fetching code here (you can use a hardcoded value for testing)
+        });
 
         const fetchURL = `https://autocomplete-server-arp6.onrender.com/search-endpoint?query=${inputValue}${fieldParam}`;
         console.log(`Fetching from: ${fetchURL}`);  // Debugging: Logging the URL being fetched
