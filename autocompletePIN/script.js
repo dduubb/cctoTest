@@ -1,4 +1,4 @@
-// v.03
+// v.04
 document.addEventListener("DOMContentLoaded", function() {
     initAutocomplete();
 });
@@ -15,6 +15,10 @@ function formatPIN(pin) {
     return parts.join('-');
 }
 
+function convertFormattedPINToBackendFormat(pin) {
+    // Converts "12-34-567-890-1234" to "12345678901234"
+    return pin.replace(/-/g, '');
+}
 
 function initAutocomplete() {
     const input = document.querySelector("#autocomplete-input");
