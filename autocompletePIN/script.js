@@ -1,32 +1,19 @@
 // client script .06
 document.addEventListener("DOMContentLoaded", function() {
     console.log("Document loaded!");  
+
     const input = document.querySelector("#autocomplete-input");
     const resultsContainer = document.querySelector("#autocomplete-list");
 
-    input.addEventListener("input", function(e) {
-        const inputValue = e.target.value.trim();
-        const lastChar = inputValue.charAt(inputValue.length - 1);
-console.log("Input element:", input);
-
-        // Only fetch suggestions if the last character is a space, '-' or if inputValue length is >= 3
-        if ((lastChar !== ' ' && lastChar !== '-') || inputValue.length < 3) {
-            resultsContainer.innerHTML = ''; 
-            return;
-        }
-
+    // Function to fetch the data from the server
+    function fetchData(queryValue) {
         let fieldParam = '';  
-        if (inputValue.includes('-')) {
+        if (queryValue.includes('-')) {
             fieldParam = '&field=PIN';
         }
-        const testButton = document.querySelector("#testButton");
-        testButton.addEventListener("click", function() {
-            console.log("Test button clicked");
-            // Now put the fetching code here (you can use a hardcoded value for testing)
-        });
 
-        const fetchURL = `https://autocomplete-server-arp6.onrender.com/search-endpoint?query=${inputValue}${fieldParam}`;
-        console.log(`Fetching from: ${fetchURL}`);  // Debugging: Logging the URL being fetched
+        const fetchURL = `https://autocomplete-server-arp6.onrender.com/search-endpoint?query=${queryValue}${fieldParam}`;
+        console.log(`Fetching from: ${fetchURL}`);
 
         fetch(fetchURL)
             .then(response => {
@@ -36,7 +23,7 @@ console.log("Input element:", input);
                 return response.json();
             })
             .then(data => {
-                console.log("Received data:", data);  // Debugging: Logging the data received from the server
+                console.log("Received data:", data);  
 
                 let resultsHTML = '';
                 data.forEach(item => {
@@ -69,11 +56,31 @@ console.log("Input element:", input);
                         console.log("Selected item data:", selectedData);
                     });
                 });
-
             })
             .catch(error => {
                 console.error("Error fetching data:", error.message);
                 resultsContainer.innerHTML = 'Error fetching results';
             });
+    }
+
+    // Event listener for input change
+    input.addEventListener("input", function(e) {
+        const inputValue = e.target.value.trim();
+        const lastChar = inputValue.charAt(inputValue.length - 1);
+
+        // Only fetch suggestions if the last character is a space, '-' or if inputValue length is >= 3
+        if ((lastChar !== ' ' && lastChar !== '-') || inputValue.length < 3) {
+            resultsContainer.innerHTML = ''; 
+            return;
+        }
+
+        fetchData(inputValue);
+    });
+
+    // Event listener for the test button
+    const testButton = document.querySelector("#testButton");
+    testButton.addEventListener("click", function() {
+        console.log("Test button clicked");
+        fetchData("sample-test-value"); // Use a hardcoded value or input's value for testing
     });
 });
