@@ -3,6 +3,19 @@ document.addEventListener("DOMContentLoaded", function() {
     initAutocomplete();
 });
 
+function formatPIN(pin) {
+    // Assuming PIN is a string like "12345678901234"
+    const parts = [
+        pin.substr(0, 2),
+        pin.substr(2, 2),
+        pin.substr(4, 3),
+        pin.substr(7, 3),
+        pin.substr(10, 4)
+    ];
+    return parts.join('-');
+}
+
+
 function initAutocomplete() {
     const input = document.querySelector("#autocomplete-input");
     const resultsContainer = document.querySelector("#autocomplete-list");
