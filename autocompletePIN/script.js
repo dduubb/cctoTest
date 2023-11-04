@@ -9,7 +9,7 @@ document.addEventListener("DOMContentLoaded", function() {
     function fetchData(queryValue) {
         let fieldParam = '';  
         if (queryValue.includes('-')) {
-            fieldParam = '&field=PIN';
+            fieldParam = '';//'&field=PIN';
         }
 
         const fetchURL = `https://autocomplete-server-arp6.onrender.com/search-endpoint?query=${queryValue}${fieldParam}`;
