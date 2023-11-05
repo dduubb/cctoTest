@@ -1,4 +1,4 @@
-// v.05
+// v.07
 document.addEventListener("DOMContentLoaded", function() {
     initAutocomplete();
 });
@@ -13,7 +13,7 @@ function initAutocomplete() {
 
         // Check for space or dash before proceeding
         const lastChar = inputValue.charAt(inputValue.length - 1);
-        if (lastChar !== ' ' && lastChar !== '-') {
+        if (lastChar !== '|' && lastChar !== '-') {
             resultsContainer.innerHTML = ''; // clear previous results if they exist
             return;
         }
