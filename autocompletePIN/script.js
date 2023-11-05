@@ -1,4 +1,4 @@
-// v.10
+// v.101
 document.addEventListener("DOMContentLoaded", function() {
     initAutocomplete();
 });
@@ -9,18 +9,17 @@ function initAutocomplete() {
 
     // Debounced function
     const debouncedFetchData = debounce(function(e) {
-        // Check for space or dash before proceeding
-        if (e.code !== 'Space' && e.code !== 'Minus') {
-            return; // If the last key pressed is not a space or dash, do nothing.
+        // Check if last input was a space or minus before proceeding
+        if (e.inputType !== 'insertText' || (e.data !== ' ' && e.data !== '-')) {
+            return; // If the last input is not a space or dash, do nothing.
         }
 
         const inputValue = formatInput(e.target.value);
 
         if (inputValue.length < 3) {
-            resultsContainer.innerHTML = ''; 
+            resultsContainer.innerHTML = '';
             return;
         }
-
 
         fetch(`https://autocomplete-server-arp6.onrender.com/search-endpoint?query=${inputValue}`)
             .then(response => response.json())
@@ -65,10 +64,7 @@ function initAutocomplete() {
 
     }, 300);  // 300ms debounce time
 
-        input.addEventListener("input", function(e) {
-        debouncedFetchData(e);
-    });
-
+    input.addEventListener("input", debouncedFetchData);
 }
 
 function formatInput(value) {
