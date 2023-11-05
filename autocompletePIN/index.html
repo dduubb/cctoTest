@@ -8,12 +8,29 @@
     
     <!-- Bootstrap CSS -->
     <link href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+
+<style>
+#loading-spinner {
+    display: none;
+}
+
+</style>
+
+    
 </head>
 <body>
 
 <div class="container mt-5">
     <input type="text" id="autocomplete-input" class="form-control" placeholder="Search...">
-    <div id="autocomplete-list" class="list-group"></div>
+
+
+<div id="autocomplete-list">
+    <div class="spinner-border text-primary" role="status" id="loading-spinner">
+        <span class="sr-only">Loading...</span>
+    </div>
+</div>
+
+    
     <button id="testButton">Fetch</button>
 </div>
 
