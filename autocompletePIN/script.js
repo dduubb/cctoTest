@@ -1,4 +1,4 @@
-// v.101
+// v.11
 document.addEventListener("DOMContentLoaded", function() {
     initAutocomplete();
 });
@@ -21,10 +21,14 @@ function initAutocomplete() {
             return;
         }
 
+        document.querySelector("#loading-spinner").style.display = 'block';
+
         fetch(`https://autocomplete-server-arp6.onrender.com/search-endpoint?query=${inputValue}`)
             .then(response => response.json())
             .then(data => {
                 let resultsHTML = '';
+                document.querySelector("#loading-spinner").style.display = 'none'; // Hide spinner when data arrives
+
                 data.forEach(item => {
                     resultsHTML += `
                         <div class="result-item" 
@@ -60,6 +64,8 @@ function initAutocomplete() {
             .catch(error => {
                 console.error("Error fetching data:", error);
                 resultsContainer.innerHTML = 'Error fetching results';
+                document.querySelector("#loading-spinner").style.display = 'none';
+
             });
 
     }, 300);  // 300ms debounce time
