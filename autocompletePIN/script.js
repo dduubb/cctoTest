@@ -1,106 +1,88 @@
-// v.04
+// v.05
 document.addEventListener("DOMContentLoaded", function() {
     initAutocomplete();
 });
-
-function formatPIN(pin) {
-    // Assuming PIN is a string like "12345678901234"
-    const parts = [
-        pin.substr(0, 2),
-        pin.substr(2, 2),
-        pin.substr(4, 3),
-        pin.substr(7, 3),
-        pin.substr(10, 4)
-    ];
-    return parts.join('-');
-}
-
-function convertFormattedPINToBackendFormat(pin) {
-    // Converts "12-34-567-890-1234" to "12345678901234"
-    return pin.replace(/-/g, '');
-}
 
 function initAutocomplete() {
     const input = document.querySelector("#autocomplete-input");
     const resultsContainer = document.querySelector("#autocomplete-list");
 
-    input.addEventListener("input", handleInput);
+    // Debounced function
+    const debouncedFetchData = debounce(function(e) {
+        const inputValue = formatInput(e.target.value);
 
-    function handleInput(e) {
-        const inputValue = e.target.value;
+        // Check for space or dash before proceeding
+        const lastChar = inputValue.charAt(inputValue.length - 1);
+        if (lastChar !== ' ' && lastChar !== '-') {
+            resultsContainer.innerHTML = ''; // clear previous results if they exist
+            return;
+        }
 
-        if (shouldFetchData(inputValue)) {
-            fetchData(inputValue, resultsContainer);
-        } else {
+        if (inputValue.length < 3) {
             resultsContainer.innerHTML = '';
+            return;
         }
-    }
 
-    function shouldFetchData(value) {
-        return value.length >= 3; // You can adjust this condition as needed
-    }
+        fetch(`https://autocomplete-server-arp6.onrender.com/search-endpoint?query=${inputValue}`)
+            .then(response => response.json())
+            .then(data => {
+                let resultsHTML = '';
+                data.forEach(item => {
+                    resultsHTML += `
+                        <div class="result-item" 
+                             data-pin="${item.PIN}" 
+                             data-classification="${item.Classification}" 
+                             data-taxcode21="${item.TaxCode21}"
+                             data-taxcode22="${item.TaxCode22}"
+                             data-billed21="${item.Billed21}"
+                             data-billed22="${item.Billed22}">
+                            ${item.TaxpayerName} - ${formatPIN(item.PIN)} - ${item.Address}
+                        </div>
+                    `;
+                });
 
-    function fetchData(query, container) {
-        const endpoint = `https://autocomplete-server-arp6.onrender.com/search-endpoint?query=${query}`;
-        
-        fetch(endpoint)
-            .then(handleFetchResponse)
-            .then(data => displayResults(data, container))
-            .catch(handleFetchError);
-    }
+                resultsContainer.innerHTML = resultsHTML;
 
-    function handleFetchResponse(response) {
-        if (!response.ok) {
-            throw new Error(`Server responded with status: ${response.status}`);
-        }
-        return response.json();
-    }
+                const resultItems = document.querySelectorAll(".result-item");
+                resultItems.forEach(item => {
+                    item.addEventListener("click", function() {
+                        const selectedData = {
+                            PIN: this.getAttribute("data-pin"),
+                            Classification: this.getAttribute("data-classification"),
+                            TaxCode21: this.getAttribute("data-taxcode21"),
+                            TaxCode22: this.getAttribute("data-taxcode22"),
+                            Billed21: this.getAttribute("data-billed21"),
+                            Billed22: this.getAttribute("data-billed22")
+                        };
+                        console.log(selectedData);
+                    });
+                });
 
-    function displayResults(data, container) {
-        let resultsHTML = '';
-        data.forEach(item => {
-            resultsHTML += generateResultHTML(item);
-        });
+            })
+            .catch(error => {
+                console.error("Error fetching data:", error);
+                resultsContainer.innerHTML = 'Error fetching results';
+            });
 
-        container.innerHTML = resultsHTML;
-        addClickListenersToResults();
-    }
+    }, 300);  // 300ms debounce time
 
-    function generateResultHTML(item) {
-        return `
-            <div class="result-item" 
-                 data-pin="${item.PIN}" 
-                 data-classification="${item.Classification}" 
-                 data-taxcode21="${item.TaxCode21}"
-                 data-taxcode22="${item.TaxCode22}"
-                 data-billed21="${item.Billed21}"
-                 data-billed22="${item.Billed22}">
-                ${item.TaxpayerName} - ${formatPIN(item.PIN)} - ${item.Address}
-            </div>
-        `;
-    }
+    input.addEventListener("input", debouncedFetchData);
+}
 
-    function addClickListenersToResults() {
-        const resultItems = document.querySelectorAll(".result-item");
-        resultItems.forEach(item => {
-            item.addEventListener("click", handleResultClick);
-        });
-    }
+function formatInput(value) {
+    return value.trim().replace(/\s+/g, ' ').toLowerCase();
+}
 
-    function handleResultClick() {
-        const selectedData = {
-            PIN: this.getAttribute("data-pin"),
-            Classification: this.getAttribute("data-classification"),
-            TaxCode21: this.getAttribute("data-taxcode21"),
-            TaxCode22: this.getAttribute("data-taxcode22"),
-            Billed21: this.getAttribute("data-billed21"),
-            Billed22: this.getAttribute("data-billed22")
-        };
-        console.log(selectedData);
-    }
+function formatPIN(pin) {
+    return pin.replace(/(\d{2})(\d{2})(\d{3})(\d{3})(\d{4})/, "$1-$2-$3-$4-$5");
+}
 
-    function handleFetchError(error) {
-        console.error("Error fetching data:", error);
-        resultsContainer.innerHTML = 'Error fetching results';
-    }
+function debounce(func, delay) {
+    let debounceTimer;
+    return function() {
+        const context = this;
+        const args = arguments;
+        clearTimeout(debounceTimer);
+        debounceTimer = setTimeout(() => func.apply(context, args), delay);
+    };
 }
