@@ -74,7 +74,7 @@ function initAutocomplete() {
 }
 
 function formatInput(value) {
-    return value.trim().replace(/\s+/g, ' ').toLowerCase().replace('-','');
+    return value.replace('-','').trim().replace(/\s+/g, ' ').toLowerCase();
 }
 
 function formatPIN(pin) {
