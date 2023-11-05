@@ -38,7 +38,7 @@ function initAutocomplete() {
                              data-taxcode22="${item.TaxCode22}"
                              data-billed21="${item.Billed21}"
                              data-billed22="${item.Billed22}">
-                            ${item.TaxpayerName} - ${formatPIN(item.PIN)} - ${item.Address}
+                            ${item.TaxpayerName} | ${formatPIN(item.PIN)} | ${item.Address}
                         </div>
                     `;
                 });
