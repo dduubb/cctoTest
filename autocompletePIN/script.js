@@ -10,7 +10,7 @@ function initAutocomplete() {
     // Debounced function
     const debouncedFetchData = debounce(function(e) {
         // Check if last input was a space or minus before proceeding
-        if (e.inputType !== 'insertText' || (e.data !== ' ' && e.data !== '-')) {
+        if (e.inputType !== 'insertText' || (e.data !== ' ' && e.data !== '~')) { // replace - with ~ 
             return; // If the last input is not a space or dash, do nothing.
         }
 
