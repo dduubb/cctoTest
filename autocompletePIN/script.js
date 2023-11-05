@@ -1,4 +1,4 @@
-// v.08
+// v.09
 document.addEventListener("DOMContentLoaded", function() {
     initAutocomplete();
 });
@@ -8,16 +8,16 @@ function initAutocomplete() {
     const resultsContainer = document.querySelector("#autocomplete-list");
 
     // Debounced function
-    const debouncedFetchData = debounce(function(e) {
+   const debouncedFetchData = debounce(function() {
         // Check for space or dash before proceeding
-        if (e.code !== 'Space' && e.code !== 'Minus') {
+        if (lastKeyPressed !== 'Space' && lastKeyPressed !== 'Minus') {
             return; // If the last key pressed is not a space or dash, do nothing.
         }
 
-        const inputValue = formatInput(e.target.value);
+        const inputValue = formatInput(input.value); // You can directly use input.value here
 
         if (inputValue.length < 3) {
-            resultsContainer.innerHTML = ''; 
+            resultsContainer.innerHTML = '';
             return;
         }
 
@@ -65,9 +65,8 @@ function initAutocomplete() {
 
     }, 300);  // 300ms debounce time
 
-     input.addEventListener("input", function(e) {
-        debouncedFetchData(e);
-    });
+    input.addEventListener("input", debouncedFetchData);
+
 }
 
 function formatInput(value) {
