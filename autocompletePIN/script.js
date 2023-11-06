@@ -47,7 +47,7 @@ function initAutocomplete() {
 
                 const resultItems = document.querySelectorAll(".result-item");
                 resultItems.forEach(item => {
-                    item.addEventListener("click", function() {
+                    item.addEventListener("click", async function() {
                         const selectedData = {
                             PIN: this.getAttribute("data-pin"),
                             Classification: this.getAttribute("data-classification"),
