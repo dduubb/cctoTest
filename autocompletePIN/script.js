@@ -56,7 +56,7 @@ function initAutocomplete() {
                             Billed21: this.getAttribute("data-billed21"),
                             Billed22: this.getAttribute("data-billed22")
                         };
- await updateTableauParameter('setValue22', selectedData.billed22);
+ await updateTableauParameter('query', `${selectedData.taxcode21},${selectedData.taxcode22},${selectedData.billed21},${selectedData.billed22}`);
                         
                         console.log(selectedData.billed22);
     const selectedText = `${this.innerText.split(' - ')[0]}`;
