@@ -57,6 +57,12 @@ function initAutocomplete() {
                             Billed22: this.getAttribute("data-billed22")
                         };
                         console.log(selectedData);
+    const selectedText = `${this.innerText.split(' - ')[0]}`;
+    input.value = selectedText;
+
+    // Clear the dropdown
+    resultsContainer.innerHTML = '';
+                        
                     });
                 });
 
