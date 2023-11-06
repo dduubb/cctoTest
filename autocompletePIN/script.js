@@ -109,7 +109,7 @@ async function updateTableauParameter(paramName, paramValue) {
       //  viz.addEventListener(TableauEventType.FirstInteractive, () => {
       //      console.log('Viz is interactive!');
     //        resolve();
-        });
+     //   });
     });
 
     // Make the Overview dashboard the active sheet
