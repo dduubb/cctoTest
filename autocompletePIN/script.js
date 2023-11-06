@@ -106,9 +106,9 @@ async function updateTableauParameter(paramName, paramValue) {
     // Wait for the viz to become interactive
     await new Promise((resolve, reject) => {
         // Add an event listener to verify the viz becomes interactive
-        viz.addEventListener(TableauEventType.FirstInteractive, () => {
-            console.log('Viz is interactive!');
-            resolve();
+      //  viz.addEventListener(TableauEventType.FirstInteractive, () => {
+      //      console.log('Viz is interactive!');
+    //        resolve();
         });
     });
 
