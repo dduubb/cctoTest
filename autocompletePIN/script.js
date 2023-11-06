@@ -96,3 +96,31 @@ function debounce(func, delay) {
         debounceTimer = setTimeout(() => func.apply(context, args), delay);
     };
 }
+
+async function updateTableauParameter(paramName, paramValue) {
+    // Get the viz object from the HTML web component
+    const viz = document.querySelector('tableau-viz');
+
+    // Wait for the viz to become interactive
+    await new Promise((resolve, reject) => {
+        // Add an event listener to verify the viz becomes interactive
+        viz.addEventListener(TableauEventType.FirstInteractive, () => {
+            console.log('Viz is interactive!');
+            resolve();
+        });
+    });
+
+    // Make the Overview dashboard the active sheet
+    const dashboard = await viz.workbook.activateSheetAsync('Overview');
+
+    // Get the worksheet we want to use
+    const worksheet = dashboard.worksheets.find((ws) => ws.name === 'SaleMap');
+
+    // Update the parameter
+    try {
+        const updatedParam = await viz.workbook.changeParameterValueAsync(paramName, paramValue);
+        console.log(`Updated parameter: ${updatedParam.name}, ${updatedParam.currentValue.value}`);
+    } catch (e) {
+        console.error(e.toString());
+    }
+}
