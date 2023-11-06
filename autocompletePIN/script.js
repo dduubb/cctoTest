@@ -113,10 +113,10 @@ async function updateTableauParameter(paramName, paramValue) {
     });
 
     // Make the Overview dashboard the active sheet
-    const dashboard = await viz.workbook.activateSheetAsync('Overview');
+    const dashboard = await viz.workbook.activateSheetAsync('changeCalculator');
 
     // Get the worksheet we want to use
-    const worksheet = dashboard.worksheets.find((ws) => ws.name === 'SaleMap');
+    const worksheet = dashboard.worksheets.find((ws) => ws.name === 'changeCalculator');
 
     // Update the parameter
     try {
