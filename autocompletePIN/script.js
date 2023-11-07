@@ -1,67 +1,128 @@
-const data = [
-    {
-        "PIN": "33311000020000",
-        "Classification": "592",
-        "TaxpayerName": "BOB SMITH",
-        "Address": "231 W MAIN ST BARRINGTON, IL 600104205",
-        "TaxCode21": "10101",
-        "TaxCode22": "10101",
-        "Billed21": 16477.58,
-        "Billed22": 14235.33
-    },
-    {
-        "PIN": "01011003330000",
-        "Classification": "592",
-        "TaxpayerName": "LINDA DAN",
-        "Address": "223 W MAIN ST BARRINGTON, IL 600104205",
-        "TaxCode21": "10101",
-        "TaxCode22": "10101",
-        "Billed21": 30086.35,
-        "Billed22": 27440.53
-    }
-];
+// v.12
+document.addEventListener("DOMContentLoaded", function() {
+    initAutocomplete();
+});
 
-const input = document.getElementById("autocomplete-input");
-const list = document.getElementById("autocomplete-list");
+function initAutocomplete() {
+    const input = document.querySelector("#autocomplete-input");
+    const resultsContainer = document.querySelector("#autocomplete-list");
 
-input.addEventListener('input', function() {
-    let val = this.value;
-    list.innerHTML = '';  // Clear existing list items
-
-    if (!val || val.length < 3) return false;  // Wait until user has typed at least 3 characters
-
-    for (let item of data) {
-        let taxName = item.TaxpayerName.toLowerCase();
-        let pin = item.PIN.toLowerCase();
-        let address = item.Address.toLowerCase();
-        let searchVal = val.toLowerCase();
-
-        if (taxName.includes(searchVal) || pin.includes(searchVal) || address.includes(searchVal)) {
-            let div = document.createElement("div");
-            div.className = 'list-group-item list-group-item-action';
-            div.innerHTML = `<strong>${item.TaxpayerName}</strong> | ${item.PIN} | ${item.Address}`;
-            div.addEventListener('click', function() {
-                input.value = item.TaxpayerName;  // Assigning TaxpayerName to input for better UX
-                list.innerHTML = '';  // Clear the list
-
-                let selectedData = {
-                    "PIN": item.PIN,
-                    "Classification": item.Classification,
-                    "TaxCode21": item.TaxCode21,
-                    "TaxCode22": item.TaxCode22,
-                    "Billed21": item.Billed21,
-                    "Billed22": item.Billed22
-                };
-
-                console.log(selectedData); // Logging the selected data to the console
-            });
-            list.appendChild(div);
+    // Debounced function
+    const debouncedFetchData = debounce(function(e) {
+        // Check if last input was a space or minus before proceeding
+        if (e.inputType !== 'insertText' || (e.data !== ' ' && e.data !== '~')) { // replace - with ~ 
+            return; // If the last input is not a space or dash, do nothing.
         }
-    }
-});
 
-document.addEventListener('click', function(e) {
-    if(e.target !== input) {
-        list.innerHTML = '';  // Clear the list if clicked outside
+        const inputValue = formatInput(e.target.value);
+
+        if (inputValue.length < 3) {
+            resultsContainer.innerHTML = '';
+            return;
+        }
+
+        document.querySelector("#loading-spinner").style.display = 'block';
+
+        fetch(`https://autocomplete-server-arp6.onrender.com/search-endpoint?query=${inputValue}`)
+            .then(response => response.json())
+            .then(data => {
+                let resultsHTML = '';
+                document.querySelector("#loading-spinner").style.display = 'none'; // Hide spinner when data arrives
+
+                data.forEach(item => {
+                    resultsHTML += `
+                        <div class="result-item" 
+                             data-pin="${item.PIN}" 
+                             data-classification="${item.Classification}" 
+                             data-taxcode21="${item.TaxCode21}"
+                             data-taxcode22="${item.TaxCode22}"
+                             data-billed21="${item.Billed21}"
+                             data-billed22="${item.Billed22}">
+                            ${item.TaxpayerName} | ${formatPIN(item.PIN)} | ${item.Address}
+                        </div>
+                    `;
+                });
+
+                resultsContainer.innerHTML = resultsHTML;
+
+                const resultItems = document.querySelectorAll(".result-item");
+                resultItems.forEach(item => {
+                    item.addEventListener("click", async function() {
+                        const selectedData = {
+                            PIN: this.getAttribute("data-pin"),
+                            Classification: this.getAttribute("data-classification"),
+                            TaxCode21: this.getAttribute("data-taxcode21"),
+                            TaxCode22: this.getAttribute("data-taxcode22"),
+                            Billed21: this.getAttribute("data-billed21"),
+                            Billed22: this.getAttribute("data-billed22")
+                        };
+ await updateTableauParameter('query', `${selectedData.taxcode21},${selectedData.taxcode22},${selectedData.billed21},${selectedData.billed22}`);
+                        
+                        console.log(selectedData.billed22);
+    const selectedText = `${this.innerText.split(' - ')[0]}`;
+    input.value = selectedText;
+
+    // Clear the dropdown
+    resultsContainer.innerHTML = '';
+                        
+                    });
+                });
+
+            })
+            .catch(error => {
+                console.error("Error fetching data:", error);
+                resultsContainer.innerHTML = 'Error fetching results';
+                document.querySelector("#loading-spinner").style.display = 'none';
+
+            });
+
+    }, 300);  // 300ms debounce time
+
+    input.addEventListener("input", debouncedFetchData);
+}
+
+function formatInput(value) {
+    return value.replaceAll('-','').trim().replace(/\s+/g, ' ').toLowerCase();
+}
+
+function formatPIN(pin) {
+    return pin.replace(/(\d{2})(\d{2})(\d{3})(\d{3})(\d{4})/, "$1-$2-$3-$4-$5");
+}
+
+function debounce(func, delay) {
+    let debounceTimer;
+    return function() {
+        const context = this;
+        const args = arguments;
+        clearTimeout(debounceTimer);
+        debounceTimer = setTimeout(() => func.apply(context, args), delay);
+    };
+}
+
+async function updateTableauParameter(paramName, paramValue) {
+    // Get the viz object from the HTML web component
+    const viz = document.querySelector('tableau-viz');
+
+    // Wait for the viz to become interactive
+    await new Promise((resolve, reject) => {
+        // Add an event listener to verify the viz becomes interactive
+        viz.addEventListener(TableauEventType.FirstInteractive, () => {
+            console.log('Viz is interactive!');
+            resolve();
+        });
+    });
+
+    // Make the Overview dashboard the active sheet
+    const dashboard = await viz.workbook.activateSheetAsync('changeCalculator');
+
+    // Get the worksheet we want to use
+    const worksheet = dashboard.worksheets.find((ws) => ws.name === 'changeCalculator');
+
+    // Update the parameter
+    try {
+        const updatedParam = await viz.workbook.changeParameterValueAsync(paramName, paramValue);
+        console.log(`Updated parameter: ${updatedParam.name}, ${updatedParam.currentValue.value}`);
+    } catch (e) {
+        console.error(e.toString());
     }
-});
+}
