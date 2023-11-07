@@ -16,11 +16,20 @@
 <body>
 
 <div class="container mt-5">
-    <input type="text" id="autocomplete-input" class="form-control" placeholder="Search...">
-
-    <div class="spinner-border text-primary" role="status" id="loading-spinner">
-        <span class="sr-only">Loading...</span>
+    <div class="input-group mb-3">
+        <input type="text" id="autocomplete-input" class="form-control" placeholder="Search...">
+        <div class="input-group-append">
+            <span class="input-group-text" id="basic-addon2">
+                <div class="spinner-border text-primary spinner-border-sm" role="status" id="loading-spinner" style="display: none;">
+                    <span class="sr-only">Loading...</span>
+                </div>
+            </span>
+            <button id="clear-button" class="btn btn-secondary">Clear</button>
+        </div>
     </div>
+    
+    
+    
 <div id="autocomplete-list">
 
 </div>

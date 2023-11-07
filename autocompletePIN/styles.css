@@ -20,6 +20,14 @@
 }
 
 tableau-viz {
-    width: 1000 px;
+    width: 1000px;
     margin: auto;
+}
+
+#clear-button {
+    display: none;
+}
+
+#basic-addon2 {
+    width: 2.5rem;
 }

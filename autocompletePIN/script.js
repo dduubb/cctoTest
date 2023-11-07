@@ -48,6 +48,8 @@ function initAutocomplete() {
 
                 resultsContainer.innerHTML = resultsHTML;
 
+                
+
                 const resultItems = document.querySelectorAll(".result-item");
                 resultItems.forEach(item => {
                     item.addEventListener("click", async function() {
@@ -59,7 +61,16 @@ function initAutocomplete() {
                             Billed21: this.getAttribute("data-billed21"),
                             Billed22: this.getAttribute("data-billed22")
                         };
-                        
+                document.querySelector("#clear-button").style.display = 'block'; // show clear with a result
+                
+                document.querySelector('#clear-button').addEventListener('click', function() {
+                    // Clear the input field
+                    const input = document.querySelector("#autocomplete-input");
+                    input.value = '';
+                
+                    // Clear the Tableau parameter
+                    updateTableauParameter('query', 'empty');
+                  });        
      const selectedText = `${this.innerText.split(' - ')[0]}`;
     input.value = selectedText;
  
