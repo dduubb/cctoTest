@@ -5,6 +5,17 @@ document.addEventListener("DOMContentLoaded", function() {
     initAutocomplete();
 });
 
+function highlightMatch(text, term) {
+    const startIndex = text.toLowerCase().indexOf(term.toLowerCase());
+    if (startIndex >= 0) {
+      const endLength = term.length;
+      const matchingText = text.substr(startIndex, endLength);
+      return text.substring(0, startIndex) + '<strong>' + matchingText + '</strong>' + text.substring(startIndex + endLength);
+    }
+    return text; // No match found; return original text
+  }
+
+
 function initAutocomplete() {
     const input = document.querySelector("#autocomplete-input");
     const resultsContainer = document.querySelector("#autocomplete-list");
@@ -12,9 +23,9 @@ function initAutocomplete() {
     // Debounced function
     const debouncedFetchData = debounce(function(e) {
         // Check if last input was a space or minus before proceeding
-        if (e.inputType !== 'insertText' || (e.data !== ' ' && e.data !== '~')) { // replace - with ~ 
-            return; // If the last input is not a space or dash, do nothing.
-        }
+        //if (e.inputType !== 'insertText' || (e.data !== ' ' && e.data !== '~')) { // replace - with ~ 
+        //    return; // If the last input is not a space or dash, do nothing.
+        //}
 
         const inputValue = formatInput(e.target.value);
 
@@ -31,7 +42,14 @@ function initAutocomplete() {
                 let resultsHTML = '';
                 document.querySelector("#loading-spinner").style.display = 'none'; // Hide spinner when data arrives
 
+
+
+
                 data.forEach(item => {
+                    const highlightedTaxpayerName = highlightMatch(item.TaxpayerName, inputValue);
+                    const highlightedPIN = highlightMatch(formatPIN(item.PIN), formatPIN(inputValue));
+                    const highlightedAddress = highlightMatch(item.Address, inputValue);
+
                     resultsHTML += `
                         <div class="result-item" 
                              data-pin="${item.PIN}" 
@@ -41,7 +59,7 @@ function initAutocomplete() {
                              data-billed21="${item.Billed21}"
                              data-billed22="${item.Billed22}" 
                              > 
-                            ${item.TaxpayerName} | ${formatPIN(item.PIN)} | ${item.Address}
+                            ${highlightedTaxpayerName} | ${(highlightedPIN)} | ${highlightedAddress}
                         </div>
                     `;
                 });
@@ -91,7 +109,7 @@ function initAutocomplete() {
 
             });
 
-    }, 300);  // 300ms debounce time
+    }, 400);  // 300ms debounce time
 
     input.addEventListener("input", debouncedFetchData);
 }
