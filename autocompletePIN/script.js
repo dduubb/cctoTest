@@ -1,4 +1,6 @@
 // v.12
+import { TableauEventType } from 'https://public.tableau.com/javascripts/api/tableau.embedding.3.latest.js';
+
 document.addEventListener("DOMContentLoaded", function() {
     initAutocomplete();
 });
@@ -37,7 +39,8 @@ function initAutocomplete() {
                              data-taxcode21="${item.TaxCode21}"
                              data-taxcode22="${item.TaxCode22}"
                              data-billed21="${item.Billed21}"
-                             data-billed22="${item.Billed22}">
+                             data-billed22="${item.Billed22}" 
+                             > 
                             ${item.TaxpayerName} | ${formatPIN(item.PIN)} | ${item.Address}
                         </div>
                     `;
@@ -56,14 +59,15 @@ function initAutocomplete() {
                             Billed21: this.getAttribute("data-billed21"),
                             Billed22: this.getAttribute("data-billed22")
                         };
- await updateTableauParameter('query', `${selectedData.taxcode21},${selectedData.taxcode22},${selectedData.billed21},${selectedData.billed22}`);
                         
-                        console.log(selectedData.billed22);
-    const selectedText = `${this.innerText.split(' - ')[0]}`;
+     const selectedText = `${this.innerText.split(' - ')[0]}`;
     input.value = selectedText;
-
+ 
     // Clear the dropdown
     resultsContainer.innerHTML = '';
+    let selectParam = `${selectedData.TaxCode21};${selectedData.TaxCode22};${selectedData.Billed21};${selectedData.Billed22}`
+    console.log(selectParam);
+    await updateTableauParameter('query', selectParam);
                         
                     });
                 });
@@ -100,24 +104,10 @@ function debounce(func, delay) {
 }
 
 async function updateTableauParameter(paramName, paramValue) {
+    console.log(`updatePram will run with ${paramName} and ${paramValue}`);
     // Get the viz object from the HTML web component
     const viz = document.querySelector('tableau-viz');
-
-    // Wait for the viz to become interactive
-    await new Promise((resolve, reject) => {
-        // Add an event listener to verify the viz becomes interactive
-        viz.addEventListener(TableauEventType.FirstInteractive, () => {
-            console.log('Viz is interactive!');
-            resolve();
-        });
-    });
-
-    // Make the Overview dashboard the active sheet
-    const dashboard = await viz.workbook.activateSheetAsync('changeCalculator');
-
-    // Get the worksheet we want to use
-    const worksheet = dashboard.worksheets.find((ws) => ws.name === 'changeCalculator');
-
+  
     // Update the parameter
     try {
         const updatedParam = await viz.workbook.changeParameterValueAsync(paramName, paramValue);
