@@ -5,17 +5,6 @@ document.addEventListener("DOMContentLoaded", function() {
     initAutocomplete();
 });
 
-function highlightMatch(text, term) {
-    const startIndex = text.toLowerCase().indexOf(term.toLowerCase());
-    if (startIndex >= 0) {
-      const endLength = term.length;
-      const matchingText = text.substr(startIndex, endLength);
-      return text.substring(0, startIndex) + '<strong>' + matchingText + '</strong>' + text.substring(startIndex + endLength);
-    }
-    return text; // No match found; return original text
-  }
-
-
 function initAutocomplete() {
     const input = document.querySelector("#autocomplete-input");
     const resultsContainer = document.querySelector("#autocomplete-list");
@@ -121,6 +110,16 @@ function formatInput(value) {
 function formatPIN(pin) {
     return pin.replace(/(\d{2})(\d{2})(\d{3})(\d{3})(\d{4})/, "$1-$2-$3-$4-$5");
 }
+
+function highlightMatch(text, term) {
+    const startIndex = text.toLowerCase().indexOf(term.toLowerCase());
+    if (startIndex >= 0) {
+      const endLength = term.length;
+      const matchingText = text.substr(startIndex, endLength);
+      return text.substring(0, startIndex) + '<strong>' + matchingText + '</strong>' + text.substring(startIndex + endLength);
+    }
+    return text; // No match found; return original text
+  }
 
 function debounce(func, delay) {
     let debounceTimer;
