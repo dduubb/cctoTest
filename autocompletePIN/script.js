@@ -144,3 +144,16 @@ async function updateTableauParameter(paramName, paramValue) {
         console.error(e.toString());
     }
 }
+
+    // Check the user's device type
+    const isMobile = /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent);
+  
+    // Modify the "device" parameter based on the device type
+    const tableauViz = document.querySelector('tableau-viz');
+    if (isMobile) {
+        console.log("mobile")
+      tableauViz.setAttribute('device', 'phone');
+    } else {
+        console.log("desktop")
+      tableauViz.setAttribute('device', 'desktop');
+    }
