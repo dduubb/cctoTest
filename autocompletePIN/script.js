@@ -35,7 +35,7 @@ function initAutocomplete() {
 
 
                 data.forEach(item => {
-                    const highlightedTaxpayerName = highlightMatch(item.TaxpayerName, inputValue);
+                    const highlightedTaxpayerName = highlightMatch(item.TaxPayer, inputValue);
                     const highlightedPIN = highlightMatch(formatPIN(item.PIN), formatPIN(inputValue));
                     const highlightedAddress = highlightMatch(item.Address, inputValue);
 
