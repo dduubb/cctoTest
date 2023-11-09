@@ -199,28 +199,33 @@ document.getElementsByTagName("head")[0].insertAdjacentHTML(
     el.classList.remove("superscript")
   })
 
-
+  let targetHeadingTextHash = (window.location.hash.substring(1)).replaceAll("%20", " "); // Get the number from the hash parameter
+ 
 
   ///////////
   const contentElement = document.getElementsByTagName('pp-div')[0];
-  //const targetHeadingIndex = 8; // Target the 10th <h2> element
-  const targetHeadingIndex = parseInt(window.location.hash.substring(1)); // Get the number from the hash parameter
-  let targetHeadingElement = null;
-  let nextHeadingElement = null;
+  const targetHeadingText = targetHeadingTextHash;
+    let targetHeadingElement = null;
   
   // Find the target heading element
-  let headingElements = contentElement.querySelectorAll('h2');
+  const headingElements = contentElement.querySelectorAll('h2');
   for (let i = 0; i < headingElements.length; i++) {
-      if (i === targetHeadingIndex - 1) {
+    
+    console.log(headingElements[i].textContent)
+      if (headingElements[i].textContent.includes(targetHeadingText)) {
           targetHeadingElement = headingElements[i];
+          console.log(headingElements[i].textContent)
           break;
       }
   }
   
   if (targetHeadingElement) {
+  
+    console.log(targetHeadingElement);
       // Find the next heading element after the target heading
-      nextHeadingElement = targetHeadingElement.nextElementSibling;
+      let nextHeadingElement = targetHeadingElement.nextElementSibling;
       while (nextHeadingElement && nextHeadingElement.nodeName !== 'H2') {
+console.log("here")
           nextHeadingElement = nextHeadingElement.nextElementSibling;
       }
   
@@ -231,15 +236,12 @@ document.getElementsByTagName("head")[0].insertAdjacentHTML(
           extractedContent += childNode.outerHTML;
           childNode = childNode.nextElementSibling;
       }
-  
       console.log('Extracted content:', extractedContent);
       document.getElementsByTagName('pp-div')[0].innerHTML = extractedContent;
   } else {
       console.log('Target heading not found');
   }
   
-
-
 
 
 }())
