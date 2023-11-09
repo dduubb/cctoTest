@@ -42,7 +42,7 @@ function initAutocomplete() {
                     resultsHTML += `
                         <div class="result-item" 
                              data-pin="${item.PIN}" 
-                             data-classification="${item.query}" 
+                             data-param="${item.param}" 
                              data-classification="${item.Classification}" 
                              data-taxcode21="${item.TaxCode21}"
                              data-taxcode22="${item.TaxCode22}"
@@ -63,7 +63,7 @@ function initAutocomplete() {
                     item.addEventListener("click", async function() {
                         const selectedData = {
                             PIN: this.getAttribute("data-pin"),
-                            query: this.getAttribute("query"),
+                            query: this.getAttribute("data-param"),
                             TaxCode21: this.getAttribute("data-taxcode21"),
                             TaxCode22: this.getAttribute("data-taxcode22"),
                             Billed21: this.getAttribute("data-billed21"),
