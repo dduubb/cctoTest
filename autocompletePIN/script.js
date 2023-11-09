@@ -42,11 +42,12 @@ function initAutocomplete() {
                     resultsHTML += `
                         <div class="result-item" 
                              data-pin="${item.PIN}" 
-                             data-classification="${item.Classification}" 
-                             data-taxcode21="${item.TaxCode21}"
-                             data-taxcode22="${item.TaxCode22}"
-                             data-billed21="${item.Billed21}"
-                             data-billed22="${item.Billed22}" 
+                             data-classification="${item.query}" 
+                             //data-classification="${item.Classification}" 
+                             //data-taxcode21="${item.TaxCode21}"
+                             //data-taxcode22="${item.TaxCode22}"
+                             //data-billed21="${item.Billed21}"
+                             //data-billed22="${item.Billed22}" 
                              > 
                             ${highlightedTaxpayerName} | ${(highlightedPIN)} | ${highlightedAddress}
                         </div>
@@ -62,11 +63,11 @@ function initAutocomplete() {
                     item.addEventListener("click", async function() {
                         const selectedData = {
                             PIN: this.getAttribute("data-pin"),
-                            Classification: this.getAttribute("data-classification"),
-                            TaxCode21: this.getAttribute("data-taxcode21"),
-                            TaxCode22: this.getAttribute("data-taxcode22"),
-                            Billed21: this.getAttribute("data-billed21"),
-                            Billed22: this.getAttribute("data-billed22")
+                            query: this.getAttribute("query")  //,
+                            //TaxCode21: this.getAttribute("data-taxcode21"),
+                            //TaxCode22: this.getAttribute("data-taxcode22"),
+                            //Billed21: this.getAttribute("data-billed21"),
+                            //Billed22: this.getAttribute("data-billed22")
                         };
                 document.querySelector("#clear-button").style.display = 'block'; // show clear with a result
                 
@@ -83,7 +84,8 @@ function initAutocomplete() {
  
     // Clear the dropdown
     resultsContainer.innerHTML = '';
-    let selectParam = `${selectedData.TaxCode21};${selectedData.TaxCode22};${selectedData.Billed21};${selectedData.Billed22}`
+    let selectParam = selectedData.query
+    //let selectParam = `${selectedData.TaxCode21};${selectedData.TaxCode22};${selectedData.Billed21};${selectedData.Billed22}`
     console.log(selectParam);
     await updateTableauParameter('query', selectParam);
                         
@@ -135,7 +137,7 @@ async function updateTableauParameter(paramName, paramValue) {
     console.log(`updatePram will run with ${paramName} and ${paramValue}`);
     // Get the viz object from the HTML web component
     const viz = document.querySelector('tableau-viz');
-  
+    paramValue = paramValue ?? '10021;10021;8888.88;7777.77' //fallback
     // Update the parameter
     try {
         const updatedParam = await viz.workbook.changeParameterValueAsync(paramName, paramValue);
