@@ -63,11 +63,11 @@ function initAutocomplete() {
                     item.addEventListener("click", async function() {
                         const selectedData = {
                             PIN: this.getAttribute("data-pin"),
-                            query: this.getAttribute("query")  //,
-                            //TaxCode21: this.getAttribute("data-taxcode21"),
-                            //TaxCode22: this.getAttribute("data-taxcode22"),
-                            //Billed21: this.getAttribute("data-billed21"),
-                            //Billed22: this.getAttribute("data-billed22")
+                            //query: this.getAttribute("query")  //,
+                            TaxCode21: this.getAttribute("data-taxcode21"),
+                            TaxCode22: this.getAttribute("data-taxcode22"),
+                            Billed21: this.getAttribute("data-billed21"),
+                            Billed22: this.getAttribute("data-billed22")
                         };
                 document.querySelector("#clear-button").style.display = 'block'; // show clear with a result
                 
@@ -84,8 +84,8 @@ function initAutocomplete() {
  
     // Clear the dropdown
     resultsContainer.innerHTML = '';
-    let selectParam = `${selectedData.query}`;
-    //let selectParam = `${selectedData.TaxCode21};${selectedData.TaxCode22};${selectedData.Billed21};${selectedData.Billed22}`
+    //let selectParam = `${selectedData.query}`;
+    let selectParam = `${selectedData.TaxCode21};${selectedData.TaxCode22};${selectedData.Billed21};${selectedData.Billed22}`
     console.log(selectParam);
     await updateTableauParameter('query', selectParam);
                         
