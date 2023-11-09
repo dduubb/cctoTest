@@ -43,11 +43,11 @@ function initAutocomplete() {
                         <div class="result-item" 
                              data-pin="${item.PIN}" 
                              data-classification="${item.query}" 
-                             //data-classification="${item.Classification}" 
-                             //data-taxcode21="${item.TaxCode21}"
-                             //data-taxcode22="${item.TaxCode22}"
-                             //data-billed21="${item.Billed21}"
-                             //data-billed22="${item.Billed22}" 
+                             data-classification="${item.Classification}" 
+                             data-taxcode21="${item.TaxCode21}"
+                             data-taxcode22="${item.TaxCode22}"
+                             data-billed21="${item.Billed21}"
+                             data-billed22="${item.Billed22}" 
                              > 
                             ${highlightedTaxpayerName} | ${(highlightedPIN)} | ${highlightedAddress}
                         </div>
