@@ -84,7 +84,7 @@ function initAutocomplete() {
  
     // Clear the dropdown
     resultsContainer.innerHTML = '';
-    let selectParam = selectedData.query
+    let selectParam = selectedData.query;
     //let selectParam = `${selectedData.TaxCode21};${selectedData.TaxCode22};${selectedData.Billed21};${selectedData.Billed22}`
     console.log(selectParam);
     await updateTableauParameter('query', selectParam);
