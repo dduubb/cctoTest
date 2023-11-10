@@ -1,53 +1,52 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="referrer" content="always">
-    <title>Test Tableau Dashboard with Params</title>
-    
-
-    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+    <title>Property Tax Search and Visualization</title>
+    <link rel="icon" href="/favicon.svg">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
     <link rel="stylesheet" type="text/css" rel="noopener" target="_blank" href="styles.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Roboto+Condensed:ital,wght@0,300;0,700;1,700&family=Roboto:wght@700&display=swap" rel="stylesheet">
-
-    
 </head>
+
 <body>
-
-<div class="container mt-5">
-    <div class="input-group mb-3">
-        <input type="text" id="autocomplete-input" class="form-control" placeholder="Search... (Currently only the northern most 100K Properties)">
-        <div class="input-group-append">
-            <span class="input-group-text" id="basic-addon2">
-                <div class="spinner-border text-primary spinner-border-sm" role="status" id="loading-spinner" style="display: none;">
-                    <span class="sr-only">Loading...</span>
-                </div>
-            </span>
-            <button id="clear-button" class="btn btn-secondary">Clear</button>
+    <section aria-label="Property Tax Search and Visualization">
+        <div class="container mt-5 autocomplete-container">
+            <div class="input-group mb-3">
+                <input type="text" id="autocomplete-input" class="form-control" placeholder="Search property taxes..."
+                    aria-label="Search property taxes" aria-autocomplete="list" aria-controls="autocomplete-list"
+                    aria-haspopup="true">
+                <span class="input-group-text" id="basic-addon2">
+                    <span class="spinner-border text-primary spinner-border-sm" role="status" id="loading-spinner"
+                        style="display: none;">
+                        <span class="visually-hidden" aria-live="assertive">Loading...</span>
+                </span>
+                </span>
+                <button id="clear-button" class="btn btn-secondary" aria-label="Clear search">Clear</button>
+            </div>
+            <div id="autocomplete-list" role="listbox" aria-labelledby="autocomplete-input">
+            </div>
         </div>
-    </div>
-    
-    
-    
-<div id="autocomplete-list">
 
-</div>
+        <section aria-label="Data Visualization" class="around-viz">
+            <tableau-viz
+                src="https://public.tableau.com/views/PropertyMasterWithComparibleExemptions_TCLevel3/changeCalculator?:language=en-US&query=empty&:display_count=n&:origin=viz_share_link"
+                hide-tabs toolbar="hidden">
+            </tableau-viz>
+        </section>
+    </section>
 
-</div>
-<div class="around-viz">
-    <tableau-viz
-    src="https://public.tableau.com/views/PropertyMasterWithComparibleExemptions_TCLevel3/changeCalculator?:language=en-US&query=empty&:display_count=n&:origin=viz_share_link"
-     hide-tabs toolbar="hidden" >
-  </tableau-viz>
-  
+    <!-- Bootstrap JS and Popper.js -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
+        crossorigin="anonymous"></script>
+    <script type="module" src="script.js"></script>
 
-<!-- Bootstrap JS and Popper.js -->
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
-<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
-<script type="module" src="script.js"></script>
 </body>
+
 </html>
