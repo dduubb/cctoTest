@@ -144,7 +144,8 @@ function onSelectResultItem(event) {
     // Perform additional actions
     // For example, updating Tableau parameter based on the selection
     updateTableauParameter("query", selectedParam || "default value");
-
+    showStreetView(selectedItem.innerText.split("|")[2],selectedParam.split(";")[0],selectedParam.split(";")[4]);
+    
     // Any other logic that needs to run after an item is selected
 }
 
@@ -196,10 +197,8 @@ function setDeviceType() {
     const tableauViz = document.querySelector("tableau-viz");
 
     if (isMobile) {
-        console.log("mobile");
         tableauViz.setAttribute("device", "phone");
     } else {
-        console.log("desktop");
         tableauViz.setAttribute("device", "desktop");
     }
 }
@@ -219,13 +218,13 @@ function attachClearButtonListener() {
         document.querySelector("#autocomplete-input").value = "";
         updateTableauParameter("query", "empty");
         resultsContainer.innerHTML = "";
+        showStreetView(null);
         clearButton.style.display = "none"; // show clear with a result
         input.focus(); // Set focus back to the input field
     });
 }
 
 async function updateTableauParameter(paramName, paramValue) {
-    console.log(`updatePram will run with ${paramName} and ${paramValue}`);
     // Get the viz object from the HTML web component
     const viz = document.querySelector("tableau-viz");
     paramValue = paramValue ?? "10021;10021;8888.88;7777.77" //fallback
@@ -235,5 +234,48 @@ async function updateTableauParameter(paramName, paramValue) {
         console.log(`Updated parameter: ${updatedParam.name}, ${updatedParam.currentValue.value}`);
     } catch (e) {
         console.error(e.toString());
+    }
+}
+
+function generateTri(param){
+    const taxcodeCheat = param.slice(0, 2)
+    return taxcodeCheat.substring(0, 1) === "7" ? "City, reassessed in Tax Years 2021 next in 2024"
+    : [10, 16, 17, 18, 20, 22, 23, 24, 25, 26, 29, 35, 38].includes(parseInt(taxcodeCheat.substring(0, 2)))
+    ? "North, reassessed in Tax Years 2022 next in 2025"
+    : "South, reassessed in Tax Years 2020 next in 2023";
+}
+
+function classifyNumber(n) {
+    const C = ["Exempt", "Vacant", "Residential", "Multifamily", "Commercial", "Industrial", "Unknown"];
+  
+    for (let i = 0; i < C.length; i++) {
+      if ((i === 0 && n >= 0 && n <= 99) ||
+          (i === 1 && n >= 100 && n <= 199) ||
+          (i === 2 && n >= 200 && n <= 299) ||
+          (i === 3 && n >= 300 && n <= 399) ||
+          ((i === 4 || i === 6) && ((n >= 400 && n <= 417) || n === 418 || n >= 419 && n <= 449 || n === 497 || (n >= 498 && n <= 499) || (n >= 500 && n <= 549) || n >= 590 && n <= 592 || n >= 594 && n <= 599 || n >= 700 && n <= 799 || n >= 800 && n <= 849 || (n >= 891 && n <= 892) || (n >= 894 && n <= 899))) ||
+          ((i === 5 || i === 6) && ((n >= 450 && n <= 489) || n === 493 || (n >= 550 && n <= 589) || n === 593 || (n >= 600 && n <= 637) || n === 638 || n >= 639 && n <= 699 || n >= 850 && n <= 890 || n === 893)) ||
+          ((i === 4 || i === 6) && ((n >= 494 && n <= 496) || (n >= 900 && n <= 999)))) {
+        return C[i];
+      }
+    }
+    return C[C.length - 1];
+  }  
+
+function showStreetView(address,taxcode,classNum) {
+    const streetViewImage = document.getElementById('streetViewImage');
+    const streetViewContainer = document.getElementById('streetViewContainer');
+    const streetViewTextContainer = document.getElementById('addressText');
+    if (address) {
+        const apiKey = 'AIzaSyC4n1tmgSYclPNrfW8BKcgInWwxaW4FBII'; // Replace with your API key
+        const streetViewUrl = `https://maps.googleapis.com/maps/api/streetview?size=600x300&location=${encodeURIComponent(address)}&key=${apiKey}`;
+        streetViewTextContainer.innerHTML= 
+        `<address><strong>Address:</strong> ${address}</address><p>
+        <strong>Assessment Schedule:</strong> ${generateTri(taxcode)}<p>
+        <strong>Classification:</strong> ${classifyNumber(classNum)}`;
+        streetViewImage.src = streetViewUrl;
+        streetViewContainer.style.display = 'block'; // Ensure the image is visible
+    } else {
+        streetViewContainer.style.display = 'none'; // Hide the image
     }
 }

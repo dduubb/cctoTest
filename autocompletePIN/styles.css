@@ -1,11 +1,22 @@
 /* General Elements */
+body {
+    font-family: 'Roboto', sans-serif;
+}
+
+.card-title {
+    font-weight: 700;
+    padding-bottom: 1em;
+}
+
 strong {
     font-weight: bold;
+    
 }
 
 /* Autocomplete Input Styles */
 .autocomplete-container {
     position: relative;
+    max-width: 1000px;
     /* Additional styles as needed */
 }
 
@@ -71,6 +82,10 @@ strong {
 /* Tableau Visualization Container */
 .around-viz {
     padding-top: 1em;
+}
+
+#streetViewContainer{
+    max-width: 1000px;
 }
 
 tableau-viz {

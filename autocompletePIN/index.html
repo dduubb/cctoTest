@@ -11,15 +11,15 @@
     <link rel="stylesheet" type="text/css" rel="noopener" target="_blank" href="styles.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Roboto+Condensed:ital,wght@0,300;0,700;1,700&family=Roboto:wght@700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto+Condensed:ital,wght@0,400;0,700;1,700&family=Roboto:wght@400&display=swap" rel="stylesheet">
 </head>
 
 <body>
     <section aria-label="Property Tax Search and Visualization">
-        <div class="container mt-5 autocomplete-container">
+        <section id="searchContainer" class="container mt-5 autocomplete-container">
             <div class="input-group mb-3">
-                <input type="text" id="autocomplete-input" class="form-control" placeholder="Search property taxes..."
-                    aria-label="Search property taxes" aria-autocomplete="list" aria-controls="autocomplete-list"
+                <input type="text" id="autocomplete-input" class="form-control" placeholder="Search property taxes from a 440,000 PIN sample..."
+                    aria-label="Search for Cook County Properties" aria-autocomplete="list" aria-controls="autocomplete-list"
                     aria-haspopup="true">
                 <span class="input-group-text" id="basic-addon2">
                     <span class="spinner-border text-primary spinner-border-sm" role="status" id="loading-spinner"
@@ -31,7 +31,23 @@
             </div>
             <div id="autocomplete-list" role="listbox" aria-labelledby="autocomplete-input">
             </div>
-        </div>
+        </section>
+        
+        <section id="streetViewContainer" aria-label="Street View and Details" style="display: none;" class="container mt-4">
+            <div class="card mb-3">
+                <div class="row g-0">
+                    <div class="col-md-6">
+                        <img id="streetViewImage" src="" class="img-fluid rounded-start" alt="Street View">
+                    </div>
+                    <div class="col-md-6">
+                        <div class="card-body">
+                            <h5 class="card-title">Property Details</h5>
+                            <p class="card-text"><span id="addressText"></span></p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
 
         <section aria-label="Data Visualization" class="around-viz">
             <tableau-viz
