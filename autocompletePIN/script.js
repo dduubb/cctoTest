@@ -101,7 +101,7 @@ async function fetchAutocompleteResults(query) {
 
 function displayResults(data,inputValue, resultsContainer) {
     let resultsHTML = "";
-    data.forEach(item => {
+    data.results.forEach(item => {
         resultsHTML += buildResultItemHTML(item, inputValue);
     });
     resultsContainer.innerHTML = resultsHTML;
