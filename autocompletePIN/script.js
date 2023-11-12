@@ -279,7 +279,7 @@ function showStreetView(address,taxcode,classNum) {
         streetViewContainer.style.display = 'none'; // Hide the image
     }
 }
-console.log(getUserLocation());
+
 async function getUserLocation() {
   return new Promise(function(resolve, reject) {
     if ("geolocation" in navigator) {
@@ -298,3 +298,20 @@ async function getUserLocation() {
     }
   });
 }
+
+// Usage:
+async function getLocationAndDoSomething() {
+    try {
+      const location = await getUserLocation();
+      // Location retrieval was successful
+      console.log("Latitude: " + location.latitude);
+      console.log("Longitude: " + location.longitude);
+      
+      // Perform other asynchronous operations here if needed
+    } catch (error) {
+      // Handle errors
+      console.error(error);
+    }
+  };
+  
+  // Call the async function
