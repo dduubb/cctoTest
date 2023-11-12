@@ -279,3 +279,22 @@ function showStreetView(address,taxcode,classNum) {
         streetViewContainer.style.display = 'none'; // Hide the image
     }
 }
+console.log(getUserLocation());
+async function getUserLocation() {
+  return new Promise(function(resolve, reject) {
+    if ("geolocation" in navigator) {
+      navigator.geolocation.getCurrentPosition(async function(position) {
+        // Success: Resolve the Promise with the location data
+        var latitude = position.coords.latitude;
+        var longitude = position.coords.longitude;
+        resolve({ latitude, longitude });
+      }, function(error) {
+        // Error: Reject the Promise with an error message
+        reject("Error getting user's location: " + error.message);
+      });
+    } else {
+      // Geolocation is not supported: Reject the Promise
+      reject("Geolocation is not supported in this browser.");
+    }
+  });
+}
