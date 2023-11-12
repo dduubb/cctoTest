@@ -239,10 +239,10 @@ async function updateTableauParameter(paramName, paramValue) {
 
 function generateTri(param){
     const taxcodeCheat = param.slice(0, 2)
-    return taxcodeCheat.substring(0, 1) === "7" ? "City, reassessed in Tax Years 2021 next in 2024"
+    return taxcodeCheat.substring(0, 1) === "7" ? "City, reassessed in Tax Year 2021 next in 2024"
     : [10, 16, 17, 18, 20, 22, 23, 24, 25, 26, 29, 35, 38].includes(parseInt(taxcodeCheat.substring(0, 2)))
-    ? "North, reassessed in Tax Years 2022 next in 2025"
-    : "South, reassessed in Tax Years 2020 next in 2023";
+    ? "North, reassessed in Tax Year 2022 next in 2025"
+    : "South, reassessed in Tax Year 2020 next in 2023";
 }
 
 function classifyNumber(n) {
