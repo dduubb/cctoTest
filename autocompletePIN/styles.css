@@ -70,14 +70,33 @@ strong {
 }
 
 /* Button and Spinner Styles */
+/* Button and Spinner Styles */
 #clear-button,
 #loading-spinner {
     display: none;
 }
 
 #basic-addon2 {
-    width: 2.5rem;
+    display: flex;
+    align-items: center; /* Vertically center elements */
+    justify-content: space-between; /* Add space between elements */
+    min-width: 2.5em;
+    width: auto; /* Let the container adjust to content */
+    padding-right: 0px; /* Add some right padding */
 }
+
+#location-radio {
+    display: none;
+    flex-shrink: 0; /* Prevent radio button from shrinking */
+    width: 2.5rem; /* Set the width of the radio button */
+    margin: auto;
+}
+
+.spinner-border {
+    width: 1.2rem; /* Set the width of the spinner */
+    height: 1.2rem; /* Set the height of the spinner */
+}
+
 
 /* Tableau Visualization Container */
 .around-viz {

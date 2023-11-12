@@ -314,4 +314,26 @@ async function getLocationAndDoSomething() {
     }
   };
   
-  // Call the async function
+  document.addEventListener("DOMContentLoaded", function() {
+    // Get references to the radio button and loading spinner
+    var locationRadio = document.getElementById("location-radio");
+    var loadingSpinner = document.getElementById("loading-spinner");
+  
+    // Add a click event listener to the radio button
+    locationRadio.addEventListener("click", async function() {
+      // Toggle the loading spinner
+      loadingSpinner.style.display = "inline-block";
+  
+      try {
+        // Call the async function when the radio button is clicked
+        await getLocationAndDoSomething();
+      } catch (error) {
+        // Handle errors if necessary
+        console.error(error);
+      } finally {
+        // Toggle off the loading spinner when done
+        loadingSpinner.style.display = "none";
+      }
+    });
+  });
+  
