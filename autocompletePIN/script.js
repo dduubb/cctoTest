@@ -7,7 +7,7 @@ document.addEventListener("DOMContentLoaded", function() {
     setDeviceType();
 });
 
-const debouncedFetchAndDisplay = debounce(fetchAndDisplayResults, 400);
+const debouncedFetchAndDisplay = debounce(fetchAndDisplayResults, 500);
 
 function initAutocomplete() {
     const input = document.querySelector("#autocomplete-input");
@@ -111,8 +111,9 @@ function displayResults(data,inputValue, resultsContainer) {
 function resultsFooter (resultCount) {
     if (resultCount > 20) {
         return `<div class='result-footer'>Showing 20 of ${resultCount}, try a more specific search</div>`
-    } else
-    return `<div class="no-results">no result with search "<i>${query}</i>"</div>`
+    } else if   (resultCount === 0) {
+    return `<div class="no-results">no result with search "<i>${query}</i>"</div>` }
+    else return ''
 }
 
 function buildResultItemHTML(item, inputValue) {
@@ -169,6 +170,7 @@ function hideLoadingSpinner() {
 function handleFetchError(error , resultsContainer) {
     console.error("Error fetching data:", error);
     resultsContainer.innerHTML = `<div class="no-results">no result with this search </div>`;
+    
 }
 
 function formatInput(value) {
