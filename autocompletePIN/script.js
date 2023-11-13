@@ -130,12 +130,6 @@ function buildResultItemHTML(item, inputValue) {
         </button>`;
 }
 
-/* function attachResultItemsListeners() {
-    document.querySelectorAll(".result-item").forEach(item => {
-        item.addEventListener("click", onSelectResultItem);
-    });
-} */
-
 function onSelectResultItem(event) {
     const selectedItem = event.currentTarget;
     const selectedPIN = selectedItem.getAttribute("data-pin");
