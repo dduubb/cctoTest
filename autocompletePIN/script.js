@@ -102,10 +102,17 @@ async function fetchAutocompleteResults(query) {
 function displayResults(data,inputValue, resultsContainer) {
     let resultsHTML = "";
     data.results.forEach(item => {
-        resultsHTML += buildResultItemHTML(item, inputValue);
+        resultsHTML += buildResultItemHTML(item, inputValue) ; // append list footer here 
     });
-    resultsContainer.innerHTML = resultsHTML;
+    resultsContainer.innerHTML = resultsHTML+ resultsFooter(data.totalCount);
     attachResultItemsListeners();
+}
+
+function resultsFooter (resultCount) {
+    if (resultCount > 20) {
+        return `<div class='result-footer'>Showing 20 of ${resultCount}, try a more specific search</div>`
+    } else
+    return `<div class="no-results">no result with search "<i>${query}</i>"</div>`
 }
 
 function buildResultItemHTML(item, inputValue) {
@@ -161,7 +168,7 @@ function hideLoadingSpinner() {
 
 function handleFetchError(error , resultsContainer) {
     console.error("Error fetching data:", error);
-    resultsContainer.innerHTML = "Error fetching results";
+    resultsContainer.innerHTML = `<div class="no-results">no result with this search </div>`;
 }
 
 function formatInput(value) {
