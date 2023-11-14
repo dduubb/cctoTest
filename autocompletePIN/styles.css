@@ -75,7 +75,6 @@ strong {
 }
 
 /* Button and Spinner Styles */
-/* Button and Spinner Styles */
 #clear-button,
 #loading-spinner {
     display: none;
@@ -87,13 +86,13 @@ strong {
     justify-content: space-between; /* Add space between elements */
     min-width: 2.5em;
     width: auto; /* Let the container adjust to content */
-    padding-right: 0px; /* Add some right padding */
+     /* padding-right: 0px;Add some right padding */
 }
 
-#location-radio {
-    display: none;
+.checkbox-icon-wrapper {
+    display: none; /* */
     flex-shrink: 0; /* Prevent radio button from shrinking */
-    width: 2.5rem; /* Set the width of the radio button */
+     /* width: 2.5rem; Set the width of the radio button */
     margin: auto;
 }
 
@@ -111,6 +110,48 @@ strong {
 #streetViewContainer{
     max-width: 1000px;
 }
+
+.tooltip {
+    background-color: white;
+    color: rgb(255, 255, 255);
+    border-radius: 5px;
+    font-size: 1em;
+  }
+  
+  .checkbox-icon-wrapper {
+    
+    align-items: center; /* Aligns items vertically in the center */
+}
+
+.checkbox-icon-wrapper input[type="checkbox"] {
+    margin-right: 5px; /* Adjust spacing between checkbox and label */
+}
+
+.checkbox-icon-wrapper i {
+    margin-left: .75em; /* Adjust spacing between label and icon */
+}
+
+#autocomplete-input {
+    position: relative;
+    padding-left: 30px; /* Adjust to make room for the icon */
+}
+
+.input-group::before {
+    font-family: "Font Awesome 5 Free"; 
+    content: "\f002"; 
+    position: absolute;
+    left: 10px; 
+    top: 50%;
+    transform: translateY(-50%);
+    color: #757575; 
+    font-weight: 900; 
+    font-size: 1rem; /* Adjust the size as needed */
+    z-index: 1; /* Ensure it's above the input field */
+}
+
+/* Styles for the rest of your elements... */
+
+
 
 tableau-viz {
     margin: auto;

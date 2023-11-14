@@ -12,6 +12,8 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Roboto+Condensed:ital,wght@0,400;0,700;1,700&family=Roboto:wght@400&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+
 </head>
 
 <body>
@@ -22,7 +24,13 @@
                     aria-label="Search for Cook County Properties" aria-autocomplete="list" aria-controls="autocomplete-list"
                     aria-haspopup="true">
                 <span class="input-group-text" id="basic-addon2">
-                    <input type="radio" id="location-radio" aria-label="Get Location">
+                    <div class="checkbox-icon-wrapper">
+                        <input class="form-check-input" type="checkbox" data-bs-toggle="tooltip" data-bs-placement="top"  title="<a>Limit search to </br> your location</a>" id="flexCheckDefault" aria-label="Get Location">
+              
+                        <i class="fas fa-map-marker-alt"></i> <!-- Font Awesome location icon -->
+                    </div>
+                    
+                    
                     <span class="spinner-border text-primary spinner-border-sm" role="status" id="loading-spinner"
                         style="display: none;">
                         <span class="visually-hidden" aria-live="assertive">Loading...</span>

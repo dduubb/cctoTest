@@ -1,11 +1,33 @@
 // v.12
 
 import { TableauEventType } from "https://public.tableau.com/javascripts/api/tableau.embedding.3.latest.js";
+const pinService = "https://autocomplete-server-arp6.onrender.com";
+
+
+const tooltipTriggerList = [].slice.call(document.querySelectorAll('[data-bs-toggle="tooltip"]'));
+const tooltipList = tooltipTriggerList.map(function (tooltipTriggerEl) {
+  return new bootstrap.Tooltip(tooltipTriggerEl, {
+    html: true  // Enable HTML content inside the tooltip
+  });
+});
+
+
+
 
 document.addEventListener("DOMContentLoaded", function() {
     initAutocomplete();
     setDeviceType();
+    
+    // Fetch the PIN initially
+    fetchPin();
+
+    // Set up checkbox event listener
+    const checkbox = document.getElementById('flexCheckDefault');
+    checkbox.addEventListener('change', onCheckboxChange);
 });
+// Global variable to store the PIN prefix
+let globalPin = null;
+let globalPinOK = false;
 
 const debouncedFetchAndDisplay = debounce(fetchAndDisplayResults, 500);
 
@@ -13,7 +35,8 @@ function initAutocomplete() {
     const input = document.querySelector("#autocomplete-input");
     const resultsContainer = document.querySelector("#autocomplete-list");
     input.addEventListener("input", function(event) {
-        debouncedFetchAndDisplay(event, resultsContainer);
+        debouncedFetchAndDisplay(event.target.value, resultsContainer);
+        //debouncedFetchAndDisplay(event, resultsContainer);
     });
     input.addEventListener("keydown", (event) => handleInputKeyDown(event, resultsContainer));
 
@@ -70,15 +93,21 @@ function handleItemKeyDown(event) {
     }
 }
 
-function fetchAndDisplayResults(event, resultsContainer) {
-    const inputValue = formatInput(event.target.value);
-    if (inputValue.length < 3) {
+
+function fetchAndDisplayResults(inputValue, resultsContainer) {
+    if (!inputValue || inputValue.length < 3) {
         resultsContainer.innerHTML = "";
         return;
     }
 
     showLoadingSpinner();
-    fetchAutocompleteResults(inputValue)
+
+    // Check the checkbox state and use globalPin if checked
+    const checkbox = document.getElementById('flexCheckDefault');
+    const pinPrefix = checkbox.checked ? globalPin : null;
+
+    console.log(pinPrefix);
+    fetchAutocompleteResults(inputValue, pinPrefix)
         .then(data => {
             if (data.length === 0) {
                 displayNoResultsMessage(resultsContainer, inputValue);
@@ -90,12 +119,25 @@ function fetchAndDisplayResults(event, resultsContainer) {
         .finally(hideLoadingSpinner);
 }
 
+
 function displayNoResultsMessage(resultsContainer, query) {
-    resultsContainer.innerHTML = `<div class="no-results">no result with search "<i>${query}</i>"</div>`;
+    const displayQuery = query ? `<i>${query}</i>` : "this search";
+    resultsContainer.innerHTML = `<div class="no-results">no result with search "<i>${displayQuery}</i>"</div>`;
 }
 
-async function fetchAutocompleteResults(query) {
-    return fetch(`https://autocomplete-server-arp6.onrender.com/search-endpoint?query=${query}`)
+async function fetchAutocompleteResults(queryX,pin) {
+    let pinQuery = ""
+     if (pin) {
+         pinQuery = `&PIN=${pin}`
+    } else pinQuery =""
+console.log(`pinQuery is ${pinQuery}`) 
+
+    return fetch(`${pinService}/search-endpoint?query=${queryX}`+`${pinQuery}`)
+           .then(response => response.json());
+}
+
+async function fetchRegion(lat,lon) {
+    return fetch(`${pinService}/get-region?lat=${lat}&lon=${lon}`)
            .then(response => response.json());
 }
 
@@ -108,12 +150,15 @@ function displayResults(data,inputValue, resultsContainer) {
     attachResultItemsListeners();
 }
 
-function resultsFooter (resultCount) {
+function resultsFooter(resultCount, query) {
+    const displayQuery = query ? `<i>${query}</i>` : "this search";
     if (resultCount > 20) {
-        return `<div class='result-footer'>Showing 20 of ${resultCount}, try a more specific search</div>`
-    } else if   (resultCount === 0) {
-    return `<div class="no-results">no result with search "<i>${query}</i>"</div>` }
-    else return ''
+        return `<div class='result-footer'>Showing 20 of ${resultCount}, try a more specific search</div>`;
+    } else if (resultCount === 0) {
+        return `<div class="no-results">No result with search "${displayQuery}"</div>`;
+    } else {
+        return '';
+    }
 }
 
 function buildResultItemHTML(item, inputValue) {
@@ -148,7 +193,6 @@ function onSelectResultItem(event) {
     updateTableauParameter("query", selectedParam || "default value");
     showStreetView(selectedItem.innerText.split("|")[2],selectedParam.split(";")[0],selectedParam.split(";")[4]);
     
-    // Any other logic that needs to run after an item is selected
 }
 
 function showLoadingSpinner() {
@@ -162,9 +206,9 @@ function hideLoadingSpinner() {
 }
 
 function handleFetchError(error , resultsContainer) {
-    console.error("Error fetching data:", error);
+    try {console.error("Error fetching data:", error);
     resultsContainer.innerHTML = `<div class="no-results">no result with this search </div>`;
-    
+} catch {}
 }
 
 function formatInput(value) {
@@ -214,18 +258,22 @@ document.addEventListener("DOMContentLoaded", function(resultsContainer) {
 
 function attachClearButtonListener() {
     const clearButton = document.querySelector("#clear-button");
-    const input = document.querySelector("#autocomplete-input"); // Get the input field
-    const resultsContainer = document.querySelector("#autocomplete-list"); // Define it here
- 
+    const input = document.querySelector("#autocomplete-input");
+    const resultsContainer = document.querySelector("#autocomplete-list");
+    console.log(globalPin+ "< global pin")
     clearButton.addEventListener("click", function() {
-        document.querySelector("#autocomplete-input").value = "";
-        updateTableauParameter("query", "empty");
+        input.value = "";
         resultsContainer.innerHTML = "";
+        // Do not reset globalPin here
+        updateTableauParameter("query", "empty");
         showStreetView(null);
-        clearButton.style.display = "none"; // show clear with a result
-        input.focus(); // Set focus back to the input field
+        clearButton.style.display = "none";
+        input.focus();
     });
 }
+
+
+
 
 async function updateTableauParameter(paramName, paramValue) {
     // Get the viz object from the HTML web component
@@ -302,41 +350,44 @@ async function getUserLocation() {
   });
 }
 
-// Usage:
-async function getLocationAndDoSomething() {
+
+  
+// Function to fetch PIN
+async function fetchPin() {
     try {
-      const location = await getUserLocation();
-      // Location retrieval was successful
-      console.log("Latitude: " + location.latitude);
-      console.log("Longitude: " + location.longitude);
-      
-      // Perform other asynchronous operations here if needed
+        if (globalPinOK) {const location = await getUserLocation();
+        const pinData = await fetchRegion(location.latitude, location.longitude);
+        globalPin = pinData.section; }
     } catch (error) {
-      // Handle errors
-      console.error(error);
+        console.error("Error fetching PIN:", error);
+        globalPin = null;
     }
-  };
-  
-  document.addEventListener("DOMContentLoaded", function() {
-    // Get references to the radio button and loading spinner
-    var locationRadio = document.getElementById("location-radio");
-    var loadingSpinner = document.getElementById("loading-spinner");
-  
-    // Add a click event listener to the radio button
-    locationRadio.addEventListener("click", async function() {
-      // Toggle the loading spinner
-      loadingSpinner.style.display = "inline-block";
-  
-      try {
-        // Call the async function when the radio button is clicked
-        await getLocationAndDoSomething();
-      } catch (error) {
-        // Handle errors if necessary
-        console.error(error);
-      } finally {
-        // Toggle off the loading spinner when done
-        loadingSpinner.style.display = "none";
-      }
-    });
-  });
-  
+}
+
+async function onCheckboxChange() {
+    const checkbox = document.getElementById('flexCheckDefault');
+    const searchQuery = document.getElementById('autocomplete-input').value;
+    const resultsContainer = document.querySelector("#autocomplete-list");
+
+    // Only fetch PIN if checkbox is checked and globalPin is not set
+    if (checkbox.checked && globalPin == null) {
+        globalPinOK = true
+        await fetchPin(); // Fetch the PIN
+        
+    }
+
+    // Use globalPin if checkbox is checked, otherwise null
+    const pinParam = checkbox.checked ? globalPin : null;
+    fetchAndDisplayResults(searchQuery, resultsContainer, pinParam);
+}
+
+
+
+// Fetch PIN independently
+document.addEventListener("DOMContentLoaded", function() {
+    fetchPin();
+
+    // Set up checkbox event listener
+    const checkbox = document.getElementById('flexCheckDefault');
+    checkbox.addEventListener('change', onCheckboxChange);
+});
