@@ -208,4 +208,5 @@ tableau-viz {
 
 #streetViewContainer{
     max-width: 900px;
+    display: none;
 }
