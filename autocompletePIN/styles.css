@@ -29,21 +29,22 @@ strong {
 
 /* Autocomplete List Styles */
 #autocomplete-list {
-    position: absolute;
     background-color: #fff;
     border: 1px solid #d1d1d1;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    left: .5em;
     max-height: 18.5rem; 
     overflow-y: auto;  
-    left: .5em;
+    padding-top: .15em;
+    position: absolute;
     right: .5em;
     z-index: 1000;
 }
 
 /* No Results Style */
 .no-results {
-    font-style: italic;
     color: #484747; /* or any color that suits your design */
+    font-style: italic;
     padding: 1em;
 }
 
@@ -51,7 +52,6 @@ strong {
 .result-item, .result-footer {
     background: none; /* Removes default button background */
     border: none; /* Removes default border */
-    border-bottom: 1px solid #d1d1d1; /* Custom border for each item */
     color: inherit; /* Inherits text color from parent */
     cursor: pointer; /* Cursor to indicate it's clickable */
     display: block; /* Makes the button behave like a block element */
@@ -60,6 +60,38 @@ strong {
     text-align: left; /* Aligns text to the left */
     width: 100%;
 }
+
+#autocomplete-list i.fa-solid {
+    display: inline-block; /* Make the <i> element an inline-block element */
+    margin: 0 5px; /* Add some spacing to the right of the <i> element (adjust as needed) */
+    text-align: end;
+    vertical-align: middle; /* Align the <i> element vertically in the middle */
+    width: 1em;
+  }
+  #autocomplete-list .result-item {
+    align-items: center;
+    display: flex;
+  }
+
+  #autocomplete-list i.fa-solid {
+    margin-right: .5em; /* Add some spacing to the right of the <i> element (adjust as needed) */
+  }
+  
+
+  button.result-item {
+    vertical-align: center; /* Align the button vertically in the middle */
+  }
+  div.result-item {border-bottom: 1px solid #d1d1d1; /* Custom border for each item */
+    display: inline-block;
+  }
+
+  /* Additional Bootstrap classes */
+.d-flex {
+    display: flex !important; /* Use !important to override Bootstrap styles if necessary */
+  }
+  .align-items-center {
+    align-items: center !important; /* Use !important to override Bootstrap styles if necessary */
+  }
 
 .result-footer {
     background-color: #e9e9e9;
@@ -81,12 +113,12 @@ strong {
 }
 
 #basic-addon2 {
-    display: flex;
+
     align-items: center; /* Vertically center elements */
+    display: flex;
     justify-content: space-between; /* Add space between elements */
     min-width: 2.5em;
     width: auto; /* Let the container adjust to content */
-     /* padding-right: 0px;Add some right padding */
 }
 
 .checkbox-icon-wrapper {
@@ -144,7 +176,7 @@ strong {
 
 #autocomplete-input {
     position: relative;
-    padding-left: 30px; /* Adjust to make room for the icon */
+    padding-left: 2em; /* Adjust to make room for the icon */
 }
 
 .input-group::before {

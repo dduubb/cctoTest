@@ -166,13 +166,13 @@ function buildResultItemHTML(item, inputValue) {
     const highlightedPIN = highlightMatch(formatPIN(item.PIN), formatPIN(inputValue));
     const highlightedAddress = highlightMatch(item.Address, inputValue);
 
-    return `<button class="result-item" 
-                role="option"
-                id="result-item-${item.PIN}"
+    return `<div class="d-flex result-item" id="result-item-${item.PIN}" tabindex="0" 
                 data-pin="${item.PIN}" 
-                data-param="${item.param}">
+                data-param="${item.param}" role="option">${classIcon(item.param.split(";")[4])}<button class="result-item" 
+                data-param="${item.param}"
+>
             ${highlightedTaxpayerName} | ${highlightedPIN} | ${highlightedAddress}
-        </button>`;
+        </button></div>`;
 }
 
 function onSelectResultItem(event) {
@@ -312,6 +312,21 @@ function classifyNumber(n) {
     }
     return C[C.length - 1];
   }  
+
+  function classIcon(classNum){
+    const propertyTypes = {
+        Exempt: '<i class="fa-solid fa-place-of-worship"></i>',
+        Vacant: '<i class="fa-regular fa-circle-xmark"></i>',
+        Commercial: '<i class="fa-solid fa-shop"></i>',
+        Residential: '<i class="fa-solid fa-house"></i>',
+        Multifamily: '<i class="fa-solid fa-building"></i>',
+        Industrial: '<i class="fa-solid fa-industry"></i>',
+        Unknown: '<i class="fa-solid fa-industry"></i>'
+      };
+    const mClass = classifyNumber(classNum)
+    return propertyTypes[mClass]
+  }
+console.log(classIcon(434));
 
 function showStreetView(address,taxcode,classNum) {
     const streetViewImage = document.getElementById('streetViewImage');
