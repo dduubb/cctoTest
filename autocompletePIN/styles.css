@@ -90,29 +90,40 @@ strong {
 }
 
 .checkbox-icon-wrapper {
-    display: none; /* */
+     /*display: none; */
     flex-shrink: 0; /* Prevent radio button from shrinking */
      /* width: 2.5rem; Set the width of the radio button */
     margin: auto;
 }
 
 .spinner-border {
-    width: 1.2rem; /* Set the width of the spinner */
-    height: 1.2rem; /* Set the height of the spinner */
+    width: 1rem; /* Set the width of the spinner */
+    height: 1rem; /* Set the height of the spinner */
+    margin-right: 1.1rem;
+}
+
+/* Apply border-radius when the input field is not empty */
+#autocomplete-input:not(:placeholder-shown) + .input-group-text {
+    border-top-right-radius: 0.25rem; /* Adjust value as needed */
+    border-bottom-right-radius: 0.25rem; /* Adjust value as needed */
+}
+
+/* Hide the clear button initially */
+#clear-button {
+    display: none;
 }
 
 
-/* Tableau Visualization Container */
-.around-viz {
-    padding-top: 1em;
+#basic-addon2 {
+    border-top-right-radius: 0.25rem ;
+    border-bottom-right-radius: 0.25rem ;
 }
 
-#streetViewContainer{
-    max-width: 1000px;
-}
+
+
 
 .tooltip {
-    background-color: white;
+    background-color: transparent;
     color: rgb(255, 255, 255);
     border-radius: 5px;
     font-size: 1em;
@@ -156,4 +167,13 @@ strong {
 tableau-viz {
     margin: auto;
     width: 1000px;
+}
+
+/* Tableau Visualization Container */
+.around-viz {
+    padding-top: 1em;
+}
+
+#streetViewContainer{
+    max-width: 1000px;
 }

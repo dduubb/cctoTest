@@ -24,17 +24,16 @@
                     aria-label="Search for Cook County Properties" aria-autocomplete="list" aria-controls="autocomplete-list"
                     aria-haspopup="true">
                 <span class="input-group-text" id="basic-addon2">
-                    <div class="checkbox-icon-wrapper">
+                    <span class="spinner-border text-primary spinner-border-sm" role="status" id="loading-spinner">
+                        <span class="visually-hidden" aria-live="assertive">Loading...</span>
+                </span><div class="checkbox-icon-wrapper">
                         <input class="form-check-input" type="checkbox" data-bs-toggle="tooltip" data-bs-placement="top"  title="<a>Limit search to </br> your location</a>" id="flexCheckDefault" aria-label="Get Location">
               
                         <i class="fas fa-map-marker-alt"></i> <!-- Font Awesome location icon -->
                     </div>
                     
                     
-                    <span class="spinner-border text-primary spinner-border-sm" role="status" id="loading-spinner"
-                        style="display: none;">
-                        <span class="visually-hidden" aria-live="assertive">Loading...</span>
-                </span>
+                    
                 </span>
                 <button id="clear-button" class="btn btn-secondary" aria-label="Clear search">Clear</button>
             </div>
