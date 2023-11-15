@@ -106,6 +106,7 @@ function fetchAndDisplayResults(inputValue, resultsContainer) {
     const checkbox = document.getElementById('flexCheckDefault');
     const pinPrefix = checkbox.checked ? globalPin : null;
 
+    console.log(pinPrefix);
     fetchAutocompleteResults(inputValue, pinPrefix)
         .then(data => {
             if (data.length === 0) {
@@ -129,6 +130,7 @@ async function fetchAutocompleteResults(queryX,pin) {
      if (pin) {
          pinQuery = `&PIN=${pin}`
     } else pinQuery =""
+    //console.log(`pinQuery is ${pinQuery}`) 
 
     return fetch(`${pinService}/search-endpoint?query=${queryX}`+`${pinQuery}`)
            .then(response => response.json());
@@ -258,6 +260,7 @@ function attachClearButtonListener() {
     const clearButton = document.querySelector("#clear-button");
     const input = document.querySelector("#autocomplete-input");
     const resultsContainer = document.querySelector("#autocomplete-list");
+    //console.log(globalPin+ "< global pin")
     clearButton.addEventListener("click", function() {
         input.value = "";
         resultsContainer.innerHTML = "";
