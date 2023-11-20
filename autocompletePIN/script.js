@@ -2,6 +2,7 @@
 
 import { TableauEventType } from "https://public.tableau.com/javascripts/api/tableau.embedding.3.latest.js";
 const pinService = "https://autocomplete-server-arp6.onrender.com";
+//const pinService = "http://127.0.0.1:3000";
 
 
 const tooltipTriggerList = [].slice.call(document.querySelectorAll('[data-bs-toggle="tooltip"]'));
@@ -125,16 +126,38 @@ function displayNoResultsMessage(resultsContainer, query) {
     resultsContainer.innerHTML = `<div class="no-results">no result with search "<i>${displayQuery}</i>"</div>`;
 }
 
-async function fetchAutocompleteResults(queryX,pin) {
-    let pinQuery = ""
-     if (pin) {
-         pinQuery = `&PIN=${pin}`
-    } else pinQuery =""
-    //console.log(`pinQuery is ${pinQuery}`) 
+let currentAbortController = null;
 
-    return fetch(`${pinService}/search-endpoint?query=${queryX}`+`${pinQuery}`)
-           .then(response => response.json());
+async function fetchAutocompleteResults(queryX, pin) {
+    let pinQuery = pin ? `&PIN=${pin}` : "";
+
+    // Abort the previous request
+    if (currentAbortController) {
+        currentAbortController.abort();
+    }
+
+    // Create a new AbortController for the new request
+    currentAbortController = new AbortController();
+
+    try {
+        const response = await fetch(`${pinService}/search-endpoint?query=${queryX}${pinQuery}`, {
+            signal: currentAbortController.signal
+        });
+        
+        if (!response.ok) {
+            throw new Error('Network response was not ok');
+        }
+
+        return await response.json();
+    } catch (error) {
+        if (error.name === 'AbortError') {
+            console.log('Fetch aborted');
+        } else {
+            throw error; // Rethrow non-abort errors for further handling
+        }
+    }
 }
+
 
 async function fetchRegion(lat,lon) {
     return fetch(`${pinService}/get-region?lat=${lat}&lon=${lon}`)
