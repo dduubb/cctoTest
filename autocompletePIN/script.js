@@ -107,17 +107,28 @@ function fetchAndDisplayResults(inputValue, resultsContainer) {
     const checkbox = document.getElementById('flexCheckDefault');
     const pinPrefix = checkbox.checked ? globalPin : null;
 
+    //const requestId = ++currentRequestId;  // Increment and store the current request ID
+    let finshed = true;
+
     console.log(pinPrefix);
     fetchAutocompleteResults(inputValue, pinPrefix)
         .then(data => {
-            if (data.length === 0) {
+            if (finshed && data.length === 0) {
                 displayNoResultsMessage(resultsContainer, inputValue);
+                
             } else {
                 displayResults(data, inputValue, resultsContainer);
-            }
+            } hideLoadingSpinner();
         })
-        .catch(error => handleFetchError(error, resultsContainer))
-        .finally(hideLoadingSpinner);
+        .catch(error => {
+            if (error.name !== 'AbortError') {
+                finshed = false;
+                handleFetchError(error, resultsContainer);
+                hideLoadingSpinner;
+            }
+            // If it's an AbortError, do not hide the spinner or show error messages,
+            // as a new request is likely in progress.
+        });
 }
 
 
@@ -230,7 +241,7 @@ function hideLoadingSpinner() {
 
 function handleFetchError(error , resultsContainer) {
     try {console.error("Error fetching data:", error);
-    resultsContainer.innerHTML = `<div class="no-results">no result with this search </div>`;
+    //resultsContainer.innerHTML = `<div class="no-results">no result with this search </div>`;
 } catch {}
 }
 
