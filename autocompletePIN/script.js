@@ -162,9 +162,9 @@ function resultsFooter(resultCount, query) {
 }
 
 function buildResultItemHTML(item, inputValue) {
-    const highlightedTaxpayerName = highlightMatch(item.TaxPayer, inputValue);
-    const highlightedPIN = highlightMatch(formatPIN(item.PIN), formatPIN(inputValue));
-    const highlightedAddress = highlightMatch(item.Address, inputValue);
+    const highlightedTaxpayerName = highlightMatch(item.taxpayer, inputValue);
+    const highlightedPIN = highlightMatch(formatPIN(item.pin), formatPIN(inputValue));
+    const highlightedAddress = highlightMatch(item.address, inputValue);
 
     return `<div class="d-flex result-item" id="result-item-${item.PIN}" tabindex="0" 
                 data-pin="${item.PIN}" 
