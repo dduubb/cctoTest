@@ -1,8 +1,8 @@
 // v.12
 
 import { TableauEventType } from "https://public.tableau.com/javascripts/api/tableau.embedding.3.latest.js";
-const pinService = "https://autocomplete-server-arp6.onrender.com";
-//const pinService = "http://127.0.0.1:3000";
+//const pinService = "https://autocomplete-server-arp6.onrender.com";
+const pinService = "http://127.0.0.1:3000";
 
 
 const tooltipTriggerList = [].slice.call(document.querySelectorAll('[data-bs-toggle="tooltip"]'));

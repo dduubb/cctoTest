@@ -70,7 +70,7 @@ strong {
   }
   #autocomplete-list .result-item {
     align-items: center;
-    display: flex;
+    
   }
 
   #autocomplete-list i.fa-solid {
