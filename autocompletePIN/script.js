@@ -128,7 +128,7 @@ let currentAbortController = null;
 
 async function fetchAutocompleteResults(queryX, pin) {
     let pinQuery = pin ? `&PIN=${pin}` : "";
-
+    queryX = queryX.replace("=","")
     // Abort the previous request
     if (currentAbortController) {
         currentAbortController.abort();
