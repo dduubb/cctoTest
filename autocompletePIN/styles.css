@@ -210,3 +210,10 @@ tableau-viz {
     max-width: 900px;
     display: none;
 }
+
+  @media screen and (prefers-color-scheme: light) {
+    body {
+      background-color: white;
+      color: black;
+    }
+  }
