@@ -1,3 +1,4 @@
+/* global bootstrap */
 // v.3
 import { classIcon, generateTri, classifyNumber, formatPIN } from "./pin-utilities.js";
 import { setDeviceType,updateTableauParameter } from "./tableau-utils.js";
@@ -8,6 +9,11 @@ if (window.location.hostname === "127.0.0.1" ) {
 }
 
 document.addEventListener("DOMContentLoaded", function (resultsContainer) {
+
+    [].slice.call(document.querySelectorAll('[data-bs-toggle="tooltip"]')).forEach(function(tooltipTriggerEl) {
+        new bootstrap.Tooltip(tooltipTriggerEl);
+    });
+  
     initAutocomplete();
     setDeviceType();
     attachClearButtonListener(resultsContainer);
@@ -17,6 +23,7 @@ document.addEventListener("DOMContentLoaded", function (resultsContainer) {
     const checkbox = document.getElementById('flexCheckDefault');
     checkbox.addEventListener('change', onCheckboxChange);
 });
+
 
 // Global variable to store the PIN prefix
 let globalPin = null;
