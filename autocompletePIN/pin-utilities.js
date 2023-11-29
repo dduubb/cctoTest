@@ -35,7 +35,26 @@ export function classIcon(classNum) {
     return propertyTypes[mClass];
 }
 
-export function formatPIN(pin) {
+/* export function formatPIN(pin) {
     return pin.replace(/(\d{2})(\d{2})(\d{3})(\d{3})(\d{4})/, "$1-$2-$3-$4-$5");
+}
+ */
+export function formatPIN(num) {
+    let str = num.toString().replace(/-/g, '');
+    let parts = [];
+    let index = 0;
+
+    // Define segment lengths and a variable to track the current segment
+    let segmentLengths = [2, 2, 3, 3, 4, 0];
+    let segmentIndex = 0;
+
+    while (index < str.length) {
+        let length = segmentLengths[segmentIndex % segmentLengths.length];
+        parts.push(str.substr(index, length));
+        index += length;
+        segmentIndex++;
+    }
+
+    return parts.join('-');
 }
 
