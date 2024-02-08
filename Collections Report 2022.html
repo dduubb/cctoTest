@@ -9,21 +9,11 @@ pp-div img, pp-div > table {
     max-width: 15em;
 }
 
-img#Graphic\ 327062654 {
-    border: none;
-    height: auto;
-    max-height: 20em;
-    margin: auto;
-    width: 100%;
-    max-width: 15em;
-}
-
 pp-div table td {
     vertical-align: -webkit-baseline-middle;
     text-align: right;
 	padding: .1em .5em;
 }
-
 
 pp-div table td:first-child {
     text-align: left;
@@ -55,7 +45,6 @@ pp-div .block {
     padding: 0 0 1em 0;
 }
 
-
 pp-div .footnote-ref{
     font-size: .5em;
 }
@@ -83,51 +72,10 @@ pp-div .list-bullet {
     padding: 0  1em;
 }
 
-
-
-.pp-breadcrumbs{
-    text-decoration: none;
-    padding-bottom: 1em;
-}
-
-.pp-footer {
-    background-image: url("../src/footer-1.svg");
-    background-position-x: 71%;
-    background-repeat: no-repeat;    
-    background-size: cover;
-    min-height: .7em ;
-    padding: .7em 0 0 0;
-}
-
- .pp-header { 
-    background-image: url("../src/header-1clean.svg");
-    background-position-x: 50%;
-    background-repeat: no-repeat;
-    background-size: cover;
-    margin: auto;
-} 
-.report { 
-    background-color: #759ac1;
-}
-
-@media screen and (max-width: 980px) {
-
-.report {
-    background-color: #c8d4e0;
-}
-}
-
 @media screen and (max-width: 700px) {
 pp-div .caption::before {
 	content: "Mobile ";
-}
-
-
-
-.header-sub-title{
-    display: none;
-}
-
+}}
 
 pp-div table td:not(:first-child):not(:last-child){
     display: none;
@@ -137,24 +85,13 @@ pp-div table td:last-child, .wrapable-table td{
     text-align: center;
 }
 
-
-.child-block {
-    max-width: 20em;
-    min-width: 7em;
-    padding: 1em;
-    background-color: lightgray;
-}
-}
-
-
 pp-div table td h3 {margin:auto;}
 
 pp-div p img {margin: auto;vertical-align: middle;}
 
 pp-div table{
 	border: .5px solid #efefef;;
-	width: 100%;
-	
+	width: 100%;	
 }
 
 pp-div > tr > strong {
@@ -238,7 +175,7 @@ collection rates for Cook County municipalities, Chicago wards and community
 areas, and county taxing agencies for the 2022 tax year 31 days after payments
 were due.</p>
 
-<tableau-viz src="https://public.tableau.com/views/CookCountyPropertyTaxCollections/CollectionTables?:language=en-US&amp;:display_count=n&amp;:origin=viz_share_link" &nbsp;="" device="desktop" hide-tabs&nbsp;="" toolbar="bottom" <="" tableau-viz="" style="display: flex;height: 725px;"></tableau-viz>
+<tableau-viz src="https://public.tableau.com/views/CookCountyPropertyTaxCollections/CollectionTables?:language=en-US&:retry=yes&:display_count=n&:origin=viz_share_link" device="desktop" hide-tabs toolbar="bottom" style="display: flex"></tableau-viz>
 
 <h2>Countywide</h2>
 
@@ -2072,7 +2009,6 @@ await new Promise((resolve, reject) => {
   setDeviceType(); 
   // Add an event listener to verify the viz becomes interactive
   viz.addEventListener(TableauEventType.FirstInteractive, () => {
-    console.log('Viz is interactive!');
     resolve();
   });
 });
@@ -2080,12 +2016,12 @@ function setDeviceType() {
         const isMobile = /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent);
         const tableauViz = document.querySelector("tableau-viz");
         if (isMobile) {
-            tableauViz.setAttribute("device", "phone");
-            console.log("mobile");
+          tableauViz.style.height = "1250px";
+          tableauViz.setAttribute("device", "phone");
         } else {
-	    tableauVis.style.height = "750px";	
+	          tableauViz.style.height = "750px";	
             tableauViz.setAttribute("device", "desktop");
-            console.log("desktop");
         }
     }
-</script></pp-div>
+</script>
+</pp-div>
