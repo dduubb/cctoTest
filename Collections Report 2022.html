@@ -1,11 +1,185 @@
 <pp-div>
+<style>
+pp-div img, pp-div > table {
+	border: none;
+    height: auto;
+    max-height: 20em;
+    margin: auto;
+    width: 100%;
+    max-width: 15em;
+}
+
+img#Graphic\ 327062654 {
+    border: none;
+    height: auto;
+    max-height: 20em;
+    margin: auto;
+    width: 100%;
+    max-width: 15em;
+}
+
+pp-div table td {
+    vertical-align: -webkit-baseline-middle;
+    text-align: right;
+	padding: .1em .5em;
+}
+
+
+pp-div table td:first-child {
+    text-align: left;
+}
+
+pp-div .caption {
+	font-style: italic;
+}
+
+pp-div .image-header {
+	background-color: #759ac1;
+	padding: .5em;
+	color: white;
+	font-weight: bold;
+    margin-block-end: 0;
+    margin: 0 .2em;
+}
+
+pp-div .child-block {
+    background-color: lightgrey;
+    max-width: 11em;
+    min-width: 7em;
+    padding: .5em;
+}
+pp-div .block {
+    display: flex;
+    flex-wrap: wrap;
+    gap: .5em;
+    padding: 0 0 1em 0;
+}
+
+
+pp-div .footnote-ref{
+    font-size: .5em;
+}
+
+pp-div > br {    
+    display: block;
+    margin: 1em 0;
+}
+
+pp-div h2 img {
+    max-width: 3em;
+}
+
+pp-div .list-bullet {
+    list-style: disc inside none;
+    display:list-item;
+    padding: 0 2.5em;
+    text-indent: -1.25em;
+    }
+
+
+#pp-page-content, .pp-page-content, .pp-header-content  {
+    margin: auto;
+    max-width: var(--max-width) ;
+    padding: 0  1em;
+}
+
+
+
+.pp-breadcrumbs{
+    text-decoration: none;
+    padding-bottom: 1em;
+}
+
+.pp-footer {
+    background-image: url("../src/footer-1.svg");
+    background-position-x: 71%;
+    background-repeat: no-repeat;    
+    background-size: cover;
+    min-height: .7em ;
+    padding: .7em 0 0 0;
+}
+
+ .pp-header { 
+    background-image: url("../src/header-1clean.svg");
+    background-position-x: 50%;
+    background-repeat: no-repeat;
+    background-size: cover;
+    margin: auto;
+} 
+.report { 
+    background-color: #759ac1;
+}
+
+@media screen and (max-width: 980px) {
+
+.report {
+    background-color: #c8d4e0;
+}
+}
+
+@media screen and (max-width: 700px) {
+pp-div .caption::before {
+	content: "Mobile ";
+}
+
+.report{
+    }
+
+.header-sub-title{
+    display: none;
+}
+
+
+pp-div table td:not(:first-child):not(:last-child){
+    display: none;
+}
+pp-div table td:last-child, .wrapable-table td{
+    display: revert!important;
+    text-align: center;
+}
+
+table.table-grid{
+    /* display: none; */
+}
+
+.child-block {
+    max-width: 20em;
+    min-width: 7em;
+    padding: 1em;
+    background-color: lightgray;
+}
+}
+
+
+pp-div table td h3 {margin:auto;}
+
+pp-div p img {margin: auto;vertical-align: middle;}
+
+pp-div table{
+	border: .5px solid #efefef;;
+	width: 100%;
 	
+}
+
+pp-div > tr > strong {
+    padding: 1px 4px 1px 4px;
+}
+
+pp-div table tr:nth-child(even){background-color: lightgray;}
+pp-div table:not(.wrapable-table,.wrapable-table table) tr:nth-child(1){background-color: #759ac1;
+color:white;
+font-weight: bolder;
+	vertical-align: text-top;
+padding: 0.5em;
+}
+
+</style>
 <div class="pp-page-content">
 
-<div class="section-0 section">
 
-<h1>Collection Rates for Tax Year 2022 </h1>
 
+<h1 class="pagetitle">Collection Rates for Tax Year 2022 </h1>
+<div class="cmstextstyle">
 <p><span>Christopher
 Silber, Treasurer’s Research Team</span></p>
 
