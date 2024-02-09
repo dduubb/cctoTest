@@ -1,8 +1,12 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 
-
+<!-- insert the contnents of the section element or the entire section -->
 <section>
     <style>
+        .pp-page-content .cmstextstyle {
+            margin-top: 10px;
+        }
+
         .pp-page-content span.footnote-reference {
             vertical-align: super;
             font-size: smaller;
@@ -1549,7 +1553,8 @@
         } else {
             console.log("Desktop device detected");
             tableauViz.style.height = "100%";
-            tableauViz.querySelector("tableau-viz iframe").style.height = "750px";
+            tableauViz.style.overflowY = "hidden";
+            tableauViz.style.height = "750px";
             tableauViz.setAttribute("device", "desktop");
         }
     }
