@@ -1,3 +1,6 @@
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+
 <div>
     <style>
         .pp-page-content span.footnote-reference {
@@ -5,6 +8,7 @@
             font-size: smaller;
             text-decoration: none;
         }
+        
         .pp-page-content img,
         .pp-page-content>table {
             border: none;
@@ -61,27 +65,33 @@
             padding: 0 2.5em;
             text-indent: -1.25em;
         }
-        .pp-page-content,
-        .pp-page-content,
-        .pp-header-content {
+        div.pp-page-content{
             margin: auto;
             max-width: var(--max-width);
             padding: 0 1em;
         }
         /* Phone Media */
-        @media screen and (max-width: 750px) {
+
+        @media screen and (max-width: 500px) {
             .pp-page-content .caption::before {
-                content: "Mobile ";
-            }
-            .pp-page-content table td:not(:first-child):not(:last-child) {
-                display: none;
-            }
-            .pp-page-content table td:last-child,
-            .wrapable-table td {
-                display: revert !important;
-                text-align: center;
-            }
-        }
+	content: "Mobile ";}
+
+
+.header-sub-title{
+    display: none;
+}
+
+
+.pp-page-content table td:not(:first-child):not(:last-child){
+    display: none;
+}
+.pp-page-content table td:last-child, .wrapable-table td{
+    display: revert!important;
+    text-align: center;
+}
+
+
+}
         /* Table Styles */
         .pp-page-content table td h3 {
             margin: auto;
@@ -1497,13 +1507,12 @@
             </div>
         </div>
     </div>
-</div>
     
-<!-- Tableau Viz HTML-->
-<h1 name="_tablow-dashboard" id="_tablow-dashboard">Collections Dashboard</h1>
-<tableau-viz
-  src="https://public.tableau.com/views/CookCountyPropertyTaxCollections/CollectionTables?:language=en-US&:display_count=n&:origin=viz_share_link"
-  device="desktop"  hide-tabs  toolbar="bottom">
+    <!-- Tableau Viz HTML-->
+    <h1 name="_tablow-dashboard" id="_tablow-dashboard">Collections Dashboard</h1>
+    <tableau-viz
+    src="https://public.tableau.com/views/CookCountyPropertyTaxCollections/CollectionTables?:language=en-US&:display_count=n&:origin=viz_share_link"
+    device="desktop"  hide-tabs  toolbar="bottom">
 </tableau-viz>
 <!-- End Tableau Viz HTML-->
 
@@ -1511,7 +1520,7 @@
 <script type="module">
     // Import the Tableau Embedding API components
     import { TableauEventType } from 'https://public.tableau.com/javascripts/api/tableau.embedding.3.7.0.js';
-
+    
     async function initializeViz() {
         // Get the viz object from the HTML web component
         const viz = document.querySelector('tableau-viz');
@@ -1522,7 +1531,7 @@
                 viz.addEventListener(TableauEventType.FirstInteractive, () => {
                     resolve();
                 });
-
+                
                 // Optional: reject the promise if not resolved within a timeout
                 setTimeout(() => reject(new Error('Viz did not become interactive in time')), 10000);
             });
@@ -1548,3 +1557,4 @@
     initializeViz();
 </script>
 <!-- End Necessary Script for Tableau Viz -->
+</div>
