@@ -2,6 +2,16 @@
     --max-width: 750px;
   }
 
+
+  .pagetitle {
+    color: #3a4c5f;
+    font-size: 26px;
+    font-weight: 900;
+    padding: 0px;
+    margin: 0px 0px 20px 0px;
+}
+
+
 svg {
   position: relative;
   top: 50%;
