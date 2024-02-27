@@ -1,11 +1,166 @@
+<html>
+<head>
+<title>The Few Decide</title>
+</head>
 <link rel="stylesheet" href="./src/pp-styles.css">
 <style>
+  .pp-page-content .cmstextstyle {
+      margin-top: 10px;
+  }
+
+  .pp-page-content span.footnote-reference {
+      vertical-align: super;
+      font-size: smaller;
+      text-decoration: none;
+  }
+  
+  
+  .pp-page-content>table {
+      border: none;
+      height: auto;
+      max-height: 20em;
+      margin: auto;
+      width: 100%;
+      max-width: 15em;
+  }
+  .pp-page-content table td {
+      vertical-align: -webkit-baseline-middle;
+      text-align: right;
+      padding: .1em .5em;
+  }
+  .pp-page-content table td:first-child {
+      text-align: left;
+  }
+  .pp-page-content .caption {
+      font-style: italic;
+  }
+  .pp-page-content .image-header {
+      background-color: #759ac1;
+      padding: .5em;
+      color: white;
+      font-weight: bold;
+      margin-block-end: 0;
+      margin: 0 .2em;
+  }
+  .pp-page-content .child-block {
+      background-color: lightgrey;
+      max-width: 11em;
+      min-width: 7em;
+      padding: .5em;
+  }
+  .pp-page-content .block {
+      display: flex;
+      flex-wrap: wrap;
+      gap: .5em;
+      padding: 0 0 1em 0;
+  }
+  .pp-page-content .footnote-ref {
+      font-size: .5em;
+  }
+  .pp-page-content>br {
+      display: block;
+      margin: 1em 0;
+  }
+  .pp-page-content h2 img {
+      max-width: 3em;
+  }
+  .pp-page-content .list-bullet {
+      list-style: disc inside none;
+      display: list-item;
+      padding: 0 2.5em;
+      text-indent: -1.25em;
+  }
+  div.pp-page-content{
+      margin: auto;
+      max-width: var(--max-width);
+      padding: 0 1em;
+  }
+  /* Phone Media */
+
+  @media screen and (max-width: 500px) {
+      .pp-page-content .caption::before {
+content: "Mobile ";}
+
+
+.header-sub-title{
+display: none;
+}
+
+
+.pp-page-content table td:not(:first-child):not(:last-child){
+display: none;
+}
+.pp-page-content table td:last-child, .wrapable-table td{
+display: revert!important;
+text-align: center;
+}
+
+
+}
+  /* Table Styles */
+  .pp-page-content table td h3 {
+      margin: auto;
+  }
+  .pp-page-content p img {
+      margin: auto;
+      vertical-align: middle;
+  }
+  .pp-page-content table {
+      border: .5px solid #efefef;            ;
+      width: 100%;
+  }
+  .pp-page-content>tr>strong {
+      padding: 1px 4px 1px 4px;
+  }
+  .pp-page-content table tr:nth-child(even) {
+      background-color: lightgray;
+  }
+  .pp-page-content table:not(.wrapable-table, .wrapable-table table) tr:nth-child(1) {
+      background-color: #759ac1;
+      color: white;
+      font-weight: bolder;
+      vertical-align: text-top;
+      padding: 0.5em;
+  }
+</style>
+<style>
       .section-1, .section-3 {
-    display: none;
+    height: 100px;
+    overflow: hidden;
+    transition: height 0.5s ease-in-out;
+    display: block;
+  -webkit-mask-image: linear-gradient(to bottom, black 10%, transparent 100%);
+  mask-image: linear-gradient(to bottom, black 10%, transparent 100%);
+  
   }
   .section-1.show, .section-3.show {
     display: block;
+    height: auto;
+    -webkit-mask-image: none;
+    mask-image: none;
+ 
   }
+
+  .btn {
+    border: none;
+    width: 100%;
+    border-top:#dddddd 1px solid;
+  background-color: inherit;
+  padding: 14px 28px;
+  font-size: 16px;
+  cursor: pointer;
+  display: inline-block;
+}
+.btn:hover {background: #9e9e9e;}
+.link-item {
+    display: flex;
+    align-items: center; /* Align items vertically in the center */
+    padding: 6px 0px 0px 0px;
+}
+
+
+
+
 </style>
 <script>
     function toggleShowMore() {
@@ -29,28 +184,20 @@
 
 <div class="section-0 section">
     <h1 class="pagetitle">The Few Decide</h1>
-<p class="subtitle">Only One in Three Registered Voters Determine the Fate of Cook
-County Property Tax Referendums</p><p>Cook County Treasurer Maria Pappas</p>
-<table>
-  <tbody>
-    <tr>
-        <td style="padding: 6px 8px 0px 0px;">
-            <img width="24" height="24" id="imgReadTheStudy" alt="PDF" src="https://cookcountytreasurer.com/images/research/document.png">
-        </td>
-        <td style="padding: 6px 0px 0px 0px;">
-            <a href="pdfs/ddo/DebtDisclosureReportFY2021.pdf" target="_blank">Download the Report</a>
-        </td>
-    </tr>
-    <tr>
-        <td style="padding: 6px 8px 0px 0px;">
-            <img width="24" height="24" id="imgExploreTheMaps" alt="Tableau" src="https://cookcountytreasurer.com/images/research/search.png">
-        </td>
-        <td style="padding: 6px 0px 0px 0px;">
-            <a href="#tableau" target="_self">Explore the Data</a>
-        </td>
-    </tr>
-</tbody>
-</table>
+    <p class="emphasis"><i>Only One in Three Registered Voters Determine the Fate of Cook County Property Tax Referendums</i></p>
+    
+<div>
+  <div class="link-container">
+    <div class="link-item">
+        <img style="padding: 0px 8px 0px 0px;" src="https://cookcountytreasurer.com/images/research/document.png" alt="PDF" width="24" height="24">
+        <span ><a  href="pdfs/ddo/DebtDisclosureReportFY2021.pdf" target="_blank">Download the Report</a></span>
+    </div>
+    <div class="link-item">
+        <img style="padding: 0px 8px 0px 0px;" src="https://cookcountytreasurer.com/images/research/search.png" alt="Tableau" width="24" height="24">
+        <a href="#tableau" target="_self">Explore the Data</a>
+    </div>
+</div>
+
 
 
 
@@ -509,8 +656,11 @@ of Referendum</p>
 
 <p><b>Graph 1 </b>– Referendums and Voter &nbsp;Turnout</p>
 
-<p><img height="352" id="Chart 3" src="Referenda%20Summary_files/image001.png"></p>
-
+<!-- <p><img height="352" id="Chart 3" src="Referenda%20Summary_files/image001.png"></p> -->
+<div style="margin-left: auto;"><tableau-viz
+  src="https://public.tableau.com/views/CookCountyReferenda/q-types?:language=en-US&:embed=y&:sid=&:embed_code_version=3&:loadOrderID=0&:display_count=y&publish=yes&:tabs=n&:origin=viz_share_link"
+  device="desktop"  hide-tabs  toolbar="bottom">
+  </tableau-viz></div>
 <h1>Results and Findings</h1>
 
 <p>Voter turnout for the referendums &nbsp;averaged &nbsp;32%.
@@ -535,8 +685,11 @@ a referendum’s fate.</p>
 
 <p><b>Graph 2 </b>–Referendums and Turnout by Election</p>
 
-<p><img height="360" id="Chart 1" src="Referenda%20Summary_files/image002.png"></p>
-
+<!-- <p><img height="360" id="Chart 1" src="Referenda%20Summary_files/image002.png"></p> -->
+<div><tableau-viz
+src="https://public.tableau.com/views/CookCountyReferenda/e-types?:language=en-US&:embed=y&:sid=&:embed_code_version=3&:loadOrderID=0&:display_count=y&publish=yes&:tabs=n&:origin=viz_share_link"
+device="desktop"  hide-tabs  toolbar="bottom">
+</tableau-viz></div>
 <h2>Low turnout means a minority of taxpayers are making decisions on debt and
 tax increases.</h2>
 
@@ -920,31 +1073,57 @@ program area. (405 ILCS 22/15[<a href="https://www.ilga.gov/legislation/ilcs/ilc
 
 </div></div>
 
-</div>
-</div><button onclick="toggleShowMore()">Show More</button>
+</div><button class= 'btn showmore' onclick="toggleShowMore()">Read the study</button>
+
 <h1>Referendum Data</h1>
 <div id="tableau">
-    <div class='tableauPlaceholder' id='viz1709055801492' style='position: relative'><noscript><a href='#'><img
-                    alt='Cook County Referendums 2020 - 2023 '
-                    src='https:&#47;&#47;public.tableau.com&#47;static&#47;images&#47;Co&#47;CookCountyReferenda&#47;CookCountyReferenda2020-2023&#47;1_rss.png'
-                    style='border: none' /></a></noscript><object class='tableauViz' style='display:none;'>
-            <param name='host_url' value='https%3A%2F%2Fpublic.tableau.com%2F' />
-            <param name='embed_code_version' value='3' />
-            <param name='site_root' value='' />
-            <param name='name' value='CookCountyReferenda&#47;CookCountyReferenda2020-2023' />
-            <param name='tabs' value='no' />
-            <param name='toolbar' value='yes' />
-            <param name='static_image'
-                value='https:&#47;&#47;public.tableau.com&#47;static&#47;images&#47;Co&#47;CookCountyReferenda&#47;CookCountyReferenda2020-2023&#47;1.png' />
-            <param name='animate_transition' value='yes' />
-            <param name='display_static_image' value='yes' />
-            <param name='display_spinner' value='yes' />
-            <param name='display_overlay' value='yes' />
-            <param name='display_count' value='yes' />
-            <param name='language' value='en-US' />
-            <param name='filter' value='publish=yes' />
-        </object></div>
-    <script
-        type='text/javascript'>                    var divElement = document.getElementById('viz1709055801492'); var vizElement = divElement.getElementsByTagName('object')[0]; if (divElement.offsetWidth > 800) { vizElement.style.width = '1050px'; vizElement.style.height = '827px'; } else if (divElement.offsetWidth > 500) { vizElement.style.width = '1050px'; vizElement.style.height = '827px'; } else { vizElement.style.width = '100%'; vizElement.style.height = '727px'; } var scriptElement = document.createElement('script'); scriptElement.src = 'https://public.tableau.com/javascripts/api/viz_v1.js'; vizElement.parentNode.insertBefore(scriptElement, vizElement);                </script>
-
+  <tableau-viz
+  src="https://public.tableau.com/views/CookCountyReferenda/CookCountyReferenda2020-2023?:language=en-US&:embed=y&:sid=&:embed_code_version=3&:loadOrderID=0&:display_count=y&publish=yes&:tabs=n&:origin=viz_share_link"
+  device="desktop"  hide-tabs  toolbar="bottom">
+</tableau-viz>
     </div>
+</div>
+    
+<!-- Necessary Script for Tableau Viz -->
+<script type="module">
+  // Import the Tableau Embedding API components
+  import { TableauEventType } from 'https://public.tableau.com/javascripts/api/tableau.embedding.3.7.0.js';
+  
+  async function initializeViz() {
+      // Get the viz object from the HTML web component
+      const viz = document.querySelector('tableau-viz');
+      try {
+          await new Promise((resolve, reject) => {
+              setDeviceType();
+              // Add an event listener to verify the viz becomes interactive
+              viz.addEventListener(TableauEventType.FirstInteractive, () => {
+                  resolve();
+              });
+              
+              // Optional: reject the promise if not resolved within a timeout
+              setTimeout(() => reject(new Error('Viz did not become interactive in time')), 10000);
+          });
+      } catch (error) {
+          console.error('Failed to initialize Tableau Viz:', error);
+      }
+  }
+  function setDeviceType() {
+      const isMobile = /Android|webOS|iPhone|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent);
+      const tableauViz = document.querySelector("tableau-viz");
+      if (isMobile) {
+          console.log("Mobile device detected");
+          //tableauViz.style.height = "1250px";     
+          tableauViz.setAttribute("device", "phone");
+      } else {
+          console.log("Desktop device detected");
+          //tableauViz.style.height = "100%";
+          tableauViz.style.overflowY = "hidden";
+          //tableauViz.style.height = "950px";
+          tableauViz.setAttribute("device", "desktop");
+      }
+  }
+  // Call the async function to initialize the viz
+  initializeViz();
+</script>
+
+    </html>
