@@ -1,0 +1,317 @@
+:root {
+    --max-width: 1050px;
+  }
+
+
+  .pagetitle {
+    color: #3a4c5f;
+    font-size: 26px;
+    font-weight: 900;
+    padding: 0px;
+    margin: 0px 0px 20px 0px;
+}
+
+
+svg {
+  position: relative;
+  top: 50%;
+  left: 50%;
+  margin-top: -50px;
+  margin-left: -50px;
+
+  animation: rotate 1s linear infinite;
+  animation-play-state: paused;
+  animation-delay: calc(var(--scroll) * -1s);
+
+  animation-iteration-count: 1;
+  animation-fill-mode: both;
+}
+@keyframes rotate {
+    to {
+      transform: rotate(21360deg);
+    }
+  }
+
+/* START From Home Page  */
+body {
+    color: #000000;
+    font-family: 'Roboto',Arial, Helvetica,  sans-serif;
+    font-size: unset;
+    font-weight: 400;
+    margin: 1em;
+    margin: 1em;
+}
+/* END From Home Page  */
+
+/* BEGIN TAXING ISSUES INSERT */
+
+pp-div img, pp-div > table {
+	border: none;
+    height: auto;
+    max-height: 20em;
+    margin: auto;
+    width: 100%;
+    max-width: 15em;
+}
+
+img#Graphic\ 327062654 {
+    border: none;
+    height: auto;
+    max-height: 20em;
+    margin: auto;
+    width: 100%;
+    max-width: 15em;
+}
+
+pp-div table td {
+    vertical-align: -webkit-baseline-middle;
+    text-align: right;
+	padding: .1em .5em;
+}
+
+
+pp-div table td:first-child {
+    text-align: left;
+}
+
+pp-div .caption {
+	font-style: italic;
+}
+
+pp-div .image-header {
+	background-color: #759ac1;
+	padding: .5em;
+	color: white;
+	font-weight: bold;
+    margin-block-end: 0;
+    margin: 0 .2em;
+}
+
+pp-div .child-block {
+    background-color: lightgrey;
+    max-width: 11em;
+    min-width: 7em;
+    padding: .5em;
+}
+pp-div .block {
+    display: flex;
+    flex-wrap: wrap;
+    gap: .5em;
+    padding: 0 0 1em 0;
+}
+
+
+pp-div .footnote-ref{
+    font-size: .5em;
+}
+
+pp-div > br {    
+    display: block;
+    margin: 1em 0;
+}
+
+pp-div h2 img {
+    max-width: 3em;
+}
+
+pp-div .list-bullet {
+    list-style: disc inside none;
+    display:list-item;
+    padding: 0 2.5em;
+    text-indent: -1.25em;
+    }
+
+
+#pp-page-content, .pp-page-content, .pp-header-content  {
+    margin: auto;
+    max-width: var(--max-width) ;
+    padding: 0  1em;
+}
+
+
+
+.pp-breadcrumbs{
+    text-decoration: none;
+    padding-bottom: 1em;
+}
+
+.pp-footer {
+    background-image: url("../src/footer-1.svg");
+    background-position-x: 71%;
+    background-repeat: no-repeat;    
+    background-size: cover;
+    min-height: .7em ;
+    padding: .7em 0 0 0;
+}
+
+ .pp-header { 
+    background-image: url("../src/header-1clean.svg");
+    background-position-x: 50%;
+    background-repeat: no-repeat;
+    background-size: cover;
+    margin: auto;
+} 
+.report { 
+    background-color: #759ac1;
+}
+
+@media screen and (max-width: 980px) {
+
+.report {
+    background-color: #c8d4e0;
+}
+}
+
+@media screen and (max-width: 700px) {
+pp-div .caption::before {
+	content: "Mobile ";
+}
+
+.report{
+    }
+
+.header-sub-title{
+    display: none;
+}
+
+
+pp-div table td:not(:first-child):not(:last-child){
+    display: none;
+}
+pp-div table td:last-child, .wrapable-table td{
+    display: revert!important;
+    text-align: center;
+}
+
+table.table-grid{
+    /* display: none; */
+}
+
+.child-block {
+    max-width: 20em;
+    min-width: 7em;
+    padding: 1em;
+    background-color: lightgray;
+}
+}
+
+
+pp-div table td h3 {margin:auto;}
+
+pp-div p img {margin: auto;vertical-align: middle;}
+
+pp-div table{
+	border: .5px solid #efefef;;
+	width: 100%;
+	
+}
+
+pp-div > tr > strong {
+    padding: 1px 4px 1px 4px;
+}
+
+pp-div table tr:nth-child(even){background-color: lightgray;}
+pp-div table:not(.wrapable-table,.wrapable-table table) tr:nth-child(1){background-color: #759ac1;
+color:white;
+font-weight: bolder;
+	vertical-align: text-top;
+padding: 0.5em;
+}
+
+/* END TAXING ISSUES INSERT */
+body pp-div table div pp{background-color: #efefef;}
+
+pp-page-content{
+    scroll-snap-type: y mandatory block;
+  }
+
+  .wrapper table{
+    height:fit-content;
+    position:sticky;
+    position: -webkit-sticky;
+    background-color: #efefef;
+    top:0em;
+    scroll-snap-align: top;
+    display: flexbox;
+ }
+ /* pp-page-content>.wrapper {
+    
+    background-color: #fcfcfc;
+    position: -webkit-sticky; /* Safari 
+    position: sticky;
+    top: 0;
+  } */
+
+.pp-header-content {
+    display: flex;
+    align-items: center;
+}
+
+.header-title{
+}
+
+.pp-header-text-content{padding: 0;}
+
+.header-icon {
+    height: 6em;
+    content: url("./PostIcon.svg");
+}
+
+.header-title{
+    font-weight: 900;
+    font-size: 3em;
+    line-height: .9em;
+    Text-indent: -.5em;
+    Padding-left: .75em;
+}
+
+.header-sub-title{
+    margin: 0 7em;
+    font-weight: 400;
+}
+
+p.footnote-text, p.bibliography, .hyperlink-followed, [href]{
+    line-break: auto;
+}
+
+a>.footnote-reference{
+vertical-align: super;
+font-size:x-small
+}
+
+
+.wrapable-table>tbody>tr {
+    display:flex;
+    /* grid-template-columns: repeat(auto-fill,minmax(.1fr)); */
+    justify-content: space-around;
+    flex-wrap: wrap;
+    align-items: stretch;
+}
+table.wrapable-table{
+    background-color: #fff;
+}
+
+.wrapable-table>tbody>tr>*{
+    flex: 1;
+    flex-grow: 1;
+}
+.wrapable-table img{
+    width: 3em;
+    
+}
+.wrapable-table table{
+    height: 100%;
+}
+
+.wrapable-table td{
+vertical-align: middle;
+align-items: center;}
+
+.superscript{
+    font-size: small;
+    vertical-align: super;
+    text-decoration: none;
+}
+[href] {
+    text-decoration: none;
+}
